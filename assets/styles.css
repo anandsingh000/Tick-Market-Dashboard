@@ -383,6 +383,9 @@ select.form-select:focus {
 #homepage-call-vs-put .text-muted-2 { color: var(--muted); }
 #homepage-call-vs-put .val-call { color: var(--call); }
 #homepage-call-vs-put .val-put { color: var(--put); }
+#homepage-call-vs-put .oi-source-note { color: #64748b; margin: -7px 0 12px; line-height: 1.45; }
+#homepage-call-vs-put .oi-source-note.error { color: #b45309; }
+#homepage-call-vs-put .oi-source-note.live { color: #15803d; }
 
 #homepage-call-vs-put .stat-tile {
   padding: 1rem .75rem;

@@ -19,10 +19,11 @@
     'NIFTY W': 'Nifty Current Week',
     'NIFTY WN': 'Nifty Next Week',
     'NIFTY M': 'Nifty Monthly Exp',
-    'BANKNIFTY': 'BANK NIFTY'
+    'BANKNIFTY': 'BANK NIFTY',
+    'SENSEX': 'BSE Sensex'
   };
   var symbolLabel = function (code) { return SYMBOL_LABELS[code] || code; };
-  var ATM_STEP = { 'NIFTY W': 50, 'NIFTY WN': 50, 'NIFTY M': 50, 'BANKNIFTY': 100 };
+  var ATM_STEP = { 'NIFTY W': 50, 'NIFTY WN': 50, 'NIFTY M': 50, 'BANKNIFTY': 100, 'SENSEX': 100 };
 
   /* ---------------- tiny utils ---------------- */
   function $(id) { return document.getElementById(id); }
@@ -70,8 +71,31 @@
   var intradayChart = null;
   var barMinute = {};
   var lastRaw = {};   // previous numeric values, for up/down flashing
+  var refreshErrors = [];
+
+  function emptyOiState(sym) {
+    return {
+      meta: { symbol: sym, expiry: '', spot: null, atm: null, snapshot_time: '—' },
+      strikes: [], insights: {}, base: {}, data: null, mode: 'unavailable', error: ''
+    };
+  }
+  function ensureOiState(sym) {
+    if (!oiState[sym]) oiState[sym] = emptyOiState(sym);
+    return oiState[sym];
+  }
+  function ensureIndState(sym) {
+    if (!indState[sym]) {
+      indState[sym] = {
+        name: sym === 'SENSEX' ? 'BSE SENSEX' : sym,
+        labels: [], prices: [], open: null, high: null, low: null, prev_close: null,
+        trading_date: '', as_of: '', mode: 'unavailable', source: '', error: ''
+      };
+    }
+    return indState[sym];
+  }
 
   function strikeSums(st) {
+    st = Array.isArray(st) ? st : [];
     var tc = 0, tp = 0, cc = 0, cp = 0;
     st.forEach(function (k) {
       tc += k.ce_oi; tp += k.pe_oi;
@@ -81,7 +105,7 @@
   }
 
   function captureBase(key) {
-    oiState[key].baseStrike = strikeSums(oiState[key].strikes);
+    ensureOiState(key).baseStrike = strikeSums(oiState[key].strikes);
   }
 
   (function init() {
@@ -111,9 +135,11 @@
         trading_date: d.trading_date,
         as_of: d.trading_date + ' ' + lastLabel,
         mode: 'demo',
-        source: 'sample-snapshot'
+        source: 'sample-snapshot',
+        error: ''
       };
     });
+    ensureIndState('SENSEX');
     buildup = JSON.parse(JSON.stringify(SEED.BUILDUP));
     for (var i = 1; i <= 8; i++) spark[i] = randomWalk(30, 20, 3);
     Object.keys(oiState).forEach(function (sym) { computeSummary(sym); });
@@ -143,7 +169,12 @@
      API totals as a base and scale them by how the visible
      strikes moved since the snapshot.                     */
   function computeSummary(sym) {
-    var st = oiState[sym].strikes;
+    var state = ensureOiState(sym);
+    var st = Array.isArray(state.strikes) ? state.strikes : [];
+    if (!st.length) {
+      state.data = null;
+      return null;
+    }
     var cur = strikeSums(st);
     var visMaxC = 0, visMaxP = 0, visMaxCc = 0, visMaxPc = 0;
     st.forEach(function (k) {
@@ -196,74 +227,129 @@
     var to = setTimeout(function () { c.abort(); }, 8000);
     return fetch(url, { cache: 'no-store', signal: c.signal, headers: { 'Accept': 'application/json' } })
       .then(function (r) {
-        clearTimeout(to);
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
+        return r.json().catch(function () { return {}; }).then(function (payload) {
+          if (!r.ok) throw new Error((payload && payload.error) || ('HTTP ' + r.status));
+          return payload;
+        });
       })
-      .catch(function (e) { clearTimeout(to); throw e; });
+      .catch(function (e) { throw e; })
+      .finally(function () { clearTimeout(to); });
   }
 
   function tryLive(bSym, fSym, indSym, bExpiry, fExpiry) {
     var requests = [];
     var requested = {};
+    function taggedRequest(promise, kind, sym) {
+      return promise.catch(function (error) {
+        error.panelType = kind;
+        error.symbol = sym;
+        throw error;
+      });
+    }
     function addOiRequest(sym, expiry) {
+      ensureOiState(sym);
       var key = sym + '|' + (expiry || '');
       if (requested[key]) return;
       requested[key] = true;
       var query = '?symbol=' + encodeURIComponent(sym) + '&expiry=' + encodeURIComponent(expiry || '');
-      requests.push(fetchJson(OI_API + query).then(function (j) { return { oi: j }; }));
+      requests.push(taggedRequest(
+        fetchJson(OI_API + query).then(function (j) { return { oi: j, symbol: sym }; }), 'oi', sym
+      ));
     }
     addOiRequest(bSym, bExpiry);
     addOiRequest(fSym, fExpiry);
-    requests.push(fetchJson(INTRADAY_API + '?symbol=' + encodeURIComponent(indSym))
-      .then(function (j) { return { ind: j }; }));
-    requests.push(fetchJson(FUTURES_API).then(function (j) { return { futures: j }; }));
+    requests.push(taggedRequest(
+      fetchJson(INTRADAY_API + '?symbol=' + encodeURIComponent(indSym))
+        .then(function (j) { return { ind: j, symbol: indSym }; }), 'intraday', indSym
+    ));
+    requests.push(taggedRequest(fetchJson(FUTURES_API).then(function (j) { return { futures: j }; }), 'futures', ''));
 
-    return Promise.all(requests).then(function (results) {
-      results.forEach(function (r) {
+    return Promise.all(requests.map(function (request) {
+      return request.then(function (value) { return { ok: true, value: value }; }, function (error) { return { ok: false, error: error }; });
+    })).then(function (settled) {
+      var modes = [];
+      var errors = [];
+      var anyUsable = false;
+      settled.forEach(function (item) {
+        if (!item.ok) {
+          var err = item.error;
+          errors.push(err.message || 'API request failed');
+          if (err.panelType === 'oi') ensureOiState(err.symbol).error = err.message || 'Option-chain request failed.';
+          if (err.panelType === 'intraday') ensureIndState(err.symbol).error = err.message || 'Intraday request failed.';
+          return;
+        }
+        var r = item.value;
         if (r.oi) {
-          if (r.oi.status !== 'ok' || !r.oi.meta || !oiState[r.oi.meta.symbol]) {
-            throw new Error((r.oi && r.oi.error) || 'Invalid OI response');
+          var oi = r.oi;
+          var oiSym = r.symbol || (oi.meta && oi.meta.symbol);
+          var oiRecord = ensureOiState(oiSym);
+          if (oi.status !== 'ok' || !oi.meta || !Array.isArray(oi.strikes) || !oi.strikes.length) {
+            oiRecord.error = (oi && oi.error) || 'No option-chain data was returned.';
+            errors.push(oiRecord.error);
+            return;
           }
-          var key = r.oi.meta.symbol;
-          oiState[key].meta = r.oi.meta;
-          oiState[key].strikes = r.oi.strikes || [];
-          if (r.oi.insights) oiState[key].insights = r.oi.insights;
-          oiState[key].base = r.oi.summary || {};
-          captureBase(key);
+          oiRecord.meta = oi.meta;
+          oiRecord.strikes = oi.strikes;
+          if (oi.insights) oiRecord.insights = oi.insights;
+          oiRecord.base = oi.summary || {};
+          oiRecord.mode = oi.mode || 'demo';
+          oiRecord.error = '';
+          captureBase(oiSym);
+          modes.push(oiRecord.mode);
+          anyUsable = true;
         }
         if (r.ind) {
-          if (!r.ind.success || !indState[r.ind.symbol]) throw new Error((r.ind && r.ind.error) || 'Invalid intraday response');
-          var s = indState[r.ind.symbol];
-          s.labels = r.ind.labels || [];
-          s.prices = r.ind.prices || [];
-          s.open = r.ind.open;
-          s.high = r.ind.high;
-          s.low = r.ind.low;
-          s.prev_close = r.ind.current_price - r.ind.price_change;
-          s.trading_date = r.ind.trading_date || s.trading_date;
-          s.as_of = r.ind.as_of || s.as_of;
-          s.mode = r.ind.mode || 'demo';
-          s.source = r.ind.source || 'upstox';
-          if (s.labels.length) {
-            var pl = s.labels[s.labels.length - 1].split(':');
-            barMinute[r.ind.symbol] = parseInt(pl[0], 10) * 60 + parseInt(pl[1], 10);
+          var ind = r.ind;
+          var indSymResolved = ind.symbol || r.symbol;
+          var state = ensureIndState(indSymResolved);
+          if (!ind.success || !Array.isArray(ind.prices) || !ind.prices.length) {
+            state.error = ind.error || 'No intraday candles are available for this index.';
+            state.mode = ind.mode || 'unavailable';
+            errors.push(state.error);
+            return;
           }
+          state.labels = ind.labels || [];
+          state.prices = ind.prices;
+          state.open = ind.open;
+          state.high = ind.high;
+          state.low = ind.low;
+          state.prev_close = ind.prev_close != null ? ind.prev_close : ind.current_price - ind.price_change;
+          state.trading_date = ind.trading_date || state.trading_date;
+          state.as_of = ind.as_of || state.as_of;
+          state.mode = ind.mode || 'demo';
+          state.source = ind.source || 'upstox';
+          state.error = '';
+          if (state.labels.length) {
+            var pl = state.labels[state.labels.length - 1].split(':');
+            barMinute[indSymResolved] = parseInt(pl[0], 10) * 60 + parseInt(pl[1], 10);
+          }
+          modes.push(state.mode);
+          anyUsable = true;
         }
         if (r.futures) {
-          if (r.futures.status !== 'ok' || !r.futures.data) throw new Error((r.futures && r.futures.error) || 'Invalid futures response');
+          if (r.futures.status !== 'ok' || !r.futures.data) {
+            errors.push((r.futures && r.futures.error) || 'Invalid futures response');
+            return;
+          }
           buildup = r.futures.data;
           futuresFeedMode = r.futures.mode || 'demo';
+          modes.push(futuresFeedMode);
+          anyUsable = true;
         }
       });
       Object.keys(oiState).forEach(computeSummary);
-      apiAvailable = true;
-      var modes = results.map(function (r) { return (r.oi || r.ind || r.futures || {}).mode || 'demo'; });
-      liveMode = modes.length > 0 && modes.every(function (mode) { return mode === 'live'; });
-      feedMode = liveMode ? 'live' : (modes.some(function (mode) { return mode === 'live'; }) ? 'mixed' : 'demo');
+      refreshErrors = errors;
+      apiAvailable = anyUsable;
+      var hasLive = modes.indexOf('live') >= 0;
+      liveMode = modes.length > 0 && modes.every(function (mode) { return mode === 'live'; }) && errors.length === 0;
+      if (!anyUsable) feedMode = 'offline';
+      else if (hasLive && (errors.length > 0 || modes.some(function (mode) { return mode !== 'live'; }))) feedMode = 'mixed';
+      else if (hasLive) feedMode = 'live';
+      else feedMode = 'demo';
       lastCheckedAt = new Date();
-      return true;
-    }).catch(function () {
+      return anyUsable;
+    }).catch(function (error) {
+      refreshErrors = [error.message || 'Unexpected refresh error'];
       apiAvailable = false;
       liveMode = false;
       feedMode = 'offline';
@@ -302,10 +388,28 @@
   /* ---------------- renderers ---------------- */
   function renderCallVsPut() {
     var sym = $('b-filterSymbol').value;
-    var st = oiState[sym];
-    if (!st) return;
+    var st = ensureOiState(sym);
     var o = st.data || computeSummary(sym);
-    var m = st.meta;
+    var m = st.meta || {};
+    var title = sym === 'SENSEX' ? 'Sensex' : (sym.indexOf('NIFTY') === 0 ? 'Nifty' : 'Bank Nifty');
+    var linkLabel = $('b-oiLinkLabel');
+    if (linkLabel) linkLabel.textContent = title + ' Call vs Put OI';
+    $('b-heroSymbol').textContent = symbolLabel(sym);
+    $('b-heroExpiry').textContent = m.expiry || '—';
+    $('b-heroSpot').textContent = m.spot == null ? '—' : fmt2(m.spot);
+    $('b-heroUpdated').textContent = m.snapshot_time || '—';
+
+    var note = $('oiSourceNote');
+    if (!o) {
+      ['b-totalCallOi', 'b-totalPutOi', 'b-callChg', 'b-putChg'].forEach(function (id) { setVal(id, '—'); });
+      ['b-oiCallBar', 'b-oiPutBar', 'b-chgCallBar', 'b-chgPutBar'].forEach(function (id) { $(id).style.height = '0%'; });
+      ['b-oiCallVal', 'b-oiPutVal', 'b-chgCallVal', 'b-chgPutVal'].forEach(function (id) { $(id).textContent = '—'; });
+      if (note) {
+        note.className = 'small oi-source-note error';
+        note.textContent = st.error ? 'OI data unavailable: ' + st.error : 'Waiting for live ' + title + ' option-chain data…';
+      }
+      return;
+    }
 
     setVal('b-totalCallOi', fmtKM(o.total_call_oi), o.total_call_oi);
     setVal('b-totalPutOi', fmtKM(o.total_put_oi), o.total_put_oi);
@@ -322,19 +426,33 @@
     $('b-chgPutBar').style.height = Math.max(6, (Math.abs(o.put_oi_change_abs) / maxChg) * 100) + '%';
     $('b-chgCallVal').textContent = fmtSignedKM(o.call_oi_change_abs);
     $('b-chgPutVal').textContent = fmtSignedKM(o.put_oi_change_abs);
-
-    $('b-heroSymbol').textContent = symbolLabel(sym);
-    $('b-heroExpiry').textContent = m.expiry;
-    $('b-heroSpot').textContent = fmt2(m.spot);
-    $('b-heroUpdated').textContent = m.snapshot_time;
+    if (note) {
+      note.className = 'small oi-source-note ' + (st.error ? 'error' : (st.mode === 'live' ? 'live' : ''));
+      var dataLabel = st.mode === 'live' ? 'LIVE · Upstox' : 'DEMO · Sample data';
+      note.textContent = (st.error ? 'Refresh warning: ' + st.error + ' · Last data: ' : dataLabel + ' · Updated ') + (m.snapshot_time || '—');
+    }
   }
 
   function renderPcrPanels() {
     var sym = $('filterSymbol').value;
-    var st = oiState[sym];
-    if (!st) return;
+    var st = ensureOiState(sym);
     var o = st.data || computeSummary(sym);
-    var m = st.meta;
+    var m = st.meta || {};
+    if (!o) {
+      ['pcrValue', 'maxCallStrike', 'maxCallOiValue', 'maxPutStrike', 'maxPutOiValue', 'atmStrike', 'atmSpot', 'heroSpot', 'chgPcrValue', 'maxCallChgStrike', 'maxCallChgValue', 'maxPutChgStrike', 'maxPutChgValue', 'chgSpot'].forEach(function (id) { setVal(id, '—'); });
+      $('pcrBadge').textContent = 'Unavailable';
+      $('pcrBadge').className = 'badge badge-soft-secondary';
+      $('chgPcrBadge').textContent = 'Unavailable';
+      $('chgPcrBadge').className = 'badge badge-soft-secondary';
+      $('pcrMarker').style.left = '50%';
+      $('chgPcrMarker').style.left = '50%';
+      $('heroSymbol').textContent = symbolLabel(sym);
+      $('heroExpiry').textContent = m.expiry || '—';
+      $('heroSpot').textContent = '—';
+      $('heroUpdated').textContent = m.snapshot_time || '—';
+      $('chgSpotSub').textContent = st.error || 'Waiting for option-chain data';
+      return;
+    }
 
     var pcr = o.overall_pcr;
     setVal('pcrValue', pcr == null ? '—' : pcr.toFixed(2), pcr);
@@ -380,8 +498,23 @@
 
   function renderIntraday() {
     var sym = $('niftySymbolSelect').value;
-    var s = indState[sym];
-    if (!s) return;
+    var s = ensureIndState(sym);
+    if (!Array.isArray(s.prices) || !s.prices.length) {
+      setVal('niftyCurrentPrice', '—');
+      var emptyBadge = $('niftyChangeBadge');
+      emptyBadge.textContent = '—';
+      emptyBadge.classList.remove('positive');
+      $('niftyAbsoluteChange').textContent = s.error || 'Waiting for market data…';
+      $('niftyAbsoluteChange').classList.remove('positive');
+      $('niftyIndexName').textContent = s.name || sym;
+      $('niftyOpen').textContent = '—';
+      $('niftyHigh').textContent = '—';
+      $('niftyLow').textContent = '—';
+      $('niftyLastUpdated').textContent = s.error ? 'Intraday data unavailable' : 'Waiting for data…';
+      $('niftyChartError').textContent = s.error || '';
+      if (intradayChart) { intradayChart.destroy(); intradayChart = null; }
+      return;
+    }
     var last = s.prices[s.prices.length - 1];
     var chg = last - s.prev_close;
     var chgP = s.prev_close > 0 ? (chg / s.prev_close) * 100 : 0;
@@ -401,6 +534,7 @@
     var lastLabel = s.labels[s.labels.length - 1] || '';
     var sourceLabel = s.mode === 'demo' ? 'Demo snapshot' : 'Upstox data';
     $('niftyLastUpdated').textContent = sourceLabel + ': ' + (s.trading_date || '') + ' ' + lastLabel + ' IST';
+    $('niftyChartError').textContent = s.error ? 'Refresh issue; showing last available candles: ' + s.error : '';
 
     if (typeof Chart === 'undefined') return;
     var color = up ? '#16a085' : '#dc2626';
@@ -520,14 +654,15 @@
     var note = $('dataStatusNote');
     if (note) {
       if (feedMode === 'live') {
-        note.textContent = 'Upstox market data connected for the active option-chain and intraday panels. The futures buildup panel is still a demo snapshot.';
+        note.textContent = 'LIVE DATA: Upstox is returning data for the active index panels. The page refreshes automatically; check each panel’s timestamp.';
       } else if (feedMode === 'mixed') {
-        note.textContent = 'MIXED DATA: Upstox supplies available option-chain/intraday data; the futures buildup panel and any no-candle fallback remain clearly marked as demo. Check each panel’s as-of date.';
+        note.textContent = 'MIXED DATA: Upstox live data is shown only for successful panels. Futures buildup remains DEMO; unavailable panels show their own status and are not presented as live.';
       } else if (feedMode === 'demo') {
-        note.textContent = 'DEMO DATA: this is a historical sample snapshot. The page checks the API every minute; values will not become live until a licensed market-data provider is connected.';
+        note.textContent = 'DEMO DATA: this is a dated sample snapshot. Configure an authorized Upstox token server-side in Render to request live Nifty/Sensex data.';
       } else {
-        note.textContent = 'API unavailable: showing the last cached snapshot. Check the Render logs, token expiry, and Upstox API permissions.';
+        note.textContent = 'API unavailable: showing the last available data. Check Render logs, token expiry, and Upstox permissions.';
       }
+      if (refreshErrors.length && feedMode !== 'offline') note.textContent += ' Panel warning: ' + refreshErrors[0];
     }
   }
 
@@ -546,12 +681,12 @@
     renderIntraday();
     renderBuildup();
     renderSparklines();
-    var m = oiState[$('filterSymbol').value].meta;
+    var m = ensureOiState($('filterSymbol').value).meta || {};
     var checked = lastCheckedAt
       ? lastCheckedAt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
       : 'not yet';
     $('rbUpdated').textContent = (apiAvailable ? 'API checked: ' : 'API check: ') + checked;
-    $('chartsUpdated').textContent = m.snapshot_time.slice(11);
+    $('chartsUpdated').textContent = m.snapshot_time ? String(m.snapshot_time).slice(11) : '—';
   }
 
   function doRefresh(manual) {
@@ -561,8 +696,10 @@
     var bSym = $('b-filterSymbol').value;
     var fSym = $('filterSymbol').value;
     var indSym = $('niftySymbolSelect').value;
-    var bExpiry = $('b-filterExpiry').value || oiState[bSym].meta.expiry;
-    var fExpiry = $('filterExpiry').value || oiState[fSym].meta.expiry;
+    var bState = ensureOiState(bSym);
+    var fState = ensureOiState(fSym);
+    var bExpiry = $('b-filterExpiry').value || bState.meta.expiry;
+    var fExpiry = $('filterExpiry').value || fState.meta.expiry;
     countdownLeft = REFRESH_MS;
     updateCountdownUI();
     $('rbNow').disabled = true;
@@ -625,43 +762,47 @@
 
     function syncExpiry(id) {
       var v = $(id).value;
+      var state = ensureOiState(v);
       var expSel = $(id === 'b-filterSymbol' ? 'b-filterExpiry' : 'filterExpiry');
-      var isNifty = v.indexOf('NIFTY') === 0;
-      expSel.style.display = isNifty ? 'block' : 'none';
-      if (isNifty) {
-        var meta = oiState[v].meta;
-        var expected = meta && meta.expiry;
-        if (expected) {
-          var exists = false;
-          for (var i = 0; i < expSel.options.length; i++) {
-            if (expSel.options[i].value === expected) { exists = true; break; }
-          }
-          if (!exists) {
-            var option = document.createElement('option');
-            option.value = expected;
-            option.textContent = expected;
-            expSel.appendChild(option);
-          }
-          expSel.value = expected;
-        } else if (SEED.EXPIRIES.length) {
-          expSel.value = SEED.EXPIRIES[0];
+      expSel.style.display = 'block';
+      var expected = state.meta && state.meta.expiry;
+      if (expected) {
+        var exists = false;
+        for (var i = 0; i < expSel.options.length; i++) {
+          if (expSel.options[i].value === expected) { exists = true; break; }
         }
+        if (!exists) {
+          var option = document.createElement('option');
+          option.value = expected;
+          option.textContent = expected;
+          expSel.appendChild(option);
+        }
+        expSel.value = expected;
       } else {
-        expSel.value = (oiState[v] && oiState[v].meta.expiry) || '';
+        expSel.textContent = '';
       }
-      if (isNifty && expSel.value) oiState[v].meta.expiry = expSel.value;
+      if (expSel.value) state.meta.expiry = expSel.value;
     }
     function loadExpiryOptions(sym) {
+      var state = ensureOiState(sym);
       return fetchJson(OI_META_API + '?symbol=' + encodeURIComponent(sym)).then(function (meta) {
-        if (meta.status !== 'ok' || !Array.isArray(meta.expiries) || !meta.expiries.length) return false;
+        if (meta.status !== 'ok' || !Array.isArray(meta.expiries) || !meta.expiries.length) {
+          state.error = (meta && meta.error) || 'No expiry list was returned for this index.';
+          return false;
+        }
         var expiries = meta.expiries.map(function (item) {
           return typeof item === 'string' ? item : item.expiry;
         }).filter(Boolean);
-        if (!expiries.length) return false;
-        var chosen = meta.default_expiry || (meta.meta && meta.meta.expiry) || oiState[sym].meta.expiry;
+        if (!expiries.length) {
+          state.error = 'No active option expiries are available.';
+          return false;
+        }
+        var chosen = meta.default_expiry || (meta.meta && meta.meta.expiry) || state.meta.expiry;
         if (expiries.indexOf(chosen) < 0) chosen = expiries[0];
-        if (meta.meta) oiState[sym].meta = Object.assign({}, oiState[sym].meta, meta.meta);
-        oiState[sym].meta.expiry = chosen;
+        if (meta.meta) state.meta = Object.assign({}, state.meta, meta.meta);
+        state.meta.expiry = chosen;
+        state.expiries = expiries;
+        state.error = '';
 
         ['b-filterSymbol', 'filterSymbol'].forEach(function (symbolId) {
           if ($(symbolId).value !== sym) return;
@@ -677,7 +818,10 @@
           select.value = chosen;
         });
         return true;
-      }).catch(function () { return false; });
+      }).catch(function (error) {
+        state.error = error.message || 'Could not load option expiries.';
+        return false;
+      });
     }
     function syncOiselects(src) {
       var v = src.value;
@@ -696,6 +840,32 @@
     }
     ['b-filterSymbol', 'filterSymbol'].forEach(function (id) {
       $(id).addEventListener('change', function () { syncOiselects($(id)); });
+    });
+    document.querySelectorAll('[data-oi-symbol]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var sym = this.getAttribute('data-oi-symbol');
+        if (!sym) return;
+        ensureOiState(sym);
+        $('b-filterSymbol').value = sym;
+        $('filterSymbol').value = sym;
+        var intradaySymbol = sym === 'SENSEX' ? 'SENSEX' : (sym.indexOf('NIFTY') === 0 ? 'NIFTY' : 'BANKNIFTY');
+        if ($('niftySymbolSelect').querySelector('option[value="' + intradaySymbol + '"]')) {
+          $('niftySymbolSelect').value = intradaySymbol;
+          if (intradayChart) { intradayChart.destroy(); intradayChart = null; }
+          renderIntraday();
+        }
+        syncOiselects($('b-filterSymbol'));
+      });
+    });
+    document.querySelectorAll('[data-intraday-symbol]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var sym = this.getAttribute('data-intraday-symbol');
+        if (!$('niftySymbolSelect').querySelector('option[value="' + sym + '"]')) return;
+        $('niftySymbolSelect').value = sym;
+        if (intradayChart) { intradayChart.destroy(); intradayChart = null; }
+        renderIntraday();
+        doRefresh(true);
+      });
     });
     ['b-filterExpiry', 'filterExpiry'].forEach(function (id) {
       $(id).addEventListener('change', function () {

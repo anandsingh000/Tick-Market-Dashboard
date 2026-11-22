@@ -9,12 +9,14 @@ const OI_UNDERLYINGS = {
   'NIFTY W': 'NSE_INDEX|Nifty 50',
   'NIFTY WN': 'NSE_INDEX|Nifty 50',
   'NIFTY M': 'NSE_INDEX|Nifty 50',
-  'BANKNIFTY': 'NSE_INDEX|Nifty Bank'
+  'BANKNIFTY': 'NSE_INDEX|Nifty Bank',
+  'SENSEX': 'BSE_INDEX|SENSEX'
 };
 
 const INTRADAY_INSTRUMENTS = {
   'NIFTY': { key: 'NSE_INDEX|Nifty 50', name: 'NIFTY 50' },
   'BANKNIFTY': { key: 'NSE_INDEX|Nifty Bank', name: 'BANK NIFTY' },
+  'SENSEX': { key: 'BSE_INDEX|SENSEX', name: 'BSE SENSEX' }, 
   'FINNIFTY': { key: 'NSE_INDEX|Nifty Fin Service', name: 'FIN NIFTY' },
   'MIDCPNIFTY': { key: 'NSE_INDEX|Nifty Midcap Select', name: 'MIDCAP NIFTY' },
   'NIFTYNXT50': { key: 'NSE_INDEX|Nifty Next 50', name: 'NIFTY NEXT 50' }

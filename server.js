@@ -196,14 +196,22 @@ async function handleUpstoxApi(url, res) {
           return sendJson(res, 200, await upstox.getIntradayData(symbol));
         } catch (error) {
           // A non-trading day or provider-specific index limitation should not
-          // take the whole dashboard offline. Keep this panel clearly marked DEMO.
+          // take the whole dashboard offline. Use a dated sample only where one exists.
           console.error('Upstox intraday fallback:', error.message);
-          const fallback = getIntradayData(SNAPSHOT, url).body;
+          if (SNAPSHOT.INTRADAY[symbol]) {
+            const fallback = getIntradayData(SNAPSHOT, url).body;
+            return sendJson(res, 200, {
+              ...fallback,
+              mode: 'demo',
+              source: 'sample-fallback',
+              warning: 'Upstox returned no intraday candles; showing the dated sample series.'
+            });
+          }
           return sendJson(res, 200, {
-            ...fallback,
-            mode: 'demo',
-            source: 'sample-fallback',
-            warning: 'Upstox returned no intraday candles; showing the dated sample series.'
+            success: false,
+            mode: 'unavailable',
+            symbol,
+            error: 'Upstox returned no candles and this index has no local sample series.'
           });
         }
       }
@@ -258,9 +266,23 @@ async function handleApi(url, res) {
     case '/api/oi':
       result = getOiData(snapshot, url);
       break;
-    case '/api/intraday':
-      result = getIntradayData(snapshot, url);
+    case '/api/intraday': {
+      const symbol = url.searchParams.get('symbol') || 'NIFTY';
+      if (!snapshot.INTRADAY[symbol]) {
+        result = {
+          status: 200,
+          body: {
+            success: false,
+            mode: 'unavailable',
+            symbol,
+            error: 'No dated demo series is available for this index. Configure Upstox in Render for live candles.'
+          }
+        };
+      } else {
+        result = getIntradayData(snapshot, url);
+      }
       break;
+    }
     case '/api/futures':
       result = {
         status: 200,

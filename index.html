@@ -25,8 +25,9 @@
       <li>
         <a class="nav-link" href="#homepage-pcr-live" title="Nifty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg><span>Nifty</span> <span class="caret">&#9662;</span></a>
         <div class="dropdown-menu">
-          <a href="#homepage-pcr-live" title="Live PCR">Live PCR</a>
-          <a href="#hero9" title="Nifty Intraday">Nifty Intraday</a>
+          <a href="#homepage-call-vs-put" data-oi-symbol="NIFTY W" title="Nifty Call vs Put OI">Nifty Call vs Put OI</a>
+          <a href="#homepage-pcr-live" data-oi-symbol="NIFTY W" title="Live PCR">Live PCR</a>
+          <a href="#homepage-pcr-live" data-intraday-symbol="NIFTY" title="Nifty Intraday">Nifty Intraday</a>
           <a href="#hero9" title="OI Charts">OI Charts</a>
           <a href="#hero8" title="Expiry Day">Expiry Day</a>
           <a href="#hero8" title="Standard Deviation">Standard Deviation</a>
@@ -45,9 +46,11 @@
       <li>
         <a class="nav-link" href="#homepage-pcr-live" title="Sensex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Sensex</span> <span class="caret">&#9662;</span></a>
         <div class="dropdown-menu">
-          <a href="#homepage-pcr-live" title="Sensex Live PCR">Live PCR</a>
+          <a href="#homepage-call-vs-put" data-oi-symbol="SENSEX" title="Sensex Call vs Put OI">Sensex Call vs Put OI</a>
+          <a href="#homepage-pcr-live" data-oi-symbol="SENSEX" title="Sensex Live PCR">Sensex Live PCR</a>
+          <a href="#homepage-pcr-live" data-intraday-symbol="SENSEX" title="Sensex Intraday">Sensex Intraday</a>
           <a href="#homepage-pcr-live" title="Option Screener">Option Screener</a>
-          <a href="#homepage-call-vs-put" title="Option Chain Live">Option Chain Live</a>
+          <a href="#homepage-call-vs-put" data-oi-symbol="SENSEX" title="Option Chain Live">Option Chain Live</a>
         </div>
       </li>
       <li>
@@ -126,7 +129,7 @@
   <div class="container">
     <div class="pagetitle">
       <h1 class="fw-bold" style="color: #3b9113;">Tick Trading Call vs Put OI charts Live</h1>
-      <p class="lede">Monitor <strong>live option chain data</strong>, <strong>Call vs Put OI charts</strong>, <strong>highest Open Interest strikes</strong>, <strong>trending OI</strong>, <strong>multi-strike OI analysis</strong>, <strong>OI change charts</strong>, <strong>futures charts</strong>, and <strong>live straddle charts</strong> for Nifty, Bank Nifty and Fin Nifty. Our tick trading tools help option traders track support and resistance levels, identify OI buildup and unwinding, analyze market sentiment, and make better option trading decisions using real-time market data during live market hours.</p>
+      <p class="lede">Monitor option-chain data, Call vs Put OI, highest Open Interest strikes, PCR and intraday charts for Nifty and BSE Sensex, with additional mapped index panels. Live availability is shown per panel and depends on a valid, authorized market-data token. The dashboard refreshes automatically and labels sample or unavailable feeds instead of presenting them as live.</p>
     </div>
   </div>
 
@@ -144,17 +147,19 @@
               <option value="NIFTY M">Nifty Monthly Exp</option>
               <option value="NIFTY W" selected>Nifty Current Week</option>
               <option value="NIFTY WN">Nifty Next Week</option>
+              <option value="SENSEX">BSE Sensex</option>
             </select>
             <select id="b-filterExpiry" class="form-select mt-3" style="display:none;"></select>
           </div>
           <h2 class="mb-3" style="font-size:1.7rem;">Call <span class="text-muted-2" style="color:#94a3b8;">vs</span> <span class="text-green">Put OI</span></h2>
           <p class="mb-4" style="color:#64748b; font-size:.9rem; line-height:1.65;">Compare Call and Put open interest across available indices to understand OI distribution and changes in market positioning.</p>
           <div class="d-flex gap-2 flex-wrap mb-3">
-            <a href="#homepage-call-vs-put" title="View Nifty Call vs Put OI" class="btn btn-success">
+            <a href="#homepage-call-vs-put" title="View Call vs Put OI" class="btn btn-success">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-              Nifty Call vs Put OI
+              <span id="b-oiLinkLabel">Nifty Call vs Put OI</span>
             </a>
           </div>
+          <div class="small oi-source-note" id="oiSourceNote" role="status" aria-live="polite">Waiting for market data…</div>
           <div class="small" style="color:#64748b;">
             <span id="b-heroSymbol">—</span> ·
             Expiry: <strong id="b-heroExpiry">—</strong> ·
@@ -241,6 +246,7 @@
                 <label for="niftySymbolSelect" class="pcr-control-label">Intraday Index</label>
                 <select id="niftySymbolSelect" class="form-select">
                   <option value="NIFTY">Nifty 50</option>
+                  <option value="SENSEX">BSE Sensex</option>
                   <option value="BANKNIFTY">Bank Nifty</option>
                   <option value="FINNIFTY">Fin Nifty</option>
                   <option value="MIDCPNIFTY">Midcap Nifty</option>
@@ -283,6 +289,7 @@
                   <option value="NIFTY M">Nifty Monthly Exp</option>
                   <option value="NIFTY W" selected>Nifty Current Week</option>
                   <option value="NIFTY WN">Nifty Next Week</option>
+                  <option value="SENSEX">BSE Sensex</option>
                 </select>
                 <select id="filterExpiry" class="form-select mt-3" style="display:none;"></select>
               </div>
@@ -814,10 +821,10 @@
 <!-- mobile bottom quick nav -->
 <nav class="mobile-bottom-nav">
   <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 15l3-4 3 3 4-6"/></svg>OPTION<br>CHAIN</a>
-  <a href="#homepage-pcr-live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg>NIFTY<br>PCR</a>
+  <a href="#homepage-pcr-live" data-oi-symbol="NIFTY W"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg>NIFTY<br>PCR</a>
   <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>CALL vs<br>PUT OI</a>
   <a href="#hero4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 7l-5-5-5 5M7 17l5 5 5-5"/></svg>FUTURE<br>OI</a>
-  <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>SENSEX<br>PCR</a>
+  <a href="#homepage-call-vs-put" data-oi-symbol="SENSEX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>SENSEX<br>PCR</a>
   <a href="#hero9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-9 4 4 4-9 4 5"/></svg>OPTION<br>BACKTEST</a>
 </nav>
 

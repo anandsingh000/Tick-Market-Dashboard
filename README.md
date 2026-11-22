@@ -25,11 +25,11 @@ The server reads `PORT` from Render automatically. `.gitignore` excludes local `
 
 When a token is configured, the server makes requests from the backend (the browser never sees the token):
 
-- Option contracts and expiries: Upstox `/v2/option/contract`.
-- Call/put OI chain: Upstox `/v2/option/chain`.
-- Intraday chart: Upstox V3 intraday candles and market quotes. On weekends/holidays, the adapter tries the latest trading session; if Upstox has no candles, the API falls back to the clearly marked demo series instead of taking the whole dashboard offline.
+- Option contracts and expiries: Upstox `/v2/option/contract` for Nifty (NSE) and Sensex (BSE).
+- Call/put OI chain: Upstox `/v2/option/chain`; Sensex uses the BSE index key `BSE_INDEX|SENSEX`.
+- Intraday chart: Upstox V3 intraday candles and market quotes for Nifty and Sensex (and the mapped NSE indices). On weekends/holidays, the adapter tries the latest trading session. If no candles exist, the panel shows a clear unavailable/demo status instead of taking the whole dashboard offline.
 
-The active option-chain and intraday cards use the Upstox API. **The futures buildup card remains DEMO** until a futures instrument/contract data source is configured; the dashboard marks this as `MIXED` instead of presenting it as fully live. Demo mode uses the dated sample in `data/market-snapshot.json` (latest sample timestamp: 2026-11-20).
+The Nifty and Sensex option-chain/PCR and intraday panels can use Upstox when the configured token has access and the provider responds successfully. **The futures buildup card remains DEMO**, and historical/backtest/marketing sections are not backed by a live data store. The dashboard must stay `MIXED`/`DEMO` for those panels; it must not label the whole site fully live. Demo mode uses the dated sample in `data/market-snapshot.json` (latest sample timestamp: 2026-11-20).
 
 Upstox documents that a standard access token expires at **3:30 AM the following day**; if yours is that token type, you will need to refresh the Render environment secret when it expires. An extended/read-only token may have different validity and permissions—confirm that it can access the option-chain and market-data endpoints. See the official docs: [Option Chain](https://upstox.com/developer/api-documentation/get-pc-option-chain/), [Option Contracts](https://upstox.com/developer/api-documentation/get-option-contracts/), [Intraday Candle V3](https://upstox.com/developer/api-documentation/v3/get-intra-day-candle-data/), and [Get Token](https://upstox.com/developer/api-documentation/get-token/).
 
@@ -45,9 +45,9 @@ Upstox documents that a standard access token expires at **3:30 AM the following
 JSON responses use `Content-Type: application/json; charset=utf-8` and `Cache-Control: no-store`.
 
 - `GET /api/health` — server/data mode.
-- `GET /api/oi-meta?symbol=NIFTY%20W` — supported expiries.
-- `GET /api/oi?symbol=NIFTY%20W&expiry=YYYY-MM-DD` — option chain, OI totals, and strike rows.
-- `GET /api/intraday?symbol=NIFTY` — index candles and current-session summary.
+- `GET /api/oi-meta?symbol=NIFTY%20W` or `?symbol=SENSEX` — supported expiries.
+- `GET /api/oi?symbol=NIFTY%20W&expiry=YYYY-MM-DD` or `?symbol=SENSEX&expiry=YYYY-MM-DD` — option chain, OI totals, and strike rows.
+- `GET /api/intraday?symbol=NIFTY` or `?symbol=SENSEX` — index candles and latest-session summary.
 - `GET /api/futures` — futures buildup (currently demo data).
 - `GET /api/market-data` — combined demo snapshot for inspection.
 
