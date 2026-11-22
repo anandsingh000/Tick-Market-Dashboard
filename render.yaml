@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tick-market-dashboard
+    name: tradingtick-website-clone
     runtime: node
     plan: free
     buildCommand: npm install --omit=dev

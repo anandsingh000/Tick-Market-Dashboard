@@ -1,8 +1,8 @@
 {
-  "name": "tick-market-dashboard",
+  "name": "tradingtick-website-clone",
   "version": "1.0.0",
   "private": true,
-  "description": "Trading analytics dashboard with one-minute API polling and a demo market-data API",
+  "description": "Multi-page Trading Tick-style website clone with explicit dated demo market samples",
   "scripts": {
     "start": "node server.js"
   },

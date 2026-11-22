@@ -18,6 +18,10 @@ const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 4173);
 const SNAPSHOT_PATH = path.join(ROOT, 'data', 'market-snapshot.json');
 const SNAPSHOT = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
+const SITE_PAGE_CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'site-pages.json'), 'utf8'));
+const PCR_SAMPLE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pcr-snapshot.json'), 'utf8'));
+const CALLPUT_SAMPLE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'callput-snapshot.json'), 'utf8'));
+const FUTURES_SAMPLE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'futures-snapshot.json'), 'utf8'));
 const MODE = 'demo';
 
 const MIME_TYPES = {
@@ -171,6 +175,54 @@ function getIntradayData(snapshot, url) {
   };
 }
 
+function handleDatedDemoApi(url, res) {
+  const date = url.searchParams.get('date') || '';
+  if (url.pathname === '/api/demo/pcr') {
+    const symbol = url.searchParams.get('symbol') || 'NIFTY W';
+    if (date !== PCR_SAMPLE.date || symbol !== PCR_SAMPLE.symbol) {
+      return sendJson(res, 200, {
+        status: 'unavailable', mode: 'unavailable', symbol, date,
+        error: `No local PCR sample is available for ${symbol} on ${date || 'the selected date'}. Saved sample: ${PCR_SAMPLE.symbol}, ${PCR_SAMPLE.date}.`
+      });
+    }
+    return sendJson(res, 200, { ...PCR_SAMPLE, status: 'ok', mode: 'demo' });
+  }
+  if (url.pathname === '/api/demo/callput') {
+    const symbol = url.searchParams.get('symbol') || 'NIFTY W';
+    const requestedStrikes = (url.searchParams.get('strikes') || '')
+      .split(',').map((value) => Number(value));
+    const expectedStrikes = [...CALLPUT_SAMPLE.strikes, ...CALLPUT_SAMPLE.strikes];
+    const strikeMatch = requestedStrikes.length === expectedStrikes.length &&
+      requestedStrikes.every((value, index) => value === expectedStrikes[index]);
+    if (date !== CALLPUT_SAMPLE.date || symbol !== CALLPUT_SAMPLE.symbol || !strikeMatch) {
+      return sendJson(res, 200, {
+        status: 'unavailable', mode: 'unavailable', symbol, date,
+        error: `No local Call vs Put OI sample matches these filters. Saved sample: ${CALLPUT_SAMPLE.symbol}, ${CALLPUT_SAMPLE.date}, strikes ${CALLPUT_SAMPLE.strikes.join(', ')} on each side.`
+      });
+    }
+    return sendJson(res, 200, { ...CALLPUT_SAMPLE, status: 'ok', mode: 'demo' });
+  }
+  if (url.pathname === '/api/demo/futures') {
+    const symbol = url.searchParams.get('symbol') || 'NIFTY';
+    const expiry = url.searchParams.get('expiry') || '';
+    const interval = url.searchParams.get('interval') || '10min';
+    if (date !== FUTURES_SAMPLE.date || symbol !== FUTURES_SAMPLE.symbol || expiry !== FUTURES_SAMPLE.expiry) {
+      return sendJson(res, 200, {
+        status: 'unavailable', mode: 'unavailable', symbol, date, expiry,
+        error: `No local futures table matches those filters. Saved sample: ${FUTURES_SAMPLE.symbol}, ${FUTURES_SAMPLE.date}, expiry ${FUTURES_SAMPLE.expiry}.`
+      });
+    }
+    return sendJson(res, 200, {
+      status: 'ok', mode: 'demo', source: FUTURES_SAMPLE.source,
+      date: FUTURES_SAMPLE.date, symbol: FUTURES_SAMPLE.symbol,
+      expiry: FUTURES_SAMPLE.expiry, interval,
+      source_interval: FUTURES_SAMPLE.interval,
+      rows: FUTURES_SAMPLE.payload.data.rows
+    });
+  }
+  return sendError(res, 404, 'Dated sample route not found.');
+}
+
 async function handleUpstoxApi(url, res) {
   try {
     switch (url.pathname) {
@@ -244,6 +296,7 @@ async function handleUpstoxApi(url, res) {
 }
 
 async function handleApi(url, res) {
+  if (url.pathname.startsWith('/api/demo/')) return handleDatedDemoApi(url, res);
   if (upstox.hasToken()) return handleUpstoxApi(url, res);
 
   const snapshot = await getSnapshot();
@@ -322,19 +375,22 @@ function serveStatic(pathname, res, headOnly = false) {
   }
 
   const isIndex = decoded === '/' || decoded === '/index.html';
-  if (!isIndex && !decoded.startsWith('/assets/')) {
-    return sendError(res, 404, 'File not found.');
+  const isKnownPage = Object.prototype.hasOwnProperty.call(SITE_PAGE_CONFIG.pages, decoded);
+  const isAsset = decoded.startsWith('/assets/');
+  if (!isIndex && !isKnownPage && !isAsset) {
+    return sendError(res, 404, 'Page or file not found.');
   }
 
   const indexPath = path.join(ROOT, 'index.html');
   const assetRoot = path.join(ROOT, 'assets');
-  const relative = isIndex ? 'index.html' : decoded.replace(/^\/+/, '');
+  // Registered website paths are separate pages but share the clone's HTML shell.
+  const relative = (isIndex || isKnownPage) ? 'index.html' : decoded.replace(/^\/+/, '');
   const filePath = path.resolve(ROOT, relative);
 
   // Restrict asset URLs to the assets directory itself, not merely to the
   // project root. Encoded slashes such as /assets/..%2fserver.js are decoded
   // after URL parsing and must not be able to escape this boundary.
-  if (isIndex ? filePath !== indexPath : !filePath.startsWith(assetRoot + path.sep)) {
+  if ((isIndex || isKnownPage) ? filePath !== indexPath : !filePath.startsWith(assetRoot + path.sep)) {
     return sendError(res, 403, 'Forbidden.');
   }
 
@@ -342,7 +398,7 @@ function serveStatic(pathname, res, headOnly = false) {
   // the allowed directory.
   fs.realpath(filePath, (realErr, realPath) => {
     if (realErr) return sendError(res, 404, 'File not found.');
-    const realPathAllowed = isIndex
+    const realPathAllowed = (isIndex || isKnownPage)
       ? realPath === indexPath
       : realPath.startsWith(assetRoot + path.sep);
     if (!realPathAllowed) return sendError(res, 403, 'Forbidden.');

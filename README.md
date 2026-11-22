@@ -1,6 +1,6 @@
-# Tick Market Dashboard
+# Trading Tick-style website clone
 
-A close rebuild of the public TradingTick homepage layout, with a same-origin API, a 60-second auto-refresh, and an optional **server-side Upstox read-only market-data adapter**. It does not include the original site's private PHP/database code.
+A multi-page Trading Tick clone built from the uploaded screenshots and the public site's visible menu structure. Each menu feature has a separate local route/page (PCR, Call vs Put OI, Futures OI, option chains, charts, research, stock pages, backtest previews, calculators, and contact). It is a visual/interaction clone, not a copy of Trading Tick’s private PHP or database implementation.
 
 ## Run locally
 
@@ -10,47 +10,48 @@ Requires Node.js 18 or newer. No npm packages are needed.
 npm start
 ```
 
-Open `http://localhost:4173`. The server binds to `0.0.0.0` and serves both the site and its API.
+Open `http://localhost:4173`. The server binds to `0.0.0.0`, serves the registered website routes from `assets/site-pages.json`, and provides same-origin API routes. `PORT` can be overridden.
 
-## Deploy on Render
+## Pages and interactions
 
-1. Push this project to a GitHub repository you control.
-2. In Render, create a **Blueprint** from that repository; Render will read `render.yaml`. You can also create a Node Web Service with `npm install --omit=dev` as the build command and `npm start` as the start command.
-3. In the Render service's **Environment** settings, add `UPSTOX_ANALYTICS_TOKEN` and paste the analytics token there. Do not put the token into `index.html`, `assets/app.js`, `data/market-snapshot.json`, or GitHub.
-4. Deploy, then open `/api/health`. For a data test, open `/api/oi-meta?symbol=NIFTY%20W` and check the Render logs if Upstox rejects the request.
+- The primary menu follows the public site's NIFTY, SENSEX, OI, Charts, Stock, Research, Returns, Old Option, Backtest and Global groups. Trading tools and Contact are also included for the requested clone scope.
+- The Nifty PCR page has symbol, date, strike-range and interval filters, Indian-number formatting, and pagination.
+- The Call vs Put OI page has index/date/six-strike controls, a six-series chart, timestamped rows and pagination.
+- Futures OI Buildup has symbol, expiry, date and interval controls with the screenshot-matched interpretation table.
+- Other routes are separate pages with their own controls. Scenario/backtest pages calculate theoretical option payoff only; local calculators operate in the browser.
+- Refresh/pause controls reload the selected page's local/source endpoint. A dated sample is never described as a verified live feed.
 
-The server reads `PORT` from Render automatically. `.gitignore` excludes local `.env` files. `UPSTOX_ACCESS_TOKEN` is also accepted as an alternate name.
+## Data and important limitations
 
-## Upstox integration
+The original site's private database and PHP endpoints are not included. Historical examples saved in `data/` are dated public responses used to match the screenshots:
 
-When a token is configured, the server makes requests from the backend (the browser never sees the token):
+- `data/pcr-snapshot.json` — NIFTY W, 20 Nov 2026, 5-minute rows.
+- `data/callput-snapshot.json` — NIFTY W, 20 Nov 2026, strikes 25750 / 25800 / 25850.
+- `data/futures-snapshot.json` — NIFTY, 20 Nov 2026, expiry 23 Nov 2026, 10-minute rows.
+- `data/market-snapshot.json` — earlier dated demo option-chain and index examples.
 
-- Option contracts and expiries: Upstox `/v2/option/contract` for Nifty (NSE) and Sensex (BSE).
-- Call/put OI chain: Upstox `/v2/option/chain`; Sensex uses the BSE index key `BSE_INDEX|SENSEX`.
-- Intraday chart: Upstox V3 intraday candles and market quotes for Nifty and Sensex (and the mapped NSE indices). On weekends/holidays, the adapter tries the latest trading session. If no candles exist, the panel shows a clear unavailable/demo status instead of taking the whole dashboard offline.
-
-The Nifty and Sensex option-chain/PCR and intraday panels can use Upstox when the configured token has access and the provider responds successfully. **The futures buildup card remains DEMO**, and historical/backtest/marketing sections are not backed by a live data store. The dashboard must stay `MIXED`/`DEMO` for those panels; it must not label the whole site fully live. Demo mode uses the dated sample in `data/market-snapshot.json` (latest sample timestamp: 2026-11-20).
-
-Upstox documents that a standard access token expires at **3:30 AM the following day**; if yours is that token type, you will need to refresh the Render environment secret when it expires. An extended/read-only token may have different validity and permissions—confirm that it can access the option-chain and market-data endpoints. See the official docs: [Option Chain](https://upstox.com/developer/api-documentation/get-pc-option-chain/), [Option Contracts](https://upstox.com/developer/api-documentation/get-option-contracts/), [Intraday Candle V3](https://upstox.com/developer/api-documentation/v3/get-intra-day-candle-data/), and [Get Token](https://upstox.com/developer/api-documentation/get-token/).
-
-## Auto-refresh
-
-- Default polling interval: **60 seconds**.
-- Toolbar choices: 30 seconds, 1 minute, or 5 minutes; pause/resume and manual refresh are available.
-- Refresh uses same-origin `fetch()` calls and updates the dashboard without reloading the page.
-- The page shows the source snapshot time separately from the time the API was checked.
+These are **demo samples, not a live feed or an endorsement of any signal**. Alternate dates/symbols without a matching saved sample show an unavailable state rather than invented values. Stock/screener pages and the original historical backtest/research database are not backed by the demo data. Calculator and strategy pages show user-input calculations only and do not recreate historical returns.
 
 ## API routes
 
 JSON responses use `Content-Type: application/json; charset=utf-8` and `Cache-Control: no-store`.
 
 - `GET /api/health` — server/data mode.
-- `GET /api/oi-meta?symbol=NIFTY%20W` or `?symbol=SENSEX` — supported expiries.
-- `GET /api/oi?symbol=NIFTY%20W&expiry=YYYY-MM-DD` or `?symbol=SENSEX&expiry=YYYY-MM-DD` — option chain, OI totals, and strike rows.
-- `GET /api/intraday?symbol=NIFTY` or `?symbol=SENSEX` — index candles and latest-session summary.
-- `GET /api/futures` — futures buildup (currently demo data).
-- `GET /api/market-data` — combined demo snapshot for inspection.
+- `GET /api/oi-meta?symbol=NIFTY%20W` — supported demo or provider expiries.
+- `GET /api/oi?symbol=NIFTY%20W&expiry=YYYY-MM-DD` — OI chain/strike snapshot.
+- `GET /api/intraday?symbol=NIFTY` — intraday candles where the configured provider or local demo supports the symbol.
+- `GET /api/futures` — aggregate buildup snapshot; it is demo data.
+- `GET /api/demo/pcr?symbol=NIFTY%20W&date=2026-11-20` — dated PCR rows.
+- `GET /api/demo/callput?symbol=NIFTY%20W&date=2026-11-20&strikes=25750,25800,25850,25750,25800,25850` — dated six-series Call vs Put example.
+- `GET /api/demo/futures?symbol=NIFTY&date=2026-11-20&expiry=2026-11-23&interval=10min` — dated futures table.
+- `GET /api/market-data` — combined snapshot for inspection.
 
-## Important
+## Optional Upstox adapter
 
-This dashboard is for software demonstration and analytics only, not investment advice or an order-entry system. Use an authorized Upstox token and follow the provider's access, data-licensing, and rate-limit terms. Never share your token in chat or commit it to source control.
+An optional server-side read-only Upstox adapter remains in `upstox-provider.js`. If `UPSTOX_ACCESS_TOKEN` or `UPSTOX_ANALYTICS_TOKEN` is configured in the server environment, eligible `/api/oi`, `/api/oi-meta` and `/api/intraday` calls can use the provider. Credentials are not sent to the browser. This does **not** convert the saved historical PCR, Call vs Put OI, or futures tables to a live feed; those routes remain explicitly dated samples unless a separately authorized historical source is implemented.
+
+For Render, use the supplied `render.yaml` Blueprint or configure a Node Web Service with `npm start`. Store any provider token only in Render's environment settings. Never put credentials in frontend files or commit them to source control.
+
+## Safety and attribution
+
+This clone is for software demonstration and educational analytics only, not investment advice or an order-entry system. Follow provider access, licensing and rate-limit terms. The Trading Tick name and screenshots are used here as the user's requested visual reference; the original private backend is not included.
