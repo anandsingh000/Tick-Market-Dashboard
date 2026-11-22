@@ -1,0 +1,12 @@
+{
+  "name": "tick-market-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trading analytics dashboard with one-minute API polling and a demo market-data API",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

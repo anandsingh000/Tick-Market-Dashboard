@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Trading Tick | Tick Trading Charts, Call vs Put OI &amp; Option Analysis · Nifty, Bank Nifty &amp; Sensex</title>
+  <meta name="description" content="Trading Tick for tick by tick trading of call vs put oi charts for option analysis for tick trader on Nifty, Bank Nifty, Sensex historical data, option chain analysis, backtesting tools, calculators, and strategy insights for traders.">
+  <meta name="keywords" content="trading tick, tradingtick, tick trader, tick by tick trading, tick tick trading, trading tick oi, trading tick call and put">
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html" title="Trading Tick">
+      <img src="assets/img/logo.png" alt="Trading Tick logo">
+      <span class="logo-badge" id="logoMode" title="Data mode">DEMO</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <ul class="header-nav" id="headerNav">
+      <li>
+        <a class="nav-link" href="#homepage-pcr-live" title="Nifty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg><span>Nifty</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#homepage-pcr-live" title="Live PCR">Live PCR</a>
+          <a href="#hero9" title="Nifty Intraday">Nifty Intraday</a>
+          <a href="#hero9" title="OI Charts">OI Charts</a>
+          <a href="#hero8" title="Expiry Day">Expiry Day</a>
+          <a href="#hero8" title="Standard Deviation">Standard Deviation</a>
+          <a href="#hero6" title="Old Option Chain">Old Option Chain</a>
+        </div>
+      </li>
+      <li>
+        <a class="nav-link" href="#homepage-pcr-live" title="Bank Nifty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Bank Nifty</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#homepage-pcr-live" title="Live PCR">Live PCR</a>
+          <a href="#homepage-pcr-live" title="OI Charts">OI Charts</a>
+          <a href="#homepage-pcr-live" title="Short Straddle Backtest">Short Straddle Backtest</a>
+          <a href="#homepage-pcr-live" title="Intraday">Intraday</a>
+        </div>
+      </li>
+      <li>
+        <a class="nav-link" href="#homepage-pcr-live" title="Sensex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Sensex</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#homepage-pcr-live" title="Sensex Live PCR">Live PCR</a>
+          <a href="#homepage-pcr-live" title="Option Screener">Option Screener</a>
+          <a href="#homepage-call-vs-put" title="Option Chain Live">Option Chain Live</a>
+        </div>
+      </li>
+      <li>
+        <a class="nav-link" href="#hero4" title="Futures"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 7l-5-5-5 5M7 17l5 5 5-5"/></svg><span>Futures</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#hero4" title="Nifty Mood">Nifty Mood</a>
+          <a href="#hero4" title="Bank Nifty Mood">Bank Nifty Mood</a>
+          <a href="#hero4" title="Future OI">Future OI</a>
+          <a href="#hero4" title="Live Future">Live Future</a>
+          <a href="#hero4" title="Adv / Dec">Adv / Decline</a>
+        </div>
+      </li>
+      <li>
+        <a class="nav-link" href="#hero9" title="Backtest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-9 4 4 4-9 4 5"/></svg><span>Backtest</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#hero9" title="Nifty Bull Call Spread">Nifty Bull Call Spread</a>
+          <a href="#hero9" title="Nifty Bear Call Spread">Nifty Bear Call Spread</a>
+          <a href="#hero9" title="Nifty Long Call">Nifty Long Call</a>
+          <a href="#hero9" title="Nifty Short Straddle">Nifty Short Straddle</a>
+          <a href="#hero9" title="Short Straddle Report">Short Straddle Report</a>
+          <a href="#hero9" title="Nifty Backtesting">Nifty Backtesting &#8599;</a>
+          <a href="#hero9" title="Bank Nifty Backtesting">Bank Nifty Backtesting &#8599;</a>
+        </div>
+      </li>
+      <li>
+        <a class="nav-link" href="#hero10" title="Stocks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 15l3-4 3 3 4-6"/></svg><span>Stocks</span> <span class="caret">&#9662;</span></a>
+        <div class="dropdown-menu">
+          <a href="#hero10" title="Stock Option Chain">Stock Option Chain</a>
+          <a href="#hero4" title="Stock Futures">Stock Futures</a>
+          <a href="#hero10" title="Share Price Target">Share Price Target</a>
+          <a href="#hero10" title="Tick Screener">Tick Screener &#8599;</a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="#hero8" title="Zero to Hero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg><span>Zero to Hero</span></a></li>
+      <li><a class="nav-link" href="#site-footer" title="Contact us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Contact us</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= AUTO-REFRESH BAR (NEW) ================= -->
+<div id="refresh-bar" title="Data auto-refreshes automatically">
+  <div class="rb-inner">
+    <span class="rb-mode"><span class="rb-dot"></span><span id="rbMode">LIVE</span></span>
+    <span class="rb-label">AUTO-REFRESH</span>
+    <span class="rb-count">
+      <svg class="rb-ring" viewBox="0 0 22 22">
+        <circle class="ring-bg" cx="11" cy="11" r="9" fill="none" stroke-width="3"/>
+        <circle class="ring-fg" id="ringFg" cx="11" cy="11" r="9" fill="none" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span id="rbCount">60s</span>
+    </span>
+    <span class="rb-updated" id="rbUpdated">last updated: —</span>
+    <span class="rb-spacer"></span>
+    <select class="rb-interval" id="rbInterval" title="Auto-refresh interval">
+      <option value="30">30 sec</option>
+      <option value="60" selected>1 min</option>
+      <option value="300">5 min</option>
+    </select>
+    <button class="rb-btn go" id="rbNow" title="Refresh right now">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
+      Now
+    </button>
+    <button class="rb-btn" id="rbPause" title="Pause / resume auto-refresh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      <span id="rbPauseTxt">Pause</span>
+    </button>
+  </div>
+</div>
+<div class="data-status-note" id="dataStatusNote" role="status" aria-live="polite">
+  DEMO DATA: this is a historical sample snapshot. The page checks the API every minute; values will not become live until a licensed market-data provider is connected.
+</div>
+
+<main id="main">
+
+  <!-- ================= PAGE TITLE ================= -->
+  <div class="container">
+    <div class="pagetitle">
+      <h1 class="fw-bold" style="color: #3b9113;">Tick Trading Call vs Put OI charts Live</h1>
+      <p class="lede">Monitor <strong>live option chain data</strong>, <strong>Call vs Put OI charts</strong>, <strong>highest Open Interest strikes</strong>, <strong>trending OI</strong>, <strong>multi-strike OI analysis</strong>, <strong>OI change charts</strong>, <strong>futures charts</strong>, and <strong>live straddle charts</strong> for Nifty, Bank Nifty and Fin Nifty. Our tick trading tools help option traders track support and resistance levels, identify OI buildup and unwinding, analyze market sentiment, and make better option trading decisions using real-time market data during live market hours.</p>
+    </div>
+  </div>
+
+  <!-- ================= CALL VS PUT OI ================= -->
+  <section id="homepage-call-vs-put">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- COLUMN 1: INTRODUCTION -->
+        <div class="col-lg-4">
+          <div class="mb-3">
+            <label for="b-filterSymbol" class="pcr-control-label">Symbol</label>
+            <select id="b-filterSymbol" class="form-select">
+              <option value="BANKNIFTY">BANK NIFTY</option>
+              <option value="NIFTY M">Nifty Monthly Exp</option>
+              <option value="NIFTY W" selected>Nifty Current Week</option>
+              <option value="NIFTY WN">Nifty Next Week</option>
+            </select>
+            <select id="b-filterExpiry" class="form-select mt-3" style="display:none;"></select>
+          </div>
+          <h2 class="mb-3" style="font-size:1.7rem;">Call <span class="text-muted-2" style="color:#94a3b8;">vs</span> <span class="text-green">Put OI</span></h2>
+          <p class="mb-4" style="color:#64748b; font-size:.9rem; line-height:1.65;">Compare Call and Put open interest across available indices to understand OI distribution and changes in market positioning.</p>
+          <div class="d-flex gap-2 flex-wrap mb-3">
+            <a href="#homepage-call-vs-put" title="View Nifty Call vs Put OI" class="btn btn-success">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+              Nifty Call vs Put OI
+            </a>
+          </div>
+          <div class="small" style="color:#64748b;">
+            <span id="b-heroSymbol">—</span> ·
+            Expiry: <strong id="b-heroExpiry">—</strong> ·
+            Spot: <strong id="b-heroSpot">—</strong><br>
+            Updated: <strong id="b-heroUpdated">—</strong>
+          </div>
+        </div>
+
+        <!-- COLUMN 2: STATISTICS -->
+        <div class="col-lg-4">
+          <div class="row g-3 h-100" id="variant2-tiles">
+            <div class="col-6">
+              <div class="stat-tile">
+                <div class="label">Total Call OI</div>
+                <div class="value val-call" id="b-totalCallOi">—</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-tile">
+                <div class="label">Total Put OI</div>
+                <div class="value val-put" id="b-totalPutOi">—</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-tile">
+                <div class="label">Call OI Change</div>
+                <div class="value val-call" id="b-callChg">—</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-tile">
+                <div class="label">Put OI Change</div>
+                <div class="value val-put" id="b-putChg">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMN 3: MINI CHARTS -->
+        <div class="col-lg-4">
+          <div class="row g-3 h-100 align-items-stretch" style="display:flex;flex-direction:column;gap:12px;">
+            <div class="col-12" style="flex:1;">
+              <div class="mini-chart" style="height:100%;">
+                <div class="chart-title">Total OI</div>
+                <div class="mini-bars">
+                  <div class="mini-bar call" id="b-oiCallBar" style="height:0%;"><span class="mini-val" id="b-oiCallVal">—</span></div>
+                  <div class="mini-bar put" id="b-oiPutBar" style="height:0%;"><span class="mini-val" id="b-oiPutVal">—</span></div>
+                </div>
+                <div class="mini-legend"><span class="lg-call">Call</span><span class="lg-put">Put</span></div>
+              </div>
+            </div>
+            <div class="col-12" style="flex:1;">
+              <div class="mini-chart" style="height:100%;">
+                <div class="chart-title">OI Change</div>
+                <div class="mini-bars">
+                  <div class="mini-bar call" id="b-chgCallBar" style="height:0%;"><span class="mini-val" id="b-chgCallVal">—</span></div>
+                  <div class="mini-bar put" id="b-chgPutBar" style="height:0%;"><span class="mini-val" id="b-chgPutVal">—</span></div>
+                </div>
+                <div class="mini-legend"><span class="lg-call">Call</span><span class="lg-put">Put</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2 class="pcr-heading">Nifty Live PCR Today</h2>
+    <p style="color:#475569;font-size:13px;line-height:1.65;max-width:1100px;margin:8px 0 0;">Check Nifty Live PCR Today to track the latest Nifty Put Call Ratio (PCR), live call and put open interest (OI), and changes in options positioning. Analyze Nifty PCR data, maximum call OI, maximum put OI, and strike-wise open interest changes to identify potential support and resistance levels. Use the live Nifty PCR today alongside Nifty 50 price movements to understand options market sentiment and monitor bullish or bearish trends.</p>
+  </div>
+
+  <!-- ================= INTRADAY + PCR DASHBOARD ================= -->
+  <section id="homepage-pcr-live">
+    <div class="pcr-dashboard">
+      <div class="container">
+        <div class="row">
+
+          <!-- COLUMN 1: INTRADAY CHART -->
+          <div class="col-lg-4">
+            <div class="pcr-panel intraday-panel">
+              <div>
+                <label for="niftySymbolSelect" class="pcr-control-label">Intraday Index</label>
+                <select id="niftySymbolSelect" class="form-select">
+                  <option value="NIFTY">Nifty 50</option>
+                  <option value="BANKNIFTY">Bank Nifty</option>
+                  <option value="FINNIFTY">Fin Nifty</option>
+                  <option value="MIDCPNIFTY">Midcap Nifty</option>
+                  <option value="NIFTYNXT50">Nifty Next 50</option>
+                </select>
+              </div>
+              <div class="intraday-header mt-3">
+                <div>
+                  <div class="intraday-index-name" id="niftyIndexName">NIFTY 50</div>
+                  <div class="intraday-price-row">
+                    <span class="intraday-current-price" id="niftyCurrentPrice">--</span>
+                    <span class="intraday-change-badge" id="niftyChangeBadge">--</span>
+                  </div>
+                  <div class="intraday-absolute-change" id="niftyAbsoluteChange">Loading market data...</div>
+                </div>
+              </div>
+              <div class="intraday-chart-container">
+                <canvas id="niftyIntradayCanvas"></canvas>
+              </div>
+              <div class="intraday-market-stats">
+                <div class="intraday-stat"><span>Open</span><strong id="niftyOpen">--</strong></div>
+                <div class="intraday-stat"><span>High</span><strong id="niftyHigh" style="color:#198754;">--</strong></div>
+                <div class="intraday-stat"><span>Low</span><strong id="niftyLow" style="color:#dc3545;">--</strong></div>
+              </div>
+              <div class="intraday-chart-footer">
+                <span id="niftyLastUpdated">Waiting for data...</span>
+                <span>Intraday chart</span>
+              </div>
+              <div class="intraday-chart-error" id="niftyChartError" role="status"></div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: OVERALL PCR -->
+          <div class="col-lg-4">
+            <div class="pcr-panel">
+              <div class="mb-3">
+                <label for="filterSymbol" class="pcr-control-label">PCR Symbol</label>
+                <select id="filterSymbol" class="form-select">
+                  <option value="BANKNIFTY">BANK NIFTY</option>
+                  <option value="NIFTY M">Nifty Monthly Exp</option>
+                  <option value="NIFTY W" selected>Nifty Current Week</option>
+                  <option value="NIFTY WN">Nifty Next Week</option>
+                </select>
+                <select id="filterExpiry" class="form-select mt-3" style="display:none;"></select>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="pcr-panel-title mb-0">Overall PCR</span>
+                <span class="badge badge-soft-secondary" id="pcrBadge">—</span>
+              </div>
+              <div class="pcr-value font-monospace" id="pcrValue">—</div>
+              <div class="pcr-meter">
+                <div class="pcr-marker" id="pcrMarker" style="left:50%;"></div>
+              </div>
+              <div class="pcr-scale"><span>0.5</span><span>1.0</span><span>1.5</span><span>2.0</span></div>
+              <hr class="my-3">
+              <div class="pcr-metrics">
+                <div>
+                  <div class="pcr-metric-label">Max Call OI</div>
+                  <div class="pcr-metric-value text-red font-monospace" id="maxCallStrike">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="maxCallOiValue">—</div>
+                </div>
+                <div>
+                  <div class="pcr-metric-label">Max Put OI</div>
+                  <div class="pcr-metric-value text-green font-monospace" id="maxPutStrike">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="maxPutOiValue">—</div>
+                </div>
+                <div>
+                  <div class="pcr-metric-label">ATM</div>
+                  <div class="pcr-metric-value font-monospace" id="atmStrike">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="atmSpot">—</div>
+                </div>
+              </div>
+              <div class="pcr-meta-footer">
+                <div class="pcr-meta-line"><span id="heroSymbol">—</span> · Expiry: <strong id="heroExpiry">—</strong></div>
+                <div class="pcr-meta-line">Spot: <strong id="heroSpot">—</strong> · Updated: <strong id="heroUpdated">—</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 3: OI-CHANGE PCR -->
+          <div class="col-lg-4">
+            <div class="pcr-panel">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="pcr-panel-title mb-0">OI-Change PCR</span>
+                <span class="badge badge-soft-secondary" id="chgPcrBadge">—</span>
+              </div>
+              <div class="pcr-value pcr-change-value font-monospace" id="chgPcrValue">—</div>
+              <div class="pcr-meter">
+                <div class="pcr-marker" id="chgPcrMarker" style="left:50%;"></div>
+              </div>
+              <div class="pcr-scale"><span>0.1</span><span>0.5</span><span>1.0</span><span>1.5</span><span>2.0</span></div>
+              <hr class="my-3">
+              <div class="pcr-metrics">
+                <div>
+                  <div class="pcr-metric-label">Max Call &Delta;OI</div>
+                  <div class="pcr-metric-value text-red font-monospace" id="maxCallChgStrike">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="maxCallChgValue">—</div>
+                </div>
+                <div>
+                  <div class="pcr-metric-label">Max Put &Delta;OI</div>
+                  <div class="pcr-metric-value text-green font-monospace" id="maxPutChgStrike">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="maxPutChgValue">—</div>
+                </div>
+                <div>
+                  <div class="pcr-metric-label">Spot</div>
+                  <div class="pcr-metric-value font-monospace" id="chgSpot">—</div>
+                  <div class="pcr-metric-subvalue font-monospace" id="chgSpotSub">live</div>
+                </div>
+              </div>
+              <div class="pcr-action-buttons">
+                <a href="#homepage-pcr-live" class="btn-pcr-chart" title="View Nifty PCR Chart"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg> Nifty PCR Chart</a>
+                <a href="#homepage-call-vs-put" class="btn-pcr-table" title="View Nifty PCR Data"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg> Nifty PCR Data</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 4 — FUTURES OI BUILDUP ================= -->
+  <section class="hero plain" id="hero4">
+    <div class="container">
+      <div class="hero-label">FUTURES OI BUILDUP</div>
+      <div class="hero-live-tag"><span class="status-dot"></span><span id="futuresModeTag">Demo Futures Snapshot</span></div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Live Futures <span class="accent">OI Buildup</span></h1>
+          <p class="hero-sub">Identify how traders are positioning in Nifty futures — Long Buildup, Short Buildup, Long Unwinding, or Short Covering.</p>
+        </div>
+        <div class="btns">
+          <a href="#hero4" class="btn btn-primary-custom btn-lg">View Data</a>
+          <a href="#hero4" class="btn btn-outline-custom btn-lg">Adv / Decline</a>
+        </div>
+      </div>
+      <div class="buildup-grid">
+        <div class="buildup-tile long-buildup">
+          <div class="title">&#8599; Long Buildup</div>
+          <div class="subtitle">Price &uarr; &nbsp; OI &uarr;</div>
+          <div class="count" id="bd-long">—</div>
+          <div class="signal">Bullish signal</div>
+        </div>
+        <div class="buildup-tile short-buildup">
+          <div class="title">&#8600; Short Buildup</div>
+          <div class="subtitle">Price &darr; &nbsp; OI &uarr;</div>
+          <div class="count" id="bd-short">—</div>
+          <div class="signal">Bearish signal</div>
+        </div>
+        <div class="buildup-tile long-unwinding">
+          <div class="title">&#8600; Long Unwinding</div>
+          <div class="subtitle">Price &darr; &nbsp; OI &darr;</div>
+          <div class="count" id="bd-lu">—</div>
+          <div class="signal">Weak bullish</div>
+        </div>
+        <div class="buildup-tile short-covering">
+          <div class="title">&#8599; Short Covering</div>
+          <div class="subtitle">Price &uarr; &nbsp; OI &darr;</div>
+          <div class="count" id="bd-sc">—</div>
+          <div class="signal">Weak bearish</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 6 — HISTORICAL F&O DATA ================= -->
+  <section class="hero plain" id="hero6">
+    <div class="container">
+      <div class="hero-label">HERO 6 &middot; HISTORICAL DATA</div>
+      <div class="hero-live-tag"><span class="status-dot"></span>5 Years of Historical Data</div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Historical <span class="accent">F&amp;O Data</span></h1>
+          <p class="hero-sub">Browse, filter and download clean end-of-day data for Nifty futures, options, implied volatility and PCR.</p>
+        </div>
+        <div class="btns">
+          <a href="#hero6" class="btn btn-primary-custom btn-lg">Browse Datasets</a>
+          <a href="#hero6" class="btn btn-outline-custom btn-lg">Sample Data</a>
+        </div>
+      </div>
+      <div class="dataset-grid">
+        <div class="dataset-card">
+          <div class="name">Nifty Futures EOD</div>
+          <div class="desc">Daily OHLC, OI, volume.</div>
+          <div class="stats"><span class="chip">1,248 rows</span><span class="chip">1.2 MB</span></div>
+        </div>
+        <div class="dataset-card">
+          <div class="name">Nifty Options EOD</div>
+          <div class="desc">Strike-wise CE &amp; PE data.</div>
+          <div class="stats"><span class="chip">9.6M rows</span><span class="chip">180 MB</span></div>
+        </div>
+        <div class="dataset-card">
+          <div class="name">Implied Volatility</div>
+          <div class="desc">ATM IV, India VIX, term structure.</div>
+          <div class="stats"><span class="chip">1,248 rows</span><span class="chip">320 KB</span></div>
+        </div>
+        <div class="dataset-card">
+          <div class="name">PCR History</div>
+          <div class="desc">Daily PCR by OI &amp; volume.</div>
+          <div class="stats"><span class="chip">1,248 rows</span><span class="chip">260 KB</span></div>
+        </div>
+        <div class="dataset-card">
+          <div class="name">Nifty Index OHLC</div>
+          <div class="desc">Nifty 50, Bank Nifty, Fin Nifty.</div>
+          <div class="stats"><span class="chip">3,744 rows</span><span class="chip">480 KB</span></div>
+        </div>
+        <div class="dataset-card">
+          <div class="name">Full Bundle</div>
+          <div class="desc">Every dataset combined.</div>
+          <div class="stats"><span class="chip bundle">11M+ rows</span><span class="chip">240 MB</span></div>
+        </div>
+      </div>
+      <div class="coverage-box">
+        <div class="cov-head">
+          <span>Data Coverage</span>
+          <span>01 Jan 2019 &rarr; 31 Dec 2024</span>
+        </div>
+        <div class="coverage-bar">
+          <span class="seg index" style="flex:3;" title="Index OHLC"></span>
+          <span class="seg fut" style="flex:2;" title="Futures"></span>
+          <span class="seg opt" style="flex:3;" title="Options"></span>
+          <span class="seg iv" style="flex:1;" title="IV"></span>
+          <span class="seg pcr" style="flex:1;" title="PCR"></span>
+        </div>
+        <div class="cov-legend">
+          <span><span class="legend-dot" style="background:#14b8a6;"></span>Index OHLC</span>
+          <span><span class="legend-dot" style="background:#0284c7;"></span>Futures EOD</span>
+          <span><span class="legend-dot" style="background:#059669;"></span>Options EOD</span>
+          <span><span class="legend-dot" style="background:#7c3aed;"></span>Implied Volatility</span>
+          <span><span class="legend-dot" style="background:#b45309;"></span>PCR Series</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 9 — CHARTS ================= -->
+  <section class="hero alt" id="hero9">
+    <div class="container">
+      <div class="hero-label">HERO 9 &middot; CHARTS</div>
+      <div class="hero-live-tag"><span class="status-dot"></span>Visual Analytics</div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Nifty Historical <span class="accent">Charts</span></h1>
+          <p class="hero-sub">Every chart you need — intraday since 2015, expiry behaviour, option premiums, open interest, PCR, implied volatility and expiry comparisons.</p>
+        </div>
+        <div class="btns">
+          <a href="#hero9" class="btn btn-primary-custom btn-lg">View Full Charts</a>
+          <a href="#hero8" class="btn btn-outline-custom btn-lg">Compare Expiries</a>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <a href="#hero9" class="hero-chart-card">
+          <div class="title"><span class="ic-green">&#9650;</span> Intraday</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-1" fill="none" stroke="#0080ff" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>Since 2015</span><span>+0.62%</span></div>
+        </a>
+        <a href="#hero8" class="hero-chart-card">
+          <div class="title"><span class="ic-purple">&#9632;</span> Expiry Day</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-2" fill="none" stroke="#7c3aed" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>07 Nov 24</span><span>+1.2%</span></div>
+        </a>
+        <a href="#hero9" class="hero-chart-card">
+          <div class="title"><span class="ic-blue">&#9650;</span> Option Price</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-3" fill="none" stroke="#0284c7" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>24,500 CE</span><span>+8.2%</span></div>
+        </a>
+        <a href="#hero9" class="hero-chart-card">
+          <div class="title"><span class="ic-orange">&#9632;</span> Open Interest</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-4" fill="none" stroke="#ea580c" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>12.8M</span><span>+4.1%</span></div>
+        </a>
+        <a href="#homepage-call-vs-put" class="hero-chart-card">
+          <div class="title"><span class="ic-green">&#9878;</span> Call vs Put</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-5" fill="none" stroke="#16a085" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>PCR 1.18</span><span>Bullish</span></div>
+        </a>
+        <a href="#hero8" class="hero-chart-card">
+          <div class="title"><span class="ic-red">&#9650;</span> Implied Vol</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-6" fill="none" stroke="#dc2626" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>IV 13.6</span><span>&minus;2.1%</span></div>
+        </a>
+        <a href="#hero9" class="hero-chart-card">
+          <div class="title"><span class="ic-blue">&#8597;</span> Curr vs Old Price</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-7" fill="none" stroke="#0284c7" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>New vs Prev</span><span>+5.4%</span></div>
+        </a>
+        <a href="#hero9" class="hero-chart-card">
+          <div class="title"><span class="ic-purple">&#8597;</span> OI vs Old</div>
+          <div class="mini-chart"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path id="spark-8" fill="none" stroke="#7c3aed" stroke-width="1.6" d=""/></svg></div>
+          <div class="meta"><span>12.8M vs 11.2M</span><span>+14%</span></div>
+        </a>
+      </div>
+      <div class="small" style="color:#64748b;margin-top:14px;font-family:Consolas,monospace;">Updated: <span id="chartsUpdated">—</span> IST</div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 8 — HISTORICAL RECORDS ================= -->
+  <section class="hero plain" id="hero8">
+    <div class="container">
+      <div class="hero-label">HERO 8 &middot; HISTORICAL RECORDS</div>
+      <div class="hero-live-tag"><span class="status-dot"></span>25 Years of Nifty History</div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Nifty <span class="accent">Historical Data</span></h1>
+          <p class="hero-sub">Explore the biggest single-day moves, extreme gaps, long-term returns and valuation history of Nifty 50.</p>
+        </div>
+        <div class="btns">
+          <a href="#hero9" class="btn btn-primary-custom btn-lg">View Records</a>
+          <a href="#hero9" class="btn btn-outline-custom btn-lg">Yearly Returns</a>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-card"><div class="big">25Y</div><div class="cap">History</div></div>
+        <div class="metric-card"><div class="big">6,180</div><div class="cap">Trading Days</div></div>
+        <div class="metric-card"><div class="big">+11.8%</div><div class="cap">CAGR 1999&ndash;2024</div></div>
+        <div class="metric-card"><div class="big">22.4</div><div class="cap">Avg PE (11.2&ndash;42.6)</div></div>
+      </div>
+      <div class="record-grid">
+        <div class="record-card">
+          <div class="r-label">Biggest Fall</div>
+          <div class="r-value down">&minus;13.90%</div>
+          <div class="r-meta"><b>21 Mar 2020</b> &middot; COVID crash</div>
+        </div>
+        <div class="record-card">
+          <div class="r-label">Highest Gain</div>
+          <div class="r-value up">+8.76%</div>
+          <div class="r-meta"><b>18 May 2009</b> &middot; UPA election win</div>
+        </div>
+        <div class="record-card">
+          <div class="r-label">Highest Gap Up</div>
+          <div class="r-value up">+7.42%</div>
+          <div class="r-meta"><b>18 May 2009</b> &middot; Open 4,300 vs 4,003</div>
+        </div>
+        <div class="record-card">
+          <div class="r-label">Lowest Gap Down</div>
+          <div class="r-value down">&minus;8.15%</div>
+          <div class="r-meta"><b>17 Oct 2008</b> &middot; Global financial crisis</div>
+        </div>
+        <div class="record-card">
+          <div class="r-label">Historical Returns</div>
+          <div class="r-value up">+11.8%</div>
+          <div class="r-meta">CAGR over 25 years &middot; 1999&ndash;2024</div>
+        </div>
+        <div class="record-card">
+          <div class="r-label">Historical PE</div>
+          <div class="r-value">22.4</div>
+          <div class="r-meta">Avg PE &middot; Range 11.2 &ndash; 42.6</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 5 — OPTION BACKTESTING ================= -->
+  <section class="hero alt" id="hero5">
+    <div class="container">
+      <div class="hero-label">HERO 5 &middot; OPTION BACKTESTING</div>
+      <div class="hero-live-tag"><span class="status-dot"></span>Strategy Backtesting Engine</div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Nifty Option <span class="accent">Backtesting</span></h1>
+          <p class="hero-sub">Test any of the 12 classic option strategies on historical Nifty data. Compare P&amp;L, win rate, max drawdown and Sharpe.</p>
+        </div>
+        <div class="btns">
+          <a href="#hero9" class="btn btn-primary-custom btn-lg">&#9654; Run Backtest</a>
+          <a href="#hero9" class="btn btn-outline-custom btn-lg">See Results</a>
+        </div>
+      </div>
+      <div class="strategy-grid">
+        <div class="strategy-card"><div class="icon-wrap bg-bull">C</div><div class="name">Long Call</div><span class="bias bullish">Bullish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-bear">P</div><div class="name">Long Put</div><span class="bias bearish">Bearish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-bear">SC</div><div class="name">Short Call</div><span class="bias bearish">Bearish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-bull">SP</div><div class="name">Short Put</div><span class="bias bullish">Bullish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-bull">&uarr;</div><div class="name">Bull Call Spread</div><span class="bias bullish">Bullish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-bear">&darr;</div><div class="name">Bear Put Spread</div><span class="bias bearish">Bearish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-neutral">&mdash;</div><div class="name">Iron Condor</div><span class="bias neutral">Neutral</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-neutral">&#10005;</div><div class="name">Iron Butterfly</div><span class="bias neutral">Neutral</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-vol">&plusmn;</div><div class="name">Long Straddle</div><span class="bias volatile">Volatile</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-vol">&lt;&gt;</div><div class="name">Long Strangle</div><span class="bias volatile">Volatile</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-info2">&#9733;</div><div class="name">Covered Call</div><span class="bias bullish">Bullish</span></div>
+        <div class="strategy-card"><div class="icon-wrap bg-purple">&#128737;</div><div class="name">Protective Put</div><span class="bias neutral">Hedged</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERO 10 — TOOLS & CALCULATORS ================= -->
+  <section class="hero plain" id="hero10">
+    <div class="container">
+      <div class="hero-label">HERO 10 &middot; TOOLS &amp; CALCULATORS</div>
+      <div class="hero-live-tag"><span class="status-dot"></span>21 Free Tools</div>
+      <div class="hero-head-row">
+        <div>
+          <h1 class="mb-3">Trading Tools &amp; <span class="accent">Calculators</span></h1>
+          <p class="hero-sub">A complete toolkit for traders and investors — technical analysis, risk management, investment planning and utility calculators.</p>
+        </div>
+        <div class="btns">
+          <a href="#main" class="btn btn-primary-custom btn-lg">Browse All Tools</a>
+        </div>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="#main"><span class="cat ta">TA</span><div><div class="t-name">Gann Square of 9</div><div class="t-desc">Intraday levels.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat ta">TA</span><div><div class="t-name">Pivot Point</div><div class="t-desc">Classic &amp; Fibonacci.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Position Size</div><div class="t-desc">Risk-based sizing.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Risk-Reward</div><div class="t-desc">R:R ratio.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Stop Loss</div><div class="t-desc">Volatility-based stops.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Lot Size</div><div class="t-desc">Nifty &amp; stocks.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Win Rate</div><div class="t-desc">Strike rate &amp; expectancy.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Average Down</div><div class="t-desc">Lower your cost basis.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat risk">RISK</span><div><div class="t-name">Average Target</div><div class="t-desc">Target after averaging.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat inv">INV</span><div><div class="t-name">SIP Calculator</div><div class="t-desc">SIP returns.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat inv">INV</span><div><div class="t-name">Lumpsum</div><div class="t-desc">One-time investment FV.</div></div></a>
+        <a class="tool-card" href="#main"><span class="cat inv">INV</span><div><div class="t-name">SWP Calculator</div><div class="t-desc">Withdrawal plan.</div></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTICLE ================= -->
+  <section class="article-section">
+    <div class="container">
+      <img class="article-hero-img" src="assets/img/tick-by-tick-trade-chart-vs-minute-chart.webp" alt="Tick by tick chart vs minute chart">
+      <h2>Trading Tick</h2>
+      <p>A trading tick is the price movement of a stock, forex, index or commodity in the market. Each tick indicates the smallest change in price movement which happens, whether upward or downward. For stocks, this is typically $0.01; for some stocks it can be more like 0.05, 0.25, 0.50, 1 or even 5. For futures and other options, tick sizes are different for every contract. Ticks are units of price movement that traders track to find out momentum, direction, volatility, and potential entry or exit points, support or resistance in their trading strategies.</p>
+      <h2>Tick Trading</h2>
+      <p><strong>Tick trading</strong> is used by HFT traders or scalpers. They track tick-by-tick prices as they want to profit from small ticks. This real-time data stream helps traders use tick prices in their favour. Tick-by-tick prices include price, volume, and timestamp for each transaction that happens in the market. Unlike summarized data that shows information over time periods, tick-by-tick data gives traders complete transparency into market activity — what is happening, whether the open interest is building up or unwinding — enabling traders to do order-flow analysis, trade patterns, strike-by-strike OI changes and futures open interest changes.</p>
+      <h2>Tick Trader</h2>
+      <p>A tick trader is a specialized person who makes trading decisions based on very short-term price movements, like seconds or milliseconds. These are often HFT or scalpers who want quick gains in multiple trades. They focus on individual ticks or small clusters of ticks by which they can earn quick money. These traders enter and exit trades on extremely short timeframes, hold positions for seconds to minutes, and mostly rely on technical analysis on second or millisecond timeframes. Tick traders aim to profit from small, frequent price movements rather than long-term trends or short-term trades like intraday. Tick trading requires intense focus, quick decision-making, and sophisticated trading platforms. This can lead to burnout or high stress.</p>
+      <h2>Tick Tick Trade</h2>
+      <p>Tick-tick trades are trades occurring in quick, consecutive intervals like seconds or milliseconds in financial markets. This term basically refers to high-frequency trading environments where automated systems (algo trading) execute thousands of transactions per second, with minimal time between each trade. Algorithmic trading systems work at a machine-gun-like pace in electronic financial markets and can make quick gains on tiny price movements and arbitrage opportunities that exist for only a few seconds or minutes.</p>
+      <h2>Trading Tick OI Charts</h2>
+      <p>Trading tick OI charts are option analysis tools that display open interest data for each strike price. These charts show how many option contracts are open at each strike price of Nifty, Bank Nifty, Fin Nifty, Sensex, stocks or banks. You get insights into market depth and liquidity of each stock or index option at each strike. By tracking Call vs Put OI changes, traders can identify potential support and resistance levels to enter and exit trades. This also helps tick traders to trail stop-loss or book profits. It also helps traders gauge the strength of price movements, so they can enter or exit trades confidently.</p>
+
+      <h2>How Tick Traders Use Tick by Tick Charts</h2>
+      <div class="steps">
+        <div class="step-card">
+          <img src="assets/img/login-into-broker-ac.webp" alt="Login to broker account">
+          <div class="step-body">
+            <div class="step-num">Step 1</div>
+            <h3>Login to Your Broker Account</h3>
+            <p>Login into your broker's account using your login credentials. We have used the Upstox platform for demonstration purposes.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <img src="assets/img/select-stock-index.webp" alt="Select stock or index">
+          <div class="step-body">
+            <div class="step-num">Step 2</div>
+            <h3>Select Stock or Index</h3>
+            <p>Select the stock or index that you want to analyze using tick-by-tick charts for tick trading.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <img src="assets/img/select-tick-size.webp" alt="Select tick size">
+          <div class="step-body">
+            <div class="step-num">Step 3</div>
+            <h3>Select Tick Size</h3>
+            <p>Choose your preferred tick interval such as 1 second, 5 seconds, 10 seconds, 15 seconds, or 30 seconds.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <img src="assets/img/tick-by-tick-chart-ready-to-use.webp" alt="Tick by tick chart ready">
+          <div class="step-body">
+            <div class="step-num">Step 4</div>
+            <h3>Tick by Tick Chart Ready</h3>
+            <p>Your tick-by-tick chart is now ready to use for tick trading analysis.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Pros &amp; Cons of Tick Trading</h2>
+      <div class="pros-cons">
+        <table>
+          <thead>
+            <tr><th style="width:22%;">Tick Trading Analysis</th><th>Pros</th><th>Cons</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">Speed</td><td>Instant gains</td><td>Trader can over-trade</td></tr>
+            <tr><td class="row-label">Entry / Exit</td><td>Fast entry and exit points</td><td>Not possible manually every time</td></tr>
+            <tr><td class="row-label">Strategy</td><td>Used for high-frequency trading strategies</td><td>Increased transaction costs due to frequent trading</td></tr>
+            <tr><td class="row-label">Profits</td><td>Early in trade to maximise profits</td><td>Can lead to loss if whipsaw</td></tr>
+            <tr><td class="row-label">Patterns</td><td>Instant identification of price patterns</td><td>Cannot be used for long-term strategies</td></tr>
+            <tr><td class="row-label">Risk</td><td>Better risk management with live data</td><td>Algo subscription costs reduce profits</td></tr>
+            <tr><td class="row-label">Analysis</td><td>Better in-depth analysis</td><td>Requires constant screen monitoring</td></tr>
+            <tr><td class="row-label">Opportunity</td><td>Good opportunity for arbitrage and scalping</td><td>Psychological stress and burnout risk are high</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="faq-section">
+    <div class="container" style="max-width:900px;">
+      <h2>Faq on Trading Tick</h2>
+      <p class="faq-intro">We provide free historical data for futures and options trading.</p>
+      <details class="faq-item">
+        <summary>What is a trading tick?</summary>
+        <div class="faq-a">A trading tick is the upward or downward movement of the price of a stock or index or commodity or forex. Each tick measures the change in price from one trade to the next in different timeframes.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is tick trading?</summary>
+        <div class="faq-a">Tick trading is used by scalpers or HFT traders. They want to capture a few points on the Nifty options — instead of holding them for a longer timeframe such as 15 min, 30 min or an hour — they enter and exit positions in a few seconds to minutes.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Who is a tick trader?</summary>
+        <div class="faq-a">A tick trader (basically an HFT trader or a scalper) is a person who uses short-term price movements (ticks) to make trading decisions. Typically, he holds positions for very short time periods ranging from seconds to minutes to gain on small price changes.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What does tick tick trade mean?</summary>
+        <div class="faq-a">Tick-tick trade refers to trades that are happening every minute, every second, or every millisecond. It often describes high-frequency trading (HFT) environments where transactions are happening at extremely fast speeds — in the blink of an eye — with minimal time between executions.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What are trading tick OI charts?</summary>
+        <div class="faq-a">Trading tick OI charts display open interest data of calls and puts, showing how many contracts are open at each strike. They help traders analyze market depth and liquidity, support and resistance.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="index.html"><img src="assets/img/trading-tick-logo.webp" alt="Trading Tick"></a>
+        <p class="footer-info">Option Analytics website — tick by tick trading, call vs put OI charts, PCR, futures OI buildup, historical F&amp;O data, backtesting tools and calculators for Nifty, Bank Nifty, Fin Nifty and Sensex traders.</p>
+      </div>
+      <div>
+        <h5>Charts</h5>
+        <ul>
+          <li><a href="#hero9">Nifty Intraday</a></li>
+          <li><a href="#hero8">Nifty Expiry Day</a></li>
+          <li><a href="#hero10">Share Price Target</a></li>
+          <li><a href="#hero10">Tick Screener</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Backtest</h5>
+        <ul>
+          <li><a href="#hero9">Nifty Short Straddle</a></li>
+          <li><a href="#hero8">Nifty Gap Up</a></li>
+          <li><a href="#hero8">Nifty Gap Down</a></li>
+          <li><a href="#hero8">Standard Deviation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Option Data</h5>
+        <ul>
+          <li><a href="#hero9">OI Charts</a></li>
+          <li><a href="#hero6">Old Option Chain</a></li>
+          <li><a href="#hero9">Option Charts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#site-footer">About us</a></li>
+          <li><a href="#site-footer">Contact us</a></li>
+          <li><a href="#site-footer">Disclaimer</a></li>
+          <li><a href="#site-footer">Affiliate Disclaimer</a></li>
+          <li><a href="#site-footer">Privacy Policy</a></li>
+          <li><a href="#site-footer">Consent Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Trading Tick &middot; All data is provided for educational purposes only and is not investment advice.
+      The dashboard polls its API every 60 seconds by default; data mode and source freshness are shown above.
+    </div>
+  </div>
+</footer>
+
+<!-- mobile bottom quick nav -->
+<nav class="mobile-bottom-nav">
+  <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 15l3-4 3 3 4-6"/></svg>OPTION<br>CHAIN</a>
+  <a href="#homepage-pcr-live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg>NIFTY<br>PCR</a>
+  <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>CALL vs<br>PUT OI</a>
+  <a href="#hero4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 7l-5-5-5 5M7 17l5 5 5-5"/></svg>FUTURE<br>OI</a>
+  <a href="#homepage-call-vs-put"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>SENSEX<br>PCR</a>
+  <a href="#hero9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l4-9 4 4 4-9 4 5"/></svg>OPTION<br>BACKTEST</a>
+</nav>
+
+<!-- toast -->
+<div id="refresh-toast" role="status">
+  <span class="toast-dot"></span>
+  <span>Data auto-refreshed &middot; <span class="t-time" id="toastTime">—</span> &middot; <span id="toastSrc">live</span></span>
+</div>
+
+<script src="assets/chart.umd.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
