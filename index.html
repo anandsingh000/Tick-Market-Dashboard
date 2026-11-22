@@ -20,7 +20,7 @@
       <img src="assets/img/logo.png" alt="Trading Tick logo">
       <span class="logo-badge" id="logoMode" title="Data mode">DEMO</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="headerNav" aria-expanded="false">&#9776;</button>
     <ul class="header-nav" id="headerNav">
       <li>
         <a class="nav-link" href="#homepage-pcr-live" title="Nifty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 6-8 3 4"/></svg><span>Nifty</span> <span class="caret">&#9662;</span></a>
@@ -91,9 +91,9 @@
 </header>
 
 <!-- ================= AUTO-REFRESH BAR (NEW) ================= -->
-<div id="refresh-bar" title="Data auto-refreshes automatically">
+<div id="refresh-bar" class="sim" title="Data auto-refreshes automatically">
   <div class="rb-inner">
-    <span class="rb-mode"><span class="rb-dot"></span><span id="rbMode">LIVE</span></span>
+    <span class="rb-mode"><span class="rb-dot"></span><span id="rbMode">DEMO</span></span>
     <span class="rb-label">AUTO-REFRESH</span>
     <span class="rb-count">
       <svg class="rb-ring" viewBox="0 0 22 22">

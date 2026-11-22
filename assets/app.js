@@ -740,8 +740,66 @@
 
   /* ---------------- controls ---------------- */
   function wire() {
-    $('navToggle').addEventListener('click', function () {
-      $('headerNav').classList.toggle('open');
+    var headerNav = $('headerNav');
+    var navToggle = $('navToggle');
+    var navItems = headerNav.querySelectorAll(':scope > li');
+    function closeDropdowns(except) {
+      navItems.forEach(function (item) {
+        if (item === except) return;
+        item.classList.remove('dropdown-open');
+        if (item.matches(':hover')) item.classList.add('dropdown-dismissed');
+        else item.classList.remove('dropdown-dismissed');
+        if (item.contains(document.activeElement) && document.activeElement.blur) document.activeElement.blur();
+        var link = item.querySelector(':scope > .nav-link');
+        if (link) link.setAttribute('aria-expanded', 'false');
+      });
+    }
+    navItems.forEach(function (item) {
+      var trigger = item.querySelector(':scope > .nav-link');
+      var menu = item.querySelector(':scope > .dropdown-menu');
+      item.addEventListener('mouseleave', function () { item.classList.remove('dropdown-dismissed'); });
+      if (!trigger || !menu) return;
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        var wasOpen = item.classList.contains('dropdown-open');
+        closeDropdowns();
+        if (!wasOpen) {
+          item.classList.add('dropdown-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          closeDropdowns();
+          if (window.matchMedia('(max-width: 1199.98px)').matches) {
+            headerNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    });
+    navToggle.setAttribute('aria-controls', 'headerNav');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.addEventListener('click', function () {
+      var isOpen = headerNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen) closeDropdowns();
+    });
+    document.addEventListener('click', function (event) {
+      if (headerNav.contains(event.target) || navToggle.contains(event.target)) return;
+      closeDropdowns();
+      if (window.matchMedia('(max-width: 1199.98px)').matches) {
+        headerNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      closeDropdowns();
+      headerNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
 
     $('rbInterval').addEventListener('change', function () {

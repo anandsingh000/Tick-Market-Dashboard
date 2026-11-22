@@ -213,7 +213,7 @@ select.form-select:focus {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
   min-width: 230px;
   background: #fff;
@@ -225,8 +225,11 @@ select.form-select:focus {
   max-height: 380px;
   overflow-y: auto;
 }
-.header-nav > li:hover .dropdown-menu,
-.header-nav > li:focus-within .dropdown-menu { display: block; }
+.header-nav > li:focus-within:not(.dropdown-dismissed) .dropdown-menu,
+.header-nav > li.dropdown-open:not(.dropdown-dismissed) .dropdown-menu { display: block; }
+@media (hover: hover) and (pointer: fine) {
+  .header-nav > li:hover:not(.dropdown-dismissed) .dropdown-menu { display: block; }
+}
 .dropdown-menu a {
   display: block;
   padding: 7px 12px;

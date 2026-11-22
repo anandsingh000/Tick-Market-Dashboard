@@ -43,9 +43,9 @@ function latestAsOf() {
 }
 
 /*
- * Provider boundary: replace this demo snapshot with an authorized provider.
- * Keep API keys on the server (environment variables), never in browser JS.
- * The frontend expects the same OI / intraday data shapes returned below.
+ * Dated fallback snapshot used when no Upstox token is configured.
+ * Token-backed routes are handled separately below; credentials stay on the
+ * server, and both modes return the data shapes expected by the frontend.
  */
 async function getSnapshot() {
   return SNAPSHOT;
@@ -321,27 +321,45 @@ function serveStatic(pathname, res, headOnly = false) {
     return sendError(res, 400, 'Invalid URL path.');
   }
 
-  if (decoded !== '/' && decoded !== '/index.html' && !decoded.startsWith('/assets/')) {
+  const isIndex = decoded === '/' || decoded === '/index.html';
+  if (!isIndex && !decoded.startsWith('/assets/')) {
     return sendError(res, 404, 'File not found.');
   }
-  const relative = decoded === '/' ? 'index.html' : decoded.replace(/^\/+/, '');
+
+  const indexPath = path.join(ROOT, 'index.html');
+  const assetRoot = path.join(ROOT, 'assets');
+  const relative = isIndex ? 'index.html' : decoded.replace(/^\/+/, '');
   const filePath = path.resolve(ROOT, relative);
-  if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) {
+
+  // Restrict asset URLs to the assets directory itself, not merely to the
+  // project root. Encoded slashes such as /assets/..%2fserver.js are decoded
+  // after URL parsing and must not be able to escape this boundary.
+  if (isIndex ? filePath !== indexPath : !filePath.startsWith(assetRoot + path.sep)) {
     return sendError(res, 403, 'Forbidden.');
   }
 
-  fs.stat(filePath, (statErr, stat) => {
-    if (statErr || !stat.isFile()) return sendError(res, 404, 'File not found.');
-    const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, {
-      'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
-      'Content-Length': stat.size,
-      'Cache-Control': 'no-cache',
-      'X-Content-Type-Options': 'nosniff',
-      'Referrer-Policy': 'strict-origin-when-cross-origin'
+  // Resolve symlinks too, so an asset symlink cannot expose a file outside
+  // the allowed directory.
+  fs.realpath(filePath, (realErr, realPath) => {
+    if (realErr) return sendError(res, 404, 'File not found.');
+    const realPathAllowed = isIndex
+      ? realPath === indexPath
+      : realPath.startsWith(assetRoot + path.sep);
+    if (!realPathAllowed) return sendError(res, 403, 'Forbidden.');
+
+    fs.stat(realPath, (statErr, stat) => {
+      if (statErr || !stat.isFile()) return sendError(res, 404, 'File not found.');
+      const ext = path.extname(realPath).toLowerCase();
+      res.writeHead(200, {
+        'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
+        'Content-Length': stat.size,
+        'Cache-Control': 'no-cache',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin'
+      });
+      if (headOnly) return res.end();
+      fs.createReadStream(realPath).pipe(res);
     });
-    if (headOnly) return res.end();
-    fs.createReadStream(filePath).pipe(res);
   });
 }
 
