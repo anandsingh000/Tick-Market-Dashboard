@@ -51,6 +51,12 @@ function indiaDate(date = new Date()) {
   return `${p.year}-${p.month}-${p.day}`;
 }
 
+function shiftIndiaDate(days) {
+  const date = new Date(`${indiaDate()}T12:00:00+05:30`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
 function indiaTimestamp(date = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit',
@@ -137,11 +143,11 @@ function chooseExpiry(symbol, contracts) {
   const today = indiaDate();
   const active = contracts.filter((item) => item.expiry >= today);
   const list = active.length ? active : contracts;
-  const weekly = list.filter((item) => item.weekly);
   const monthly = list.filter((item) => !item.weekly);
   if (symbol === 'NIFTY M') return (monthly[0] || list[0]).expiry;
-  if (symbol === 'NIFTY WN') return (weekly[1] || weekly[0] || list[1] || list[0]).expiry;
-  return (weekly[0] || list[0]).expiry;
+  // The nearest expiry may be marked monthly by the exchange; use calendar order.
+  if (symbol === 'NIFTY WN') return (list[1] || list[0]).expiry;
+  return list[0].expiry;
 }
 
 async function getOiMeta(symbol) {
@@ -291,14 +297,35 @@ async function getIntradayData(symbol) {
   const instrument = INTRADAY_INSTRUMENTS[symbol];
   if (!instrument) throw new UpstoxError('Unknown intraday index.', 400);
   const encodedKey = encodeURIComponent(instrument.key);
-  const candlePath = `/v3/historical-candle/intraday/${encodedKey}/minutes/1`;
-  const candlePayload = await apiGet(candlePath);
-  const rawCandles = candlePayload && candlePayload.data && candlePayload.data.candles;
-  if (!Array.isArray(rawCandles) || !rawCandles.length) {
-    throw new UpstoxError('Upstox did not return intraday candles for this index.', 502);
+  let candles = [];
+  let source = 'current-session';
+
+  // Upstox's intraday endpoint can return no candles on weekends/holidays or
+  // before the session has started. In that case, load the latest available
+  // trading session from the V3 historical-candle endpoint instead.
+  try {
+    const intraday = await apiGet(`/v3/historical-candle/intraday/${encodedKey}/minutes/1`);
+    const candidate = intraday && intraday.data && intraday.data.candles;
+    if (Array.isArray(candidate)) candles = candidate;
+  } catch {
+    // Fall through to the recent-session history request.
   }
 
-  const candles = rawCandles.slice().sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime());
+  if (!candles.length) {
+    const toDate = indiaDate();
+    const fromDate = shiftIndiaDate(-10);
+    const history = await apiGet(`/v3/historical-candle/${encodedKey}/minutes/1/${toDate}/${fromDate}`);
+    const historyCandles = history && history.data && history.data.candles;
+    if (!Array.isArray(historyCandles) || !historyCandles.length) {
+      throw new UpstoxError('Upstox returned no candles for the current or most recent trading session.', 502);
+    }
+    const sortedHistory = historyCandles.slice().sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime());
+    const latestDate = String(sortedHistory[sortedHistory.length - 1][0]).slice(0, 10);
+    candles = sortedHistory.filter((candle) => String(candle[0]).slice(0, 10) === latestDate);
+    source = 'last-trading-session';
+  }
+
+  candles = candles.slice().sort((a, b) => new Date(a[0]).getTime() - new Date(b[0]).getTime());
   const visible = candles.slice(-75);
   const labels = visible.map((candle) => new Date(candle[0]).toLocaleTimeString('en-IN', {
     timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false
@@ -320,9 +347,12 @@ async function getIntradayData(symbol) {
   }
 
   const priceChange = previousClose > 0 ? current - previousClose : 0;
+  const tradingDate = String(candles[candles.length - 1][0]).slice(0, 10);
   return {
     success: true,
     mode: 'live',
+    source,
+    market_closed_fallback: tradingDate !== indiaDate(),
     symbol,
     name: instrument.name,
     labels,
@@ -334,7 +364,7 @@ async function getIntradayData(symbol) {
     price_change: priceChange,
     percentage_change: previousClose > 0 ? (priceChange / previousClose) * 100 : 0,
     prev_close: previousClose,
-    trading_date: candles[candles.length - 1][0].slice(0, 10),
+    trading_date: tradingDate,
     as_of: candles[candles.length - 1][0],
     fetched_at: new Date().toISOString()
   };

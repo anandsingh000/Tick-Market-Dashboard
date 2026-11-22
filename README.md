@@ -27,7 +27,7 @@ When a token is configured, the server makes requests from the backend (the brow
 
 - Option contracts and expiries: Upstox `/v2/option/contract`.
 - Call/put OI chain: Upstox `/v2/option/chain`.
-- Intraday chart: Upstox V3 intraday candles and market quotes.
+- Intraday chart: Upstox V3 intraday candles and market quotes. On weekends/holidays, the adapter tries the latest trading session; if Upstox has no candles, the API falls back to the clearly marked demo series instead of taking the whole dashboard offline.
 
 The active option-chain and intraday cards use the Upstox API. **The futures buildup card remains DEMO** until a futures instrument/contract data source is configured; the dashboard marks this as `MIXED` instead of presenting it as fully live. Demo mode uses the dated sample in `data/market-snapshot.json` (latest sample timestamp: 2026-11-20).
 

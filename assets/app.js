@@ -107,7 +107,11 @@
         open: d.open,
         high: d.high,
         low: d.low,
-        prev_close: d.prev_close
+        prev_close: d.prev_close,
+        trading_date: d.trading_date,
+        as_of: d.trading_date + ' ' + lastLabel,
+        mode: 'demo',
+        source: 'sample-snapshot'
       };
     });
     buildup = JSON.parse(JSON.stringify(SEED.BUILDUP));
@@ -237,6 +241,10 @@
           s.high = r.ind.high;
           s.low = r.ind.low;
           s.prev_close = r.ind.current_price - r.ind.price_change;
+          s.trading_date = r.ind.trading_date || s.trading_date;
+          s.as_of = r.ind.as_of || s.as_of;
+          s.mode = r.ind.mode || 'demo';
+          s.source = r.ind.source || 'upstox';
           if (s.labels.length) {
             var pl = s.labels[s.labels.length - 1].split(':');
             barMinute[r.ind.symbol] = parseInt(pl[0], 10) * 60 + parseInt(pl[1], 10);
@@ -390,8 +398,9 @@
     $('niftyOpen').textContent = fmt2(s.open);
     $('niftyHigh').textContent = fmt2(s.high);
     $('niftyLow').textContent = fmt2(s.low);
-    var clock = oiState['NIFTY W'].meta.snapshot_time;
-    $('niftyLastUpdated').textContent = 'Last updated: ' + clock + ' IST';
+    var lastLabel = s.labels[s.labels.length - 1] || '';
+    var sourceLabel = s.mode === 'demo' ? 'Demo snapshot' : 'Upstox data';
+    $('niftyLastUpdated').textContent = sourceLabel + ': ' + (s.trading_date || '') + ' ' + lastLabel + ' IST';
 
     if (typeof Chart === 'undefined') return;
     var color = up ? '#16a085' : '#dc2626';
@@ -513,7 +522,7 @@
       if (feedMode === 'live') {
         note.textContent = 'Upstox market data connected for the active option-chain and intraday panels. The futures buildup panel is still a demo snapshot.';
       } else if (feedMode === 'mixed') {
-        note.textContent = 'MIXED DATA: Upstox is supplying some active panels, while other panels (including futures buildup) still use the clearly marked demo snapshot.';
+        note.textContent = 'MIXED DATA: Upstox supplies available option-chain/intraday data; the futures buildup panel and any no-candle fallback remain clearly marked as demo. Check each panel’s as-of date.';
       } else if (feedMode === 'demo') {
         note.textContent = 'DEMO DATA: this is a historical sample snapshot. The page checks the API every minute; values will not become live until a licensed market-data provider is connected.';
       } else {

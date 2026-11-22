@@ -192,7 +192,20 @@ async function handleUpstoxApi(url, res) {
       }
       case '/api/intraday': {
         const symbol = url.searchParams.get('symbol') || 'NIFTY';
-        return sendJson(res, 200, await upstox.getIntradayData(symbol));
+        try {
+          return sendJson(res, 200, await upstox.getIntradayData(symbol));
+        } catch (error) {
+          // A non-trading day or provider-specific index limitation should not
+          // take the whole dashboard offline. Keep this panel clearly marked DEMO.
+          console.error('Upstox intraday fallback:', error.message);
+          const fallback = getIntradayData(SNAPSHOT, url).body;
+          return sendJson(res, 200, {
+            ...fallback,
+            mode: 'demo',
+            source: 'sample-fallback',
+            warning: 'Upstox returned no intraday candles; showing the dated sample series.'
+          });
+        }
       }
       case '/api/futures':
         // This card remains labelled DEMO until a futures instrument feed is configured.
