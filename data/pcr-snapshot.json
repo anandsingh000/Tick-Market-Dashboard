@@ -1,0 +1,789 @@
+{
+  "mode": "demo",
+  "source": "dated public sample used to match uploaded screenshot",
+  "symbol": "NIFTY W",
+  "date": "2026-11-20",
+  "interval_minutes": 5,
+  "rows": [
+    {
+      "time": "15:40",
+      "ce_oi_change": "-16,101,680",
+      "pe_oi_change": "32,827,905",
+      "diff_oi": "70,741,190",
+      "coi_pcr": -2.039,
+      "signal": "SELL",
+      "spot_price": 25800.6,
+      "pcr": 3.636
+    },
+    {
+      "time": "15:35",
+      "ce_oi_change": "-14,669,535",
+      "pe_oi_change": "35,879,720",
+      "diff_oi": "72,360,860",
+      "coi_pcr": -2.446,
+      "signal": "SELL",
+      "spot_price": 25800.6,
+      "pcr": 3.56
+    },
+    {
+      "time": "15:30",
+      "ce_oi_change": "-12,759,900",
+      "pe_oi_change": "38,749,340",
+      "diff_oi": "73,320,845",
+      "coi_pcr": -3.037,
+      "signal": "SELL",
+      "spot_price": 25800.6,
+      "pcr": 3.429
+    },
+    {
+      "time": "15:25",
+      "ce_oi_change": "-11,364,935",
+      "pe_oi_change": "43,401,130",
+      "diff_oi": "76,577,670",
+      "coi_pcr": -3.819,
+      "signal": "SELL",
+      "spot_price": 25784.75,
+      "pcr": 3.425
+    },
+    {
+      "time": "15:20",
+      "ce_oi_change": "-10,131,755",
+      "pe_oi_change": "47,239,445",
+      "diff_oi": "79,182,805",
+      "coi_pcr": -4.663,
+      "signal": "SELL",
+      "spot_price": 25784.75,
+      "pcr": 3.413
+    },
+    {
+      "time": "15:15",
+      "ce_oi_change": "-8,978,915",
+      "pe_oi_change": "50,293,730",
+      "diff_oi": "81,084,250",
+      "coi_pcr": -5.601,
+      "signal": "SELL",
+      "spot_price": 25781.85,
+      "pcr": 3.388
+    },
+    {
+      "time": "15:10",
+      "ce_oi_change": "-8,120,070",
+      "pe_oi_change": "53,022,300",
+      "diff_oi": "82,953,975",
+      "coi_pcr": -6.53,
+      "signal": "SELL",
+      "spot_price": 25799.05,
+      "pcr": 3.382
+    },
+    {
+      "time": "15:05",
+      "ce_oi_change": "-6,530,430",
+      "pe_oi_change": "53,869,380",
+      "diff_oi": "82,211,415",
+      "coi_pcr": -8.249,
+      "signal": "SELL",
+      "spot_price": 25795.15,
+      "pcr": 3.258
+    },
+    {
+      "time": "15:00",
+      "ce_oi_change": "-5,566,480",
+      "pe_oi_change": "55,485,215",
+      "diff_oi": "82,863,300",
+      "coi_pcr": -9.968,
+      "signal": "SELL",
+      "spot_price": 25765.85,
+      "pcr": 3.217
+    },
+    {
+      "time": "14:55",
+      "ce_oi_change": "-5,115,380",
+      "pe_oi_change": "55,193,690",
+      "diff_oi": "82,120,675",
+      "coi_pcr": -10.79,
+      "signal": "SELL",
+      "spot_price": 25765.9,
+      "pcr": 3.171
+    },
+    {
+      "time": "14:50",
+      "ce_oi_change": "-4,697,560",
+      "pe_oi_change": "57,804,350",
+      "diff_oi": "84,313,515",
+      "coi_pcr": -12.305,
+      "signal": "SELL",
+      "spot_price": 25735.5,
+      "pcr": 3.205
+    },
+    {
+      "time": "14:45",
+      "ce_oi_change": "-3,735,950",
+      "pe_oi_change": "57,897,495",
+      "diff_oi": "83,445,050",
+      "coi_pcr": -15.497,
+      "signal": "SELL",
+      "spot_price": 25741.2,
+      "pcr": 3.128
+    },
+    {
+      "time": "14:40",
+      "ce_oi_change": "-3,918,405",
+      "pe_oi_change": "57,408,955",
+      "diff_oi": "83,138,965",
+      "coi_pcr": -14.651,
+      "signal": "SELL",
+      "spot_price": 25738.95,
+      "pcr": 3.131
+    },
+    {
+      "time": "14:35",
+      "ce_oi_change": "-4,281,690",
+      "pe_oi_change": "60,140,905",
+      "diff_oi": "86,234,200",
+      "coi_pcr": -14.046,
+      "signal": "SELL",
+      "spot_price": 25738.7,
+      "pcr": 3.231
+    },
+    {
+      "time": "14:30",
+      "ce_oi_change": "-3,178,445",
+      "pe_oi_change": "60,579,200",
+      "diff_oi": "85,569,250",
+      "coi_pcr": -19.059,
+      "signal": "SELL",
+      "spot_price": 25759.9,
+      "pcr": 3.152
+    },
+    {
+      "time": "14:25",
+      "ce_oi_change": "-2,465,590",
+      "pe_oi_change": "61,373,045",
+      "diff_oi": "85,650,240",
+      "coi_pcr": -24.892,
+      "signal": "SELL",
+      "spot_price": 25772.4,
+      "pcr": 3.116
+    },
+    {
+      "time": "14:20",
+      "ce_oi_change": "-1,290,130",
+      "pe_oi_change": "61,712,215",
+      "diff_oi": "84,813,950",
+      "coi_pcr": -47.834,
+      "signal": "SELL",
+      "spot_price": 25764.4,
+      "pcr": 3.036
+    },
+    {
+      "time": "14:15",
+      "ce_oi_change": "77,470",
+      "pe_oi_change": "62,644,250",
+      "diff_oi": "84,378,385",
+      "coi_pcr": 808.626,
+      "signal": "BUY",
+      "spot_price": 25760.45,
+      "pcr": 2.961
+    },
+    {
+      "time": "14:10",
+      "ce_oi_change": "1,556,610",
+      "pe_oi_change": "63,680,675",
+      "diff_oi": "83,935,670",
+      "coi_pcr": 40.91,
+      "signal": "BUY",
+      "spot_price": 25759.85,
+      "pcr": 2.886
+    },
+    {
+      "time": "14:05",
+      "ce_oi_change": "2,317,370",
+      "pe_oi_change": "65,290,335",
+      "diff_oi": "84,784,570",
+      "coi_pcr": 28.174,
+      "signal": "BUY",
+      "spot_price": 25737,
+      "pcr": 2.873
+    },
+    {
+      "time": "14:00",
+      "ce_oi_change": "3,426,790",
+      "pe_oi_change": "66,557,640",
+      "diff_oi": "84,942,455",
+      "coi_pcr": 19.423,
+      "signal": "BUY",
+      "spot_price": 25740.8,
+      "pcr": 2.832
+    },
+    {
+      "time": "13:55",
+      "ce_oi_change": "3,661,765",
+      "pe_oi_change": "66,362,705",
+      "diff_oi": "84,512,545",
+      "coi_pcr": 18.123,
+      "signal": "BUY",
+      "spot_price": 25735.5,
+      "pcr": 2.813
+    },
+    {
+      "time": "13:50",
+      "ce_oi_change": "4,072,305",
+      "pe_oi_change": "66,076,185",
+      "diff_oi": "83,815,485",
+      "coi_pcr": 16.226,
+      "signal": "BUY",
+      "spot_price": 25733.05,
+      "pcr": 2.783
+    },
+    {
+      "time": "13:45",
+      "ce_oi_change": "4,525,875",
+      "pe_oi_change": "66,794,955",
+      "diff_oi": "84,080,685",
+      "coi_pcr": 14.758,
+      "signal": "BUY",
+      "spot_price": 25729.25,
+      "pcr": 2.771
+    },
+    {
+      "time": "13:40",
+      "ce_oi_change": "5,922,335",
+      "pe_oi_change": "69,360,960",
+      "diff_oi": "85,250,230",
+      "coi_pcr": 11.712,
+      "signal": "BUY",
+      "spot_price": 25720.1,
+      "pcr": 2.745
+    },
+    {
+      "time": "13:35",
+      "ce_oi_change": "5,962,570",
+      "pe_oi_change": "70,636,260",
+      "diff_oi": "86,485,295",
+      "coi_pcr": 11.847,
+      "signal": "BUY",
+      "spot_price": 25692.8,
+      "pcr": 2.768
+    },
+    {
+      "time": "13:30",
+      "ce_oi_change": "5,850,900",
+      "pe_oi_change": "71,215,150",
+      "diff_oi": "87,175,855",
+      "coi_pcr": 12.172,
+      "signal": "BUY",
+      "spot_price": 25706.4,
+      "pcr": 2.787
+    },
+    {
+      "time": "13:25",
+      "ce_oi_change": "5,506,920",
+      "pe_oi_change": "70,855,050",
+      "diff_oi": "87,159,735",
+      "coi_pcr": 12.867,
+      "signal": "BUY",
+      "spot_price": 25703.75,
+      "pcr": 2.799
+    },
+    {
+      "time": "13:20",
+      "ce_oi_change": "6,112,590",
+      "pe_oi_change": "69,257,285",
+      "diff_oi": "84,956,300",
+      "coi_pcr": 11.33,
+      "signal": "BUY",
+      "spot_price": 25716.1,
+      "pcr": 2.732
+    },
+    {
+      "time": "13:15",
+      "ce_oi_change": "5,809,625",
+      "pe_oi_change": "68,984,220",
+      "diff_oi": "84,986,200",
+      "coi_pcr": 11.874,
+      "signal": "BUY",
+      "spot_price": 25716.4,
+      "pcr": 2.743
+    },
+    {
+      "time": "13:10",
+      "ce_oi_change": "6,705,130",
+      "pe_oi_change": "69,827,140",
+      "diff_oi": "84,933,615",
+      "coi_pcr": 10.414,
+      "signal": "BUY",
+      "spot_price": 25731.2,
+      "pcr": 2.711
+    },
+    {
+      "time": "13:05",
+      "ce_oi_change": "7,992,650",
+      "pe_oi_change": "70,491,570",
+      "diff_oi": "84,310,525",
+      "coi_pcr": 8.82,
+      "signal": "BUY",
+      "spot_price": 25724.1,
+      "pcr": 2.655
+    },
+    {
+      "time": "13:00",
+      "ce_oi_change": "7,916,535",
+      "pe_oi_change": "70,954,370",
+      "diff_oi": "84,849,440",
+      "coi_pcr": 8.963,
+      "signal": "BUY",
+      "spot_price": 25707.35,
+      "pcr": 2.668
+    },
+    {
+      "time": "12:55",
+      "ce_oi_change": "8,789,745",
+      "pe_oi_change": "69,663,275",
+      "diff_oi": "82,685,135",
+      "coi_pcr": 7.926,
+      "signal": "BUY",
+      "spot_price": 25727.1,
+      "pcr": 2.598
+    },
+    {
+      "time": "12:50",
+      "ce_oi_change": "9,327,165",
+      "pe_oi_change": "69,340,030",
+      "diff_oi": "81,824,470",
+      "coi_pcr": 7.434,
+      "signal": "BUY",
+      "spot_price": 25727.35,
+      "pcr": 2.565
+    },
+    {
+      "time": "12:45",
+      "ce_oi_change": "9,545,175",
+      "pe_oi_change": "68,342,345",
+      "diff_oi": "80,608,775",
+      "coi_pcr": 7.16,
+      "signal": "BUY",
+      "spot_price": 25718.65,
+      "pcr": 2.536
+    },
+    {
+      "time": "12:40",
+      "ce_oi_change": "13,215,140",
+      "pe_oi_change": "68,851,295",
+      "diff_oi": "77,447,760",
+      "coi_pcr": 5.21,
+      "signal": "BUY",
+      "spot_price": 25716.55,
+      "pcr": 2.379
+    },
+    {
+      "time": "12:35",
+      "ce_oi_change": "14,273,275",
+      "pe_oi_change": "69,391,510",
+      "diff_oi": "76,929,840",
+      "coi_pcr": 4.862,
+      "signal": "BUY",
+      "spot_price": 25709.05,
+      "pcr": 2.345
+    },
+    {
+      "time": "12:30",
+      "ce_oi_change": "15,625,340",
+      "pe_oi_change": "69,246,690",
+      "diff_oi": "75,432,955",
+      "coi_pcr": 4.432,
+      "signal": "BUY",
+      "spot_price": 25697.3,
+      "pcr": 2.288
+    },
+    {
+      "time": "12:25",
+      "ce_oi_change": "16,549,510",
+      "pe_oi_change": "66,130,005",
+      "diff_oi": "71,392,100",
+      "coi_pcr": 3.996,
+      "signal": "BUY",
+      "spot_price": 25692.1,
+      "pcr": 2.2
+    },
+    {
+      "time": "12:20",
+      "ce_oi_change": "22,088,940",
+      "pe_oi_change": "66,928,595",
+      "diff_oi": "66,651,260",
+      "coi_pcr": 3.03,
+      "signal": "BUY",
+      "spot_price": 25651.85,
+      "pcr": 2.025
+    },
+    {
+      "time": "12:15",
+      "ce_oi_change": "23,351,825",
+      "pe_oi_change": "65,882,160",
+      "diff_oi": "64,341,940",
+      "coi_pcr": 2.821,
+      "signal": "BUY",
+      "spot_price": 25647.7,
+      "pcr": 1.971
+    },
+    {
+      "time": "12:10",
+      "ce_oi_change": "25,630,465",
+      "pe_oi_change": "63,675,475",
+      "diff_oi": "59,856,615",
+      "coi_pcr": 2.484,
+      "signal": "BUY",
+      "spot_price": 25643.45,
+      "pcr": 1.873
+    },
+    {
+      "time": "12:05",
+      "ce_oi_change": "26,655,450",
+      "pe_oi_change": "60,644,395",
+      "diff_oi": "55,800,550",
+      "coi_pcr": 2.275,
+      "signal": "BUY",
+      "spot_price": 25643.35,
+      "pcr": 1.802
+    },
+    {
+      "time": "12:00",
+      "ce_oi_change": "28,617,540",
+      "pe_oi_change": "57,637,495",
+      "diff_oi": "50,831,560",
+      "coi_pcr": 2.014,
+      "signal": "BUY",
+      "spot_price": 25622.35,
+      "pcr": 1.71
+    },
+    {
+      "time": "11:55",
+      "ce_oi_change": "41,629,630",
+      "pe_oi_change": "54,675,315",
+      "diff_oi": "34,857,290",
+      "coi_pcr": 1.313,
+      "signal": "BUY",
+      "spot_price": 25582.95,
+      "pcr": 1.412
+    },
+    {
+      "time": "11:50",
+      "ce_oi_change": "41,822,875",
+      "pe_oi_change": "54,855,170",
+      "diff_oi": "34,843,900",
+      "coi_pcr": 1.312,
+      "signal": "BUY",
+      "spot_price": 25561.65,
+      "pcr": 1.411
+    },
+    {
+      "time": "11:45",
+      "ce_oi_change": "42,810,940",
+      "pe_oi_change": "52,435,090",
+      "diff_oi": "31,435,755",
+      "coi_pcr": 1.225,
+      "signal": "BUY",
+      "spot_price": 25572.6,
+      "pcr": 1.367
+    },
+    {
+      "time": "11:40",
+      "ce_oi_change": "45,746,795",
+      "pe_oi_change": "51,820,905",
+      "diff_oi": "27,885,715",
+      "coi_pcr": 1.133,
+      "signal": "BUY",
+      "spot_price": 25553.8,
+      "pcr": 1.314
+    },
+    {
+      "time": "11:35",
+      "ce_oi_change": "45,381,885",
+      "pe_oi_change": "50,942,690",
+      "diff_oi": "27,372,410",
+      "coi_pcr": 1.123,
+      "signal": "BUY",
+      "spot_price": 25551.65,
+      "pcr": 1.31
+    },
+    {
+      "time": "11:30",
+      "ce_oi_change": "44,033,590",
+      "pe_oi_change": "51,210,620",
+      "diff_oi": "28,988,635",
+      "coi_pcr": 1.163,
+      "signal": "BUY",
+      "spot_price": 25533.6,
+      "pcr": 1.333
+    },
+    {
+      "time": "11:25",
+      "ce_oi_change": "44,407,665",
+      "pe_oi_change": "48,922,165",
+      "diff_oi": "26,326,105",
+      "coi_pcr": 1.102,
+      "signal": "BUY",
+      "spot_price": 25550.5,
+      "pcr": 1.301
+    },
+    {
+      "time": "11:20",
+      "ce_oi_change": "46,571,385",
+      "pe_oi_change": "49,937,140",
+      "diff_oi": "25,177,360",
+      "coi_pcr": 1.072,
+      "signal": "BUY",
+      "spot_price": 25537.75,
+      "pcr": 1.281
+    },
+    {
+      "time": "11:15",
+      "ce_oi_change": "45,292,120",
+      "pe_oi_change": "50,601,570",
+      "diff_oi": "27,121,055",
+      "coi_pcr": 1.117,
+      "signal": "BUY",
+      "spot_price": 25526.35,
+      "pcr": 1.307
+    },
+    {
+      "time": "11:10",
+      "ce_oi_change": "43,586,910",
+      "pe_oi_change": "50,436,795",
+      "diff_oi": "28,661,490",
+      "coi_pcr": 1.157,
+      "signal": "BUY",
+      "spot_price": 25527.6,
+      "pcr": 1.331
+    },
+    {
+      "time": "11:05",
+      "ce_oi_change": "44,080,195",
+      "pe_oi_change": "50,907,200",
+      "diff_oi": "28,638,610",
+      "coi_pcr": 1.155,
+      "signal": "BUY",
+      "spot_price": 25529.1,
+      "pcr": 1.329
+    },
+    {
+      "time": "11:00",
+      "ce_oi_change": "40,523,720",
+      "pe_oi_change": "50,442,580",
+      "diff_oi": "31,730,465",
+      "coi_pcr": 1.245,
+      "signal": "BUY",
+      "spot_price": 25540.3,
+      "pcr": 1.38
+    },
+    {
+      "time": "10:55",
+      "ce_oi_change": "39,678,850",
+      "pe_oi_change": "50,605,470",
+      "diff_oi": "32,738,225",
+      "coi_pcr": 1.275,
+      "signal": "BUY",
+      "spot_price": 25562.15,
+      "pcr": 1.396
+    },
+    {
+      "time": "10:50",
+      "ce_oi_change": "37,856,835",
+      "pe_oi_change": "49,554,810",
+      "diff_oi": "33,509,580",
+      "coi_pcr": 1.309,
+      "signal": "BUY",
+      "spot_price": 25557.7,
+      "pcr": 1.415
+    },
+    {
+      "time": "10:45",
+      "ce_oi_change": "45,376,620",
+      "pe_oi_change": "49,422,470",
+      "diff_oi": "25,857,455",
+      "coi_pcr": 1.089,
+      "signal": "BUY",
+      "spot_price": 25545.55,
+      "pcr": 1.293
+    },
+    {
+      "time": "10:40",
+      "ce_oi_change": "44,223,065",
+      "pe_oi_change": "48,861,715",
+      "diff_oi": "26,450,255",
+      "coi_pcr": 1.105,
+      "signal": "BUY",
+      "spot_price": 25538.15,
+      "pcr": 1.303
+    },
+    {
+      "time": "10:35",
+      "ce_oi_change": "44,665,975",
+      "pe_oi_change": "48,378,505",
+      "diff_oi": "25,524,135",
+      "coi_pcr": 1.083,
+      "signal": "BUY",
+      "spot_price": 25517.6,
+      "pcr": 1.291
+    },
+    {
+      "time": "10:30",
+      "ce_oi_change": "44,686,060",
+      "pe_oi_change": "47,558,725",
+      "diff_oi": "24,684,270",
+      "coi_pcr": 1.064,
+      "signal": "BUY",
+      "spot_price": 25529.15,
+      "pcr": 1.282
+    },
+    {
+      "time": "10:25",
+      "ce_oi_change": "42,933,660",
+      "pe_oi_change": "47,060,500",
+      "diff_oi": "25,938,445",
+      "coi_pcr": 1.096,
+      "signal": "BUY",
+      "spot_price": 25517.75,
+      "pcr": 1.302
+    },
+    {
+      "time": "10:20",
+      "ce_oi_change": "42,649,025",
+      "pe_oi_change": "45,689,715",
+      "diff_oi": "24,852,295",
+      "coi_pcr": 1.071,
+      "signal": "BUY",
+      "spot_price": 25497.5,
+      "pcr": 1.29
+    },
+    {
+      "time": "10:15",
+      "ce_oi_change": "41,415,260",
+      "pe_oi_change": "43,896,105",
+      "diff_oi": "24,292,450",
+      "coi_pcr": 1.06,
+      "signal": "BUY",
+      "spot_price": 25510.45,
+      "pcr": 1.288
+    },
+    {
+      "time": "10:10",
+      "ce_oi_change": "39,758,475",
+      "pe_oi_change": "42,586,615",
+      "diff_oi": "24,639,745",
+      "coi_pcr": 1.071,
+      "signal": "BUY",
+      "spot_price": 25508.65,
+      "pcr": 1.298
+    },
+    {
+      "time": "10:05",
+      "ce_oi_change": "34,948,995",
+      "pe_oi_change": "41,705,735",
+      "diff_oi": "28,568,345",
+      "coi_pcr": 1.193,
+      "signal": "BUY",
+      "spot_price": 25515.35,
+      "pcr": 1.367
+    },
+    {
+      "time": "10:00",
+      "ce_oi_change": "36,988,110",
+      "pe_oi_change": "40,049,470",
+      "diff_oi": "24,872,965",
+      "coi_pcr": 1.083,
+      "signal": "BUY",
+      "spot_price": 25529.55,
+      "pcr": 1.311
+    },
+    {
+      "time": "09:55",
+      "ce_oi_change": "36,537,855",
+      "pe_oi_change": "35,744,195",
+      "diff_oi": "21,017,945",
+      "coi_pcr": 0.978,
+      "signal": "SELL",
+      "spot_price": 25532.55,
+      "pcr": 1.264
+    },
+    {
+      "time": "09:50",
+      "ce_oi_change": "36,316,010",
+      "pe_oi_change": "34,026,700",
+      "diff_oi": "19,522,295",
+      "coi_pcr": 0.937,
+      "signal": "SELL",
+      "spot_price": 25503.2,
+      "pcr": 1.246
+    },
+    {
+      "time": "09:45",
+      "ce_oi_change": "36,447,830",
+      "pe_oi_change": "29,709,010",
+      "diff_oi": "15,072,785",
+      "coi_pcr": 0.815,
+      "signal": "SELL",
+      "spot_price": 25490.35,
+      "pcr": 1.19
+    },
+    {
+      "time": "09:40",
+      "ce_oi_change": "34,289,505",
+      "pe_oi_change": "28,221,485",
+      "diff_oi": "15,743,585",
+      "coi_pcr": 0.823,
+      "signal": "SELL",
+      "spot_price": 25451.5,
+      "pcr": 1.204
+    },
+    {
+      "time": "09:35",
+      "ce_oi_change": "29,736,320",
+      "pe_oi_change": "26,073,170",
+      "diff_oi": "18,148,455",
+      "coi_pcr": 0.877,
+      "signal": "SELL",
+      "spot_price": 25461.15,
+      "pcr": 1.25
+    },
+    {
+      "time": "09:30",
+      "ce_oi_change": "26,636,080",
+      "pe_oi_change": "22,176,810",
+      "diff_oi": "17,352,335",
+      "coi_pcr": 0.833,
+      "signal": "SELL",
+      "spot_price": 25436.55,
+      "pcr": 1.249
+    },
+    {
+      "time": "09:25",
+      "ce_oi_change": "21,010,395",
+      "pe_oi_change": "18,067,965",
+      "diff_oi": "18,869,175",
+      "coi_pcr": 0.86,
+      "signal": "SELL",
+      "spot_price": 25468.15,
+      "pcr": 1.295
+    },
+    {
+      "time": "09:20",
+      "ce_oi_change": "13,374,910",
+      "pe_oi_change": "7,648,725",
+      "diff_oi": "16,085,420",
+      "coi_pcr": 0.572,
+      "signal": "SELL",
+      "spot_price": 25447.95,
+      "pcr": 1.286
+    },
+    {
+      "time": "09:16",
+      "ce_oi_change": "7,555,980",
+      "pe_oi_change": "-2,678,670",
+      "diff_oi": "11,576,955",
+      "coi_pcr": -0.355,
+      "signal": "SELL",
+      "spot_price": 25418.7,
+      "pcr": 1.229
+    }
+  ]
+}

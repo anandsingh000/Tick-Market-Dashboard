@@ -1,0 +1,3856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SWSLR1Q99K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SWSLR1Q99K');
+</script>
+<!-- Google tag (gtag.js) code end-->
+<!-- Microsoft Clarity Code Start-->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "tzow5y99qt");
+</script>
+<!-- Microsoft Clarity Code End-->
+<!-- ✅ jQuery (must be loaded first) -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- ✅ DataTables Core CSS + JS -->
+<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<!-- ✅ DataTables Bootstrap 5 Styling (Optional but safe) -->
+<link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- ✅ DataTables FixedHeader Plugin (Must come last) -->
+<link href="https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+
+<!-- ✅ Chart.js and Annotation Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Nifty, Bank Nifty and Fin Nifty Call vs Put OI Live Chart (5 min refresh) Trading Tick</title>
+
+<meta name="description" content="Nifty, Bank Nifty and Fin Nifty Call vs Put OI Live (5 min refresh) by Trading Tick Compare Call Open Interest (OI) and Put Open Interest (OI) of full  option chain for weekly and monthly and next week expiries.">
+
+<meta name="keywords" content="Call vs Put OI,Nifty Call vs Put OI,Bank Nifty Call vs Put OI,Fin Nifty Call vs Put OI,Open Interest Analysis,Call OI,Put OI,Option Chain Analysis,Nifty OI,Bank Nifty OI,Fin Nifty OI,Market Sentiment">
+
+   <!-- Adsense Auto ads start -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+     <!-- Adsense Auto ads end -->
+
+
+    <!-- Favicons -->
+    <!-- Favicon -->
+<!-- Favicon -->
+<link href="https://tradingtick.in/assets/img/favicon.png" rel="icon">
+<link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<!-- Template Main CSS File -->
+<link href="https://tradingtick.in/assets/css/style.css" rel="stylesheet">
+<link href="https://tradingtick.in/assets/css/ziploans-style.css" rel="stylesheet">
+
+<!-- Scripts -->
+<script src="/assets/js/main.js"></script>
+<!-- Canonical URL -->
+<link rel="canonical" href="https://tradingtick.in/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Trading Tick",
+  "url": "https://tradingtick.in/",
+  "logo": "https://tradingtick.in/assets/img/trading-tick-logo.webp",
+  
+  "description": "Trading Tick provides tick-by-tick option analysis tools including call vs put OI charts, option chain data, and historical data for Nifty, Bank Nifty, and Sensex. It also offers backtesting tools, calculators, and trading strategy insights for Indian market traders.",
+  
+  "foundingDate": "2025",
+  
+  "sameAs": [
+    "https://x.com/tradingtickk",
+    "https://www.linkedin.com/in/tradingtick/",
+    "https://www.youtube.com/tradingtickk",
+    "https://www.facebook.com/tradingtickk"
+  ],
+
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "tradingtick.in@gmail.com"
+  },
+
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+
+  "knowsAbout": [
+    "Nifty",
+    "Bank Nifty",
+    "Sensex",
+    "Midcap Nifty",
+    "Nifty Next 50",
+    "Finnifty",
+    "Option Chain",
+    "Futures Trading",
+    "Options Trading",
+    "Backtesting",
+    "Trading Strategies",
+    "Technical Analysis",
+    "Historical Data",
+    "Trading Calculators",
+    "Option Backtesting",
+    "Stock Market India"
+  ]
+}
+</script>   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Trading Tick | Tick Tick Trading | Tick Trader | Option Alanytics Nifty, Bank Nifty & Sensex",
+  "url": "https://tradingtick.in/",
+  "description": "Trading Tick for tick by tick trading of call vs put oi charts for option analysis for tick trader on Nifty, Bank Nifty, Sensex historical data, option chain analysis, backtesting tools, calculators, and strategy insights for traders",
+  "inLanguage": "en-IN",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Trading Tick",
+    "url": "https://tradingtick.in/"
+  }
+}
+</script>   
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"What is Call vs Put OI?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Call vs Put OI compares the Open Interest of Call options and Put options at different strike prices. It helps traders understand whether market participants are building more bullish or bearish positions in Nifty, Bank Nifty and Fin Nifty."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How can Call vs Put OI help traders?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"By comparing Call OI and Put OI, traders can quickly gauge market sentiment. Higher Put OI may indicate stronger support, while higher Call OI may point towards resistance levels."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why track ATM, ATM+100 and ATM-100 strikes?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Strikes near the At-The-Money level usually attract the highest trading activity. Tracking nearby strikes helps traders monitor where fresh positions are being created around the current market price."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Does higher Put OI always mean the market will move up?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"No. Higher Put OI often suggests support, but market direction depends on several factors including price action, volume, and overall market sentiment."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"What does a sudden increase in Call OI indicate?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"A sharp rise in Call OI may indicate that traders are adding positions at a particular strike price, which can become an important resistance zone."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Why compare Call vs Put OI instead of looking at OI alone?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Comparing Call OI and Put OI provides a clearer picture of market positioning and helps traders understand whether bullish or bearish sentiment is strengthening."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Dataset",
+  "name":"Trading Tick Call vs Put OI Data",
+  "description":"Live Call OI and Put OI comparison charts and tables for Nifty, Bank Nifty and Fin Nifty option chains. Monitor Open Interest changes, trader positioning and market sentiment using intraday data.",
+  "url":"https://tradingtick.in/nifty/call-vs-put-oi.php",
+  "keywords":[
+    "Call vs Put OI",
+    "Nifty Call vs Put OI",
+    "Bank Nifty Call vs Put OI",
+    "Fin Nifty Call vs Put OI",
+    "Open Interest Analysis",
+    "Option Chain Data",
+    "Call OI",
+    "Put OI"
+  ],
+  "creator":{
+    "@type":"Organization",
+    "name":"Trading Tick"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Trading Tick",
+    "url":"https://tradingtick.in"
+  },
+  "variableMeasured":[
+    {
+      "@type":"PropertyValue",
+      "name":"Call Open Interest"
+    },
+    {
+      "@type":"PropertyValue",
+      "name":"Put Open Interest"
+    },
+    {
+      "@type":"PropertyValue",
+      "name":"Call OI Change"
+    },
+    {
+      "@type":"PropertyValue",
+      "name":"Put OI Change"
+    },
+    {
+      "@type":"PropertyValue",
+      "name":"Strike Price"
+    }
+  ]
+}
+</script>
+```html id="r37w1c"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tradingtick.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nifty",
+      "item": "https://tradingtick.in/nifty"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Trading Tick Call vs Put OI",
+      "item": "https://tradingtick.in/nifty/trading-tick-call-vs-put-oi.php"
+    }
+  ]
+}
+</script>
+```
+
+
+
+<!-- Additional Vendor JS (if used) -->
+ <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container-custom {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            font-size: 20px;
+            color: #ff6400;
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .filter-group label {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        select, input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 120px;
+        }
+        .dropdown-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .dropdown-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .dropdown-group label {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        .table-responsive {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        .table thead tr {
+            background-color: #1764fc;
+            color: white;
+        }
+        .table thead th {
+            background-color: #1764fc;
+            color: white;
+            font-weight: bold;
+            white-space: nowrap;
+            padding: 8px 6px;
+            font-size: 12px;
+            text-align: center;
+        }
+        .table tbody td {
+            padding: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            text-align: center;
+        }
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        .profit-positive {
+            color: green !important;
+            font-weight: bold;
+        }
+        .profit-negative {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        .form-control {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col-md-2, .col-md-3 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+    </style>
+
+<style>
+
+/* =====================================
+   Mobile Bottom Navigation - Single Row
+===================================== */
+
+.mobile-footer {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+
+    .mobile-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 68px;
+        background: #ffffff;
+        border-top: 1px solid #e5e5e5;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        z-index: 9999;
+    }
+
+    .mobile-footer-item {
+        width: 20%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none !important;
+
+        color: #4747a1;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.2;
+
+        text-align: center;
+    }
+
+    .mobile-footer-item i {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .mobile-footer-item span {
+        color: #4747a1;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.15;
+    }
+}
+
+
+/* =====================================
+   Mobile Double Bottom Navigation
+===================================== */
+
+.mobile-double-footer {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+
+    .mobile-double-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 130px;
+        background: #ffffff;
+        border-top: 1px solid #e5e5e5;
+
+        display: grid;
+
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        z-index: 9999;
+    }
+
+    .mobile-double-footer .mobile-footer-item {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none !important;
+
+        color: #4747a1;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.15;
+
+        text-align: center;
+    }
+
+    .mobile-double-footer .mobile-footer-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .mobile-double-footer .mobile-footer-item span {
+        color: #4747a1;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.15;
+    }
+}
+
+
+/* =====================================
+   Prevent bottom navigation covering content
+===================================== */
+
+/*
+   These are intentionally NOT applied globally.
+   The page will get the appropriate padding
+   depending on which footer is present.
+*/
+
+@media (max-width: 991.98px) {
+
+    body:has(.mobile-footer) {
+        padding-bottom: 68px;
+    }
+
+    body:has(.mobile-double-footer) {
+        padding-bottom: 130px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+  <div class="d-flex align-items-center justify-content-between">
+    <a href="/" class="logo d-flex align-items-center">
+      <img src="/assets/img/logo.png" alt="Trading Tick">
+      <span class="d-none d-lg-block">
+  <span style="color:#156cdd;">Trading</span> <span style="color:#39a71c; font-weight: bold;">Tick</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+  </div><!-- End Logo -->
+
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+
+      <!-- Dropdown 1 (Always Visible) -->
+      <li class="nav-item dropdown dropdown-center" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NIFTY</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-option-dashboard.php" title="Nifty Option Dashboard">Nifty Option Dashboard</a></li>
+          <li><a class="dropdown-item" href="/option/all-option-chain-live.php" title="All Option Chain">All Option Chain</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php" title="Live PCR">Live PCR</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" title="Call vs Put OI">Call vs Put OI</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-trending-oi.php" title="Trending OI">Trending OI</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-highest-oi.php" title="Highest OI">Highest OI</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php" title="Open Interest Charts">Open Interest Charts</a></li>
+           <li><a class="dropdown-item" href="/nifty/nifty-banknifty-finnifty-multi-strike-oi.php" title="Multi Strike OI">Multi Strike OI</a></li>
+            
+        </ul>
+      </li>
+
+      
+
+      <!-- Dropdown 2 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SENSEX</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-option-chain-live.php" title="Option Chain">Option Chain</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-option-screener.php" title="Option Screener">Option Screener</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-pcr-live.php" title="Live PCR">Live PCR</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-trending-oi.php" title="Trending OI">Trending OI</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-call-vs-put-oi.php" title="Call vs Put OI">Call vs Put OI</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-highest-oi.php" title="Trending OI">Trending OI</a></li>           
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-multi-strike-oi.php" title="Multi strike OI">Multi strike OI</a></li> 
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-open-interest-charts-live.php" title="OI Charts">OI Charts</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-short-straddle-charts-intraday.php" title="Straddle Charts">Straddle Charts</a></li>
+          <li><a class="dropdown-item" href="/sensex/bse-sensex-multi-strike-straddle-charts.php" title="Multi strike Straddle">Multi strike Straddle</a></li>
+
+        </ul>
+      </li>
+      <!-- Dropdown 3 (Always Visible) -->
+      <li class="nav-item dropdown dropdown-center" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">OI</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/futures/nifty-mood-indicator.php" title="Nifty Mood">Nifty Mood</a></li>
+          <li><a class="dropdown-item" href="/futures/bank-nifty-mood-indicator.php" title="Bank Nifty Mood">Bank Nifty Mood</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-future-live-chart.php" title="Nifty Future Live Chart">Nifty Future Live Chart</a></li>
+          <li><a class="dropdown-item" href="/futures/future-oi-analysis.php" title="Future OI">Future OI</a></li>
+          <li><a class="dropdown-item" href="/futures/all-live-futures.php" title="Live Future">Live Future</a></li>
+            <!--  <li><a class="dropdown-item" href="/futures/future-advance-decline.php">Adv / Dec</a></li> -->
+          
+        </ul>
+      </li>
+       <!-- Dropdown 4 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Charts</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/nifty-historical-intraday-charts.php" title="Nifty Intraday Charts">Nifty Intraday Charts</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-expiry-day-historical-charts.php" title="Nifty Expiry Day Charts">Nifty Expiry Day Charts</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-highest-gap-up-history-chart.php" title="Nifty Highest Gapup">Nifty Highest Gapup</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-highest-gap-down-historical-data.php" title="Nifty Highest Gap Down">Nifty Highest Gap Down</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-standard-deviation-and-volatality.php" title="Nifty Strandard Deviation">Nifty Strandard Deviation</a></li>
+
+          <li><a class="dropdown-item" href="/nifty/nifty-option-chain.php" title="Nifty Weekly">Nifty Weekly</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-option-chain-live.php" title="Nifty Monthly">Nifty Monthly</a></li>
+          <li><a class="dropdown-item" href="/banknifty/bank-nifty-option-chain.php" title="Bank Nifty">Bank Nifty</a></li>
+          <li><a class="dropdown-item" href="/finnifty/finnifty-option-chain.php" title="FinNifty">FinNifty</a></li>
+         
+        </ul>
+      </li>
+      
+      <!-- Dropdown 3 (Hidden on Mobile) 
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Backtest</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://optionbacktesting.in/nifty-50/" title="Nifty Backtesting" target="blank">Nifty Backtesting</a></li>
+          <li><a class="dropdown-item" href="https://optionbacktesting.in/bank-nifty/" title="Bank Nifty Backtesting" target="blank">Bank Nifty Backtesting</a></li>
+            <li><a class="dropdown-item" href="https://optionbacktesting.in/finnifty/" title="FinNifty Backtesting" target="blank">FinNifty Backtesting</a></li>
+          <li><a class="dropdown-item" href="https://optionbacktesting.in/midcap-nifty/"title="Midcap Nifty Backtesting" target="blank">Midcap Nifty Backtesting</a></li>
+            <li><a class="dropdown-item" href="https://optionbacktesting.in/nifty-next-50/" title="Nifty Next 50 Backtesting" target="blank">Nifty Next 50 Backtesting</a></li>
+          <li><a class="dropdown-item" href="https://optionbacktesting.in/sensex/"title="Sensex Backtesting" target="blank">Sensex Backtesting</a></li>
+            <li><a class="dropdown-item" href="https://optionbacktesting.in/bankex/" title="Bankex Backtesting" target="blank">Bankex Backtesting</a></li>
+          
+        </ul>
+      </li>-->
+
+      <!-- Dropdown 5 (Hidden on Mobile) 
+      <li class="nav-item dropdown dropdown-center" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Option Charts</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/nifty-option-charts-historical-data.php" title="Nifty Option Charts">Nifty Historical Option Charts Weekly</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-option-price-charts.php" title="Nifty Monthly Option Charts">Nifty Monthly Option Charts Historical</a></li>
+          
+        </ul>
+      </li>-->
+
+      <!-- Dropdown 6 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Stock</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/stock/option-chain/" title="Stock Option Chain">Stock Option Chain</a></li>
+          <li><a class="dropdown-item" href="/stock/futures/" title="Stock Futures">Stock Futures</a></li>
+          <li><a class="dropdown-item" href="/max-pain-today/" title="Stock Max Pain">Stock Max Pain</a></li>
+          <li><a class="dropdown-item" href="/stock/futures/historical-data/" title="Stock Futures Historical">Stock Futures Historical</a></li>
+          <li><a class="dropdown-item" href="#" title="Stock Option Chain Historical">Stock Option Chain Historical</a></li>
+          <li><a class="dropdown-item" href="/share-price-target/" title="Stock Option Backtesting">Stock Targets</a></li>
+          <li><a class="dropdown-item" href="#" title="Stock Option Backtesting">Stock Option Backtesting</a></li>
+        </ul>
+      </li>
+
+      <!-- Dropdown 7 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Research</a>
+        <ul class="dropdown-menu">
+          
+          <li><a class="dropdown-item" href="/nifty/nifty-expiry-day-historical-data-analysis.php" title="Nifty Zero to Hero">Nifty Zero to Hero</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-50-monday-prediction.php" title="Nifty on Monday">Nifty on Monday</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-50-tuesday-prediction.php" title="Nifty on Tuesday">Nifty on Tuesday</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-50-wednesday-prediction.php" title="Nifty on Wednesday">Nifty on Wednesday</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-50-thursday-prediction.php" title="Nifty on Thursday">Nifty on 
+          Thursday</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-50-friday-prediction.php" title="Nifty on Friday">Nifty on Friday</a></li>
+            <li><a class="dropdown-item" href="/nifty/nifty-daily-change-historical-data-analysis.php" title="Nifty Daily Change">Nifty Daily Change</a></li>
+          
+          <li><a class="dropdown-item" href="/nifty/research/nifty-open-to-low-probalility.php" title="Nifty Open Low">Nifty Open Low</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-open-to-high-probalility.php" title="Nifty Open High">Nifty Open High</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-open-to-close-probalility.php" title="Nifty Open Close">Nifty Open Close</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-gap-up-above-1-percent-analysis.php" title="Nifty Gapup > 1%">Nifty Gapup > 1%</a></li>
+          <li><a class="dropdown-item" href="/nifty/research/nifty-gap-up-below-1-percent-analysis.php" title="Nifty Gapdown < 1%">Nifty Gapdown < 1%</a></li>
+
+        </ul>
+      </li>
+
+      <!-- Dropdown 7 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Returns</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/nifty-historical-returns-with-cagr.php" title="Nifty Returns">Nifty Returns</a></li>
+          <li><a class="dropdown-item" href="/nifty/backtest/nifty-buy-on-dip-investment-strategy-returns.php" title="Nifty Buy on Dip Returns">Nifty Buy on Dip Returns</a></li>
+          <li><a class="dropdown-item" href="/nifty/backtest/nifty-lumpsum-investment-strategy-returns.php" title="Nifty Lumpsum Returns">Nifty Lumpsum Returns</a></li>
+          <li><a class="dropdown-item" href="/nifty/backtest/nifty-monthly-sip-investment-returns.php" title="Nifty Sip Returns">Nifty Sip Returns</a></li>
+        <li><a class="dropdown-item" href="/nifty/nifty-historical-pe-ratio-data-and-charts.php" title="Nifty Historical PE">Nifty Historical PE</a></li>
+          
+        </ul>
+      </li>
+      <!-- Dropdown 7 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Old Option</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/nifty-option-simulator-free.php" title="Nifty Simulator">Nifty Simulator</a></li>
+          <li><a class="dropdown-item" href="/nifty/download-nifty-option-chain-historical-data.php" title="Nifty Old Chain">Nifty Old Chain</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-historical-call-vs-put-oi-charts.php" title="Old Call vs Put">Old Call vs Put</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-buy-and-hold-call-option-until-expiry.php" title="Buy &amp; Hold Call">Buy &amp; Hold Call</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-buy-and-hold-put-option-until-expiry.php" title="Buy &amp; Hold Put">Buy &amp; Hold Put</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-compare-oi-with-previous-expiry.php" title="Compare Current OI with Old Expiry">Compare Current OI with Old Expiry</a></li>
+          <li><a class="dropdown-item" href="/nifty/nifty-compare-option-price-with-previous-expiry" title="Compare Current Price with OI Old Expiry">Compare Current Price with OI Old Expiry</a></li>
+        </ul>
+      </li>
+      <!-- Dropdown 7 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Backtest</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-bull-call-spread-strategy-backtest-results.php" title="Nifty Bull Call Spread">Nifty Bull Call Spread</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-bear-call-spread-strategy-backtest-results.php" title="Nifty Bear Call Spread">Nifty Bear Call Spread</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-bull-put-spread-strategy-backtest-results.php" title="Nifty Bull Put Spread">Nifty Bull Put Spread</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-bear-put-spread-strategy-backtest-results.php" title="Nifty Bull Call Spread">Nifty Bull Call Spread</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-long-call-strategy-backtest-results.php" title="Nifty Long Call">Nifty Long Call</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-long-put-strategy-backtest-results.php" title="Nifty Long Put">Nifty Long Put</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-short-call-strategy-backtest-results.php" title="Nifty Short Call">Nifty Short Call</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-short-call-strategy-backtest-results.php" title="Nifty Short Put">Nifty Short Put</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-short-straddle-strategy-backtest-results.php" title="Nifty Short Straddle">Nifty Short Straddle</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-long-straddle-strategy-backtest-results.php" title="Nifty Long Straddle">Nifty Long Straddle</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-short-strangle-strategy-backtest-results.php" title="Nifty Short Strangle">Nifty Short Strangle</a></li>
+          <li><a class="dropdown-item" href="/nifty/option-backtesting/nifty-long-strangle-strategy-backtest-results.php" title="Nifty Long Strangle">Nifty Long Strangle</a></li>
+        </ul>
+      </li>
+     
+      <!-- Dropdown 8 (Hidden on Mobile) -->
+      <li class="nav-item dropdown dropdown-center d-none d-md-block" data-bs-display="static">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Global</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://giftnifty.tradingtick.in/" title="Gift Nifty">Gift Nifty</a></li>
+          <li><a class="dropdown-item" href="https://dowjonesfuture.com/" title="Dow futures" rel="nofollow" >Dow futures</a></li>
+          
+
+        </ul>
+      </li>
+  </nav><!-- End Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ===== SECONDARY NAVIGATION ===== -->
+
+<nav id="secondary-navigation" aria-label="Quick Navigation">
+
+    <div class="secondary-nav-inner">
+
+       <a href="https://giftnifty.tradingtick.in/" title="Gift Nifty">Gift Nifty</a>
+
+        <a href="https://dowjonesfuture.com/" title="Dow futures">Dow futures</a>
+
+        <a href="/nifty/" title="Nifty">Nifty</a>
+
+        <a href="/sensex/" title="Sensex">Sensex</a>
+
+        <a href="/option/all-option-chain-live.php" title="Option Chain">Opt Chain</a>
+
+        <a href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php" title="Live PCR">Live PCR</a>
+
+        <a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" title="Call vs Put OI">Call vs Put OI</a>
+
+        <a href="/nifty/nifty-banknifty-finnifty-trending-oi.php" title="Trending OI">Trending OI</a>
+
+        <a href="/nifty/nifty-banknifty-finnifty-highest-oi.php" title="Highest OI">Highest OI</a>
+
+        <a href="/futures/future-oi-analysis.php" title="Futures OI">Futures OI</a>
+
+        <a href="/nifty/nifty-historical-intraday-charts.php" title="Intraday Charts">Intraday Charts</a>
+
+        <a href="/nifty/nifty-expiry-day-historical-charts.php" title="Expiry Charts">Expiry Charts</a>
+
+         <a href="/nifty/nifty-option-simulator-free.php" title="Simulator">Simulator</a>
+
+        <a href="/nifty/nifty-historical-intraday-charts.php" title="Old Chain">Old Chain</a>
+
+        <a href="/nifty/nifty-expiry-day-historical-data-analysis.php" title="0 to Hero">0 to Hero</a> 
+
+    </div>
+
+</nav>
+
+<!-- ===== END SECONDARY NAVIGATION ===== -->
+<style>
+
+/* =========================================
+   HEADER HEIGHT SETTINGS
+========================================= */
+
+:root {
+    --main-header-height: 60px;
+    --secondary-nav-height: 40px;
+}
+
+/* =========================================
+   MAIN HEADER
+   Keep existing header design
+========================================= */
+
+#header {
+    height: var(--main-header-height);
+    min-height: var(--main-header-height);
+    z-index: 1030;
+}
+
+/* =========================================
+   SECONDARY NAVIGATION
+========================================= */
+
+#secondary-navigation {
+    position: fixed;
+    top: var(--main-header-height);
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: var(--secondary-nav-height);
+
+    background: #f2f2f2;
+
+    border-bottom: 1px solid #dedede;
+
+    z-index: 1029;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* INNER CONTAINER */
+
+.secondary-nav-inner {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 20px;
+
+    gap: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* HIDE SCROLLBAR */
+
+.secondary-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+/* NAVIGATION LINKS */
+
+.secondary-nav-inner a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    padding: 0 13px;
+
+    color: #333333;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+/* HOVER */
+
+.secondary-nav-inner a:hover {
+    color: #ff6400;
+    background: #e5e5e5;
+}
+
+/* =========================================
+   PAGE CONTENT SPACING
+========================================= */
+
+.main {
+    margin-top: calc(
+        var(--main-header-height) +
+        var(--secondary-nav-height)
+    ) !important;
+}
+
+/* =========================================
+   COLLAPSIBLE SIDEBAR
+========================================= */
+
+.sidebar {
+    top: calc(
+        var(--main-header-height) +
+        var(--secondary-nav-height)
+    ) !important;
+
+    height: calc(
+        100vh -
+        var(--main-header-height) -
+        var(--secondary-nav-height)
+    ) !important;
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 767.98px) {
+
+    #secondary-navigation {
+        height: 38px;
+    }
+
+    :root {
+        --secondary-nav-height: 38px;
+    }
+
+    .secondary-nav-inner {
+        padding: 0 5px;
+    }
+
+    .secondary-nav-inner a {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .secondary-nav-inner a {
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+}
+
+</style>     <!-- ======= Sidebar ======= -->
+ <aside id="sidebar" class="sidebar">
+<ul class="sidebar-nav" id="sidebar-nav">
+  <li class="nav-item">
+    <a class="nav-link " href="https://tradingtick.in/" target="blank">
+      <i class="bi bi-house-heart-fill" style="color: #0037ff; font-size: 24px; display: inline-block; line-height: 1;"></i>
+      <span>TRADING TICK</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="https://tickscreener.com/" title="Screener">
+      <i class="bi bi-search-heart-fill" style="color: #FD2424; font-size: 24px; display: inline-block; line-height: 1;"></i>
+      <span>SCREENER</span>
+    </a>
+  </li>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="4732159874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-bar-chart-fill" style="color: #FF6F00; font-size: 24px; display: inline-block; line-height: 1;"></i>
+    <span>Nifty Live</span>
+    <i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+   
+      <a href="/nifty/nifty-banknifty-finnifty-option-dashboard.php" title="Nifty Option Dashboard">
+        <span>Nifty Option Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="/option/all-option-chain-live.php" title="Nifty Option Chain">
+        <span>Nifty Option Chain</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php" title="Nifty Live PCR">
+        <span>Nifty Live PCR</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" title="Nifty Call vs Put OI">
+        <span>Nifty Call vs Put OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-trending-oi.php" title="Nifty Trending OI">
+        <span>Nifty Trending OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-highest-oi.php" title="Nifty Highest OI">
+        <span>Nifty Highest OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php" title="Nifty Open Interest Charts">
+        <span>Nifty Open Interest Charts</span>
+      </a>
+    </li>
+    <li>
+      <a href="/nifty/nifty-banknifty-finnifty-multi-strike-oi.php" title="Nifty Multi Strike OI">
+        <span>Nifty Multi Strike OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/futures/nifty-mood-indicator.php" title="Nifty Mood">
+        <span>Nifty Mood</span>
+      </a>
+    </li>
+    <li>
+      <a href="/futures/bank-nifty-mood-indicator.php" title="Nifty Bank Nifty Mood">
+        <span>Nifty Bank Nifty Mood</span>
+      </a>
+    </li>
+    <li>
+      <a href="/futures/future-oi-analysis.php" title="Nifty Future OI">
+        <span>Nifty Future OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/futures/all-live-futures.php" title="Nifty Live Future">
+        <span>Nifty Live Future</span>
+      </a>
+    </li>
+    <li>
+      <a href="/futures/future-advance-decline.php" title="Nifty Adv / Dec">
+        <span>Nifty Adv / Dec</span>
+      </a>
+    </li>
+  </ul>
+</li><!-- End Components Nav -->
+
+  <li class="nav-item">
+  <li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-brilliance" style="color: #4fa21c; font-size: 24px; display: inline-block; line-height: 1;"></i>
+    <span>Sensex Live</span>
+    <i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+  <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+    <li>
+      <a href="/sensex/bse-sensex-option-chain-live.php" title="Sensex Option Chain">
+        <span>Sensex Option Chain</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-option-screener.php" title="Sensex Option Screener">
+        <span>Sensex Option Screener</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-pcr-live.php" title="Sensex Live PCR">
+        <span>Sensex Live PCR</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-trending-oi.php" title="Sensex Trending OI">
+        <span>Sensex Trending OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-call-vs-put-oi.php" title="Sensex Call vs Put OI">
+        <span>Sensex Call vs Put OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-highest-oi.php" title="Sensex Highest OI">
+        <span>Sensex Highest OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-multi-strike-oi.php" title="Sensex Multi strike OI">
+        <span>Sensex Multi strike OI</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-open-interest-charts-live.php" title="Sensex OI Charts">
+        <span>Sensex OI Charts</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-short-straddle-charts-intraday.php" title="Sensex Straddle Charts">
+        <span>Sensex Straddle Charts</span>
+      </a>
+    </li>
+    <li>
+      <a href="/sensex/bse-sensex-multi-strike-straddle-charts.php" title="Sensex Multi strike Straddle">
+        <span>Sensex Multi strike Straddle</span>
+      </a>
+    </li>
+  </ul>
+</li><!-- End Forms Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-bar-chart-steps" style="color: #5f11d6; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Nifty Historical</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-option-chain.php" title="Nifty Option chain Data">
+          </i><span>Nifty Historical F&O Data</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-option-chain.php" title="Nifty Option chain Historical Data.php" title="Bank Nifty Historical Option Chain">
+          </i><span>Bank Nifty Live</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-historical-option-chain.php" title="Nifty Option chain Historical Data">
+          </i><span>Nifty Historical</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-option-chain-historical-data.php" title="Nifty Option chain Historical Data.php" title="Nifty Historical Option Chain">
+          </i><span>Bank Nifty Historical</span>
+        </a>
+      </li>
+      </ul>
+  </li><!-- End Tables Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#straddle-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-file-bar-graph-fill" style="color: #0D9C8D; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Option Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="straddle-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="https://tradingtick.in/nifty/nifty-option-price-charts.php" title="Nifty Option Charts">
+          </i><span>Nifty</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-option-chart-old-data.php" title="Bank Nifty Option Charts">
+          </i><span>Bank Nifty</span>
+        </a>
+      </li>
+      </ul>
+  </li><!-- End Strangle Nav -->
+ <!-- <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#ironfly-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-transparency" style="color: #FD5604; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Other Data</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="ironfly-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="nifty-option-chain-historical-data.php" title="Stock Option Backesting">
+          </i><span>FII DII</span>
+        </a>
+      </li>
+      <li>
+        <a href="bank-nifty-option-chain-historical-data.php" title="Stock Option Backesting">
+          </i><span>India Vix</span>
+        </a>
+      </li>
+
+      </ul>
+  </li> -->
+  <!-- End Ironfly Nav -->
+  <!--<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#ironcondoor-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-speedometer" style="color: #FD049E; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Crossover Backtest</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="ironcondoor-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="nifty-option-chain-historical-data.php" title="Stock Option Backesting">
+          </i><span>Sma Crossover</span>
+        </a>
+      </li>
+      <li>
+        <a href="bank-nifty-option-chain-historical-data.php" title="Stock Option Backesting">
+          </i><span>Ema Crossover</span>
+        </a>
+      </li>
+      </ul> 
+  </li>End Iron Condoor Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#bullspread-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-pie-chart-fill" style="color: #a73bff; font-size: 24px; display: inline-block; line-height: 1;"></i><span>26 Years Research</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="bullspread-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="/nifty/research/nifty-50-monday-prediction.php" title=">Nifty On Monday">
+          </i><span>Nifty On Monday</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/research/nifty-50-tuesday-prediction.php" title="Nifty On Tuesday">
+          </i><span>Nifty On Tuesday</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/research/nifty-50-wednesday-prediction.php" title="Nifty On Wednesday">
+          </i><span>Nifty On Wednesday</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/research/nifty-50-thursday-prediction.php" title="Nifty On Thursday">
+          </i><span>Nifty On Thursday</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/research/nifty-50-friday-prediction.php" title="Nifty On Thursday">
+          </i><span>Nifty On Friday</span>
+        </a>
+      </li>      
+         <li>
+        <a href="/nifty/backtest/nifty-monthly-sip-investment-returns.php" title="Nifty On Wednesday">
+          </i><span>Nifty SIP Returns</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/backtest/nifty-buy-on-dip-investment-strategy-returns.php" title="Nifty Buy on Dip">
+          </i><span>Nifty Buy on Dip</span>
+        </a>
+      </li>
+      <li>
+        <a href="/nifty/backtest/nifty-lumpsum-investment-strategy-returns.php" title="Nifty Lumpsum Investment Returns">
+          </i><span>Nifty Lumpsum Investment Returns</span>
+        </a>
+      </li>  
+      </ul>
+
+  </li><!-- End Bull Spread Nav -->
+
+   <li class="nav-item">
+  <a class="nav-link collapsed" data-bs-target="#index-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-suit-heart-fill" style="color:#ff144b;font-size:24px;"></i>
+    <span>1 Min Charts (11 Years)</span>
+    <i class="bi bi-chevron-down ms-auto"></i>
+  </a>
+
+  <ul id="index-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+    <!-- Nifty Intraday + Deep Links -->
+    <li>
+      <a class="collapsed" data-bs-toggle="collapse" href="#nifty-intraday-nav"
+         style="display:flex;align-items:center;">
+        <span>Nifty Intraday Charts</span>
+        <span style="margin-left:auto;color:red;font-size:16px;font-weight:bold;">▼</span>
+      </a>
+
+      <ul id="nifty-intraday-nav" class="nav-content collapse">
+        <li>
+          <a href="https://tradingtick.in/nifty/nifty-historical-intraday-charts.php">
+            <span>Nifty Intraday Charts</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://tradingtick.in/nifty/nifty-historical-intraday-charts.php">
+            <span>Nifty Intraday Charts</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Bank Nifty Intraday -->
+    <li>
+      <a href="https://tradingtick.in/banknifty/bank-nifty-intraday-chart-history.php">
+        <span>Bank Nifty Intraday Charts</span>
+      </a>
+    </li>
+
+    <!-- Nifty Expiry Day -->
+    <li>
+      <a href="https://tradingtick.in/nifty/nifty-expiry-day-historical-charts.php">
+        <span>Nifty Expiry Day Charts</span>
+      </a>
+    </li>
+
+    <!-- Bank Nifty Expiry Day -->
+    <li>
+      <a href="https://tradingtick.in/banknifty/bank-nifty-expiry-day-chart-history.php">
+        <span>Bank Nifty Expiry Day Charts</span>
+      </a>
+    </li>
+<li>
+        <a href="https://tradingtick.in/nifty/nifty-historical-open-interest-charts.php" title="Nifty OI charts">
+          </i><span>Nifty OI charts</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Nifty Historical Option Charts">
+          </i><span>Bank Nifty OI charts</span>
+        </a>
+      </li>
+  </ul>
+</li>
+<!-- End Charts Nav -->
+
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#options-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-award-fill" style="color: #FD52CE; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Option Backtest</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="options-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="https://tradingtick.in/nifty/nifty-short-straddle-backtest-report.php" title="Nifty Short Straddle Backtest report">
+          </i><span>Nifty Short Straddle</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-short-straddle-backtest-report.php" title="Stock Option Backesting">
+          </i><span>Bank Nifty Short Straddle</span>
+        </a>
+      </li>
+      </ul>
+  </li><!-- End Options Nav -->
+  <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#futures-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-dice-4-fill" style="color: #0084ff; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Analysis</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="futures-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="https://tradingtick.in/nifty/nifty-historical-returns-with-cagr.php" title="Stock Option Backesting">
+          </i><span>Nifty Returns</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-highest-gap-up-history-chart.php" title="Stock Option Backesting">
+          </i><span>Nifty Highest Gap up<span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-highest-gap-down-historical-data.php"title="Stock Option Backesting">
+          </i><span>Nifty Lowest Gap Down</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-historical-pe-ratio-data-and-charts.php" title="Nifty Historical PE">
+          </i><span> Nifty Historical PE</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/nifty/nifty-standard-deviation-and-volatality.php" title="Nifty Standard Deviation">
+          </i><span> Nifty Standard Deviation</span>
+        </a>
+      </li> 
+     
+        <a href="https://tradingtick.in/banknifty/bank-nifty-highest-gap-up-opening-history.php" title="Bank Nifty Highest Gap up Opening">
+          </i><span>Bank Nifty Highest Gap up<span>
+        </a>
+      </li>
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-highest-gap-down-opening-history.php"title="Bank Nifty Lowest Gap Down">
+          </i><span>Bank Nifty Lowest Gap Down</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://tradingtick.in/banknifty/bank-nifty-standard-deviation-and-volatality.php" title="Bank Nifty Standard Deviation">
+          </i><span>Bank Nifty Standard Deviation</span>
+        </a>
+      </li>        
+      </ul>
+  </li><!-- End Futures Nav -->
+   <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#data-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-browser-safari" style="color: #0037ff; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Stock</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="data-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="/stock/option-chain/" title="Stock Option Chain">
+          </i><span>Stock Option Chain</span>
+        </a>
+      </li>
+      <li>
+        <a href="/stock/option-chain/historical-data/" title="Stock Option Chain Historical">
+          </i><span>Stock Option Chain Historical</span>
+        </a>
+      </li>
+      <li>
+      <li>
+        <a href="/stock/futures/" title="Stock Futures">
+          </i><span>Stock Futures</span>
+        </a>
+      </li>
+      <li>
+      <li>
+        <a href="/stock/futures/historical-data/" title="Stock Futures Historical">
+          </i><span>Stock Futures Historical</span>
+        </a>
+      </li>
+      <li>
+        <li>
+        <a href="/max-pain-today/" title="Stock Option Backtesting">
+          </i><span>Max Pain of All Stocks</span>
+        </a>
+      </li>
+      <li> 
+      <li>
+        <a href="/stock/option-backtesting/" title="Stock Option Backtesting">
+          </i><span>Stock Option Backtesting</span>
+        </a>
+      </li>
+      <li>           
+      </ul>
+  </li><!-- End Futures Nav -->
+   <li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#stock-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-alarm-fill" style="color: red; font-size: 24px; display: inline-block; line-height: 1;"></i><span>Zero to Hero </span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="stock-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="https://tradingtick.in/nifty/nifty-expiry-day-historical-data-analysis.php" title="Nifty Zero to Hero ">
+          </i><span>Nifty Zero to Hero </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Bank Nifty Nifty Zero to Hero ">
+          </i><span>Bank Nifty Nifty Zero to Hero <span>
+        </a>
+      </li>
+      <li>        
+      
+      </ul>
+  </li><!-- End Futures Nav -->
+    <li class="nav-item">
+    <a class="nav-link collapsed" href="#" title="Blog">
+      <i class="bi bi-bootstrap-fill" style="color: #FD5604; font-size: 24px; display: inline-block; line-height: 1;"></i>
+      <span>Blog</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="https://tradingtick.in/contact-us.php" title="Trading Tick Contact us">
+      <i class="bi bi-chat-heart-fill" style="color: #FB05B7; font-size: 24px; display: inline-block; line-height: 1;"></i>
+      <span>Contact us</span>
+    </a>
+  </li>
+  
+  <!-- End Register Page Nav -->
+    </li><!-- End Blank Page Nav -->
+</ul>
+
+
+</aside>
+<!-- End Sidebar-->
+    <!-- End Sidebar-->
+
+    
+
+    <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Trading Tick Call vs Put OI Live ( Nifty, Bank Nifty and Fin Nifty )</h1>
+<p>
+Nifty, Bank Nifty and Fin Nifty Call vs Put OI Live (5 min refresh) by Trading Tick Compare Call Open Interest (OI) and Put Open Interest (OI) of full  option chain for weekly and monthly and next week expiries. Check how the oi is building whether it  bullish or bearish so you can know the intraday positions option sellers are creating, accordingly you can also creater you position and take the trade in the direction of the trend.
+</p>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="https://tradingtick.in/">Home</a></li>
+          <li class="breadcrumb-item"><a href="https://tradingtick.in/nifty">Nifty</a></li>
+          <li class="breadcrumb-item">Trading Tick Call vs Put OI Live </li>
+                  </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="4732159874"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><br>
+    <br>
+    
+<style>
+/* =========================================
+   CALL VS PUT OI — HOMEPAGE SECTION
+========================================= */
+
+#homepage-call-vs-put {
+    --call: #29a6c2;
+    --put: #ff6666;
+
+    color: #1e293b;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+#homepage-call-vs-put .text-green {
+    color: #059669;
+}
+
+#homepage-call-vs-put .text-red {
+    color: #dc2626;
+}
+
+#homepage-call-vs-put .text-muted-2 {
+    color: #64748b;
+}
+
+#homepage-call-vs-put .val-call {
+    color: var(--call);
+}
+
+#homepage-call-vs-put .val-put {
+    color: var(--put);
+}
+
+/* ---------- Filter ---------- */
+
+#homepage-call-vs-put .form-select {
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 8px;
+    padding: .45rem .75rem;
+    font-size: .85rem;
+    color: #334155;
+    font-weight: 500;
+}
+
+/* ---------- Stat tiles ---------- */
+
+#homepage-call-vs-put .stat-tile {
+    padding: 1rem .75rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    height: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#homepage-call-vs-put .stat-tile .label {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#homepage-call-vs-put .stat-tile .value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    font-family: Consolas, monospace;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Mini charts ---------- */
+
+#homepage-call-vs-put .mini-chart {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #fff;
+    padding: .75rem;
+    min-height: 150px;
+}
+
+#homepage-call-vs-put .chart-title {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+#homepage-call-vs-put .mini-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 90px;
+    padding-top: 20px;
+}
+
+#homepage-call-vs-put .mini-bar {
+    width: 32px;
+    min-height: 0;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: height .35s ease;
+}
+
+#homepage-call-vs-put .mini-bar.call {
+    background: var(--call);
+}
+
+#homepage-call-vs-put .mini-bar.put {
+    background: var(--put);
+}
+
+#homepage-call-vs-put .mini-val {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .65rem;
+    font-weight: 700;
+    font-family: Consolas, monospace;
+    white-space: nowrap;
+    padding-bottom: 3px;
+}
+
+#homepage-call-vs-put .mini-bar.call .mini-val {
+    color: var(--call);
+}
+
+#homepage-call-vs-put .mini-bar.put .mini-val {
+    color: var(--put);
+}
+
+#homepage-call-vs-put .mini-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: .5rem;
+    font-size: .68rem;
+    color: #64748b;
+}
+
+#homepage-call-vs-put .mini-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+#homepage-call-vs-put .mini-legend .lg-call::before {
+    background: var(--call);
+}
+
+#homepage-call-vs-put .mini-legend .lg-put::before {
+    background: var(--put);
+}
+
+/* ---------- Buttons ---------- */
+
+#homepage-call-vs-put .btn-success,
+#homepage-call-vs-put .btn-success:visited {
+    background: #309bb3;
+    border-color: #309bb3;
+    color: #fff;
+}
+
+#homepage-call-vs-put .btn-success:hover,
+#homepage-call-vs-put .btn-success:focus {
+    background: #27869b;
+    border-color: #27869b;
+    color: #fff;
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 992px) {
+    #homepage-call-vs-put .stat-tile .value {
+        font-size: 1.65rem;
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 575.98px) {
+    #homepage-call-vs-put {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #homepage-call-vs-put .stat-tile {
+        padding: .85rem .5rem;
+        min-height: 105px;
+    }
+
+    #homepage-call-vs-put .stat-tile .label {
+        font-size: .65rem;
+    }
+
+    #homepage-call-vs-put .stat-tile .value {
+        font-size: 1.1rem;
+    }
+
+    #homepage-call-vs-put .mini-chart {
+        min-height: 140px;
+    }
+}
+</style>
+
+<section id="homepage-call-vs-put" class="py-4">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- COLUMN 1: INTRODUCTION -->
+      <div class="col-lg-4">
+        <div class="mb-3">
+          <label for="b-filterSymbol"
+                 class="form-label small text-muted-2 fw-semibold mb-1">
+            Symbol
+          </label>
+
+          <select id="b-filterSymbol" class="form-select"></select>
+          <select id="b-filterExpiry" style="display:none;"></select>
+        </div>
+
+        <h2 class="mb-3">
+          Call <span class="text-muted-2">vs</span>
+          <span class="text-green">Put OI</span>
+        </h2>
+
+        <p class="text-muted-2 mb-4">
+          Compare Call and Put open interest across available indices
+          to understand OI distribution and changes in market positioning.
+        </p>
+
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" title="View Nifty Call vs Put OI"
+             class="btn btn-success px-4">
+            <i class="bi bi-bar-chart-line me-2"></i>
+            Nifty Call vs Put OI
+          </a>
+        </div>
+
+        <div class="small text-muted-2">
+          <span id="b-heroSymbol">—</span> ·
+          Expiry: <strong id="b-heroExpiry">—</strong> ·
+          Spot: <strong id="b-heroSpot">—</strong>
+          <br>
+          Updated: <strong id="b-heroUpdated">—</strong>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: STATISTICS -->
+      <div class="col-lg-4">
+        <div class="row g-3 h-100" id="variant2-tiles">
+
+          <div class="col-6">
+            <div class="stat-tile">
+              <div class="label">Total Call OI</div>
+              <div class="value val-call" id="b-totalCallOi">—</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-tile">
+              <div class="label">Total Put OI</div>
+              <div class="value val-put" id="b-totalPutOi">—</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-tile">
+              <div class="label">Call OI Change</div>
+              <div class="value val-call" id="b-callChg">—</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="stat-tile">
+              <div class="label">Put OI Change</div>
+              <div class="value val-put" id="b-putChg">—</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COLUMN 3: MINI CHARTS -->
+      <div class="col-lg-4">
+        <div class="row g-3 h-100 align-content-center">
+
+          <div class="col-12">
+            <div class="mini-chart">
+              <div class="chart-title">Total OI</div>
+
+              <div class="mini-bars">
+                <div class="mini-bar call" id="b-oiCallBar"
+                     style="height:0%;">
+                  <span class="mini-val" id="b-oiCallVal">—</span>
+                </div>
+
+                <div class="mini-bar put" id="b-oiPutBar"
+                     style="height:0%;">
+                  <span class="mini-val" id="b-oiPutVal">—</span>
+                </div>
+              </div>
+
+              <div class="mini-legend">
+                <span class="lg-call">Call</span>
+                <span class="lg-put">Put</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="mini-chart">
+              <div class="chart-title">OI Change</div>
+
+              <div class="mini-bars">
+                <div class="mini-bar call" id="b-chgCallBar"
+                     style="height:0%;">
+                  <span class="mini-val" id="b-chgCallVal">—</span>
+                </div>
+
+                <div class="mini-bar put" id="b-chgPutBar"
+                     style="height:0%;">
+                  <span class="mini-val" id="b-chgPutVal">—</span>
+                </div>
+              </div>
+
+              <div class="mini-legend">
+                <span class="lg-call">Call</span>
+                <span class="lg-put">Put</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><br>
+
+    <section class="mini-icons-section">
+  <h3 style="display: inline-block; background: #f7f7e1; color: #ff6400; font-size: 18px; font-weight: 500; padding: 6px 16px; border-radius: 999px; margin: 0 0 10px 0;">
+    NIFTY LIVE F&O
+  </h3>
+
+  <nav class="mini-icons-strip" aria-label="Live Options and F&O Navigation">
+
+    <a href="/option/all-option-chain-live.php" class="mini-icon-item" title="Nifty Option Chain">
+      <i class="fa fa-link" style="color:#0048ff;"></i>
+      <span class="label-desktop" aria-hidden="true">Option Chain</span>
+      <span class="label-mobile" aria-hidden="true">Option <br>Chain</span>
+      <span class="sr-only">Nifty Option Chain</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php" class="mini-icon-item" title="Nifty Live PCR">
+      <i class="fa fa-heart" style="color:#d609c5;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Live PCR</span>
+      <span class="label-mobile" aria-hidden="true">Live <br>PCR</span>
+      <span class="sr-only">Nifty Live PCR</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" class="mini-icon-item" title="Nifty Call vs Put OI">
+      <i class="fa fa-chart-area" style="color:#ff0000;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Call <br>vs Put OI</span>
+      <span class="label-mobile" aria-hidden="true">Call vs<br> Put OI</span>
+      <span class="sr-only">Nifty Call vs Put OI</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-option-dashboard.php" class="mini-icon-item" title="Nifty Option Screener">
+      <i class="fa fa-chart-bar" style="color:#2bb32d;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Option Screener</span>
+      <span class="label-mobile" aria-hidden="true">Option <br>Screener</span>
+      <span class="sr-only">Nifty Option Screener</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-trending-oi.php" class="mini-icon-item" title="Nifty Trending OI">
+      <i class="fa fa-line-chart" style="color:#ff6400;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Trending OI</span>
+      <span class="label-mobile" aria-hidden="true">Trending<br> OI</span>
+      <span class="sr-only">Nifty Trending OI</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-highest-oi.php" class="mini-icon-item" title="Nifty Highest OI">
+      <i class="fa fa-signal" style="color:#5c08d1;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Highest OI</span>
+      <span class="label-mobile" aria-hidden="true">Highest <br>OI</span>
+      <span class="sr-only">Nifty Highest OI</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php" class="mini-icon-item" title="Nifty Open Interest Charts Live">
+      <i class="fa fa-pie-chart" style="color:#0284c7;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty OI Charts Live</span>
+      <span class="label-mobile" aria-hidden="true">OI Charts<br> Live</span>
+      <span class="sr-only">Nifty Open Interest Charts Live</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-multi-strike-oi.php" class="mini-icon-item" title="Nifty Multi Strike OI">
+      <i class="fa fa-bars" style="color:#227d72;"></i>
+      <span class="label-desktop" aria-hidden="true">Nifty Multi Strike OI</span>
+      <span class="label-mobile" aria-hidden="true">Multi Strike <br>OI</span>
+      <span class="sr-only">Nifty Multi Strike OI</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-intraday-short-straddle-charts.php" class="mini-icon-item" title="Nifty Short Straddle Charts">
+      <i class="fa fa-compress" style="color:#e32964;"></i>
+      <span class="label-desktop" aria-hidden="true">Short Straddle Charts</span>
+      <span class="label-mobile" aria-hidden="true">Straddle <br>Charts</span>
+      <span class="sr-only">Nifty Short Straddle Charts</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-multi-strike-straddle-charts.php" class="mini-icon-item" title="Nifty Multi Strike Short Straddle">
+      <i class="fa fa-th-list" style="color:#456ff7;"></i>
+      <span class="label-desktop" aria-hidden="true">Multi Strike Straddle</span>
+      <span class="label-mobile" aria-hidden="true">Multi Strike <br> Straddle</span>
+      <span class="sr-only">Nifty Multi Strike Short Straddle</span>
+    </a>
+
+    <a href="/sensex/bse-sensex-pcr-live.php" class="mini-icon-item" title="Sensex Live PCR">
+      <i class="fa fa-heartbeat" style="color:#d97706;"></i>
+      <span class="label-desktop" aria-hidden="true">Sensex Live PCR</span>
+      <span class="label-mobile" aria-hidden="true">Live <br>PCR</span>
+      <span class="sr-only">Sensex Live PCR</span>
+    </a>
+
+    <a href="/sensex/bse-sensex-call-vs-put-oi.php" class="mini-icon-item" title="Sensex Call vs Put OI">
+      <i class="fa fa-sliders" style="color:#dc2626;"></i>
+      <span class="label-desktop" aria-hidden="true">Sensex Call vs Put OI</span>
+      <span class="label-mobile" aria-hidden="true">Call vs<br> Put OI</span>
+      <span class="sr-only">Sensex Call vs Put OI</span>
+    </a>
+
+  </nav>
+</section><br>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 300 Ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="4499150185"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <div class="container-custom">
+         <h2 style="color:#ff6400; font-size: 20px;">Trading Tick Call vs Put OI Charts Live</h2>
+
+        <!-- Filters - Row 1 -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <label>INDEX</label>
+            <select id="indexSelect" class="form-control">
+                <option value="NIFTY W">NIFTY WEEKLY</option>
+                <option value="BANKNIFTY">BANKNIFTY</option>
+                <option value="FINNIFTY">FINNIFTY</option>
+                <option value="NIFTY M">NIFTY MONThLY</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>DATE</label>
+            <input type="date" id="datePicker" class="form-control">
+        </div>
+    </div>
+    
+    <!-- All 6 Strikes in Single Row -->
+    <div class="row mb-4">
+        <div class="col-md-2">
+            <label>CE STRIKE 1</label>
+            <select id="ceStrike1" class="form-control"></select>
+        </div>
+        <div class="col-md-2">
+            <label>CE STRIKE 2</label>
+            <select id="ceStrike2" class="form-control"></select>
+        </div>
+        <div class="col-md-2">
+            <label>CE STRIKE 3</label>
+            <select id="ceStrike3" class="form-control"></select>
+        </div>
+        <div class="col-md-2">
+            <label>PE STRIKE 1</label>
+            <select id="peStrike1" class="form-control"></select>
+        </div>
+        <div class="col-md-2">
+            <label>PE STRIKE 2</label>
+            <select id="peStrike2" class="form-control"></select>
+        </div>
+        <div class="col-md-2">
+            <label>PE STRIKE 3</label>
+            <select id="peStrike3" class="form-control"></select>
+        </div>
+    </div>
+     
+    <!-- Chart -->
+    <h2>📊 OI Change - CE & PE (6 Strikes Comparison)</h2>
+    <div class="chart-container">
+        <canvas id="oiChangeChart"></canvas>
+    </div>
+    <section class="mini-icons-section">
+  <h3 style="display: inline-block; background: #f7f7e1; color: #ff6400; font-size: 18px; font-weight: 500; padding: 6px 16px; border-radius: 999px; margin: 0 0 10px 0;">
+    NIFTY HISTORICAL F&O</h3>
+
+  <nav class="mini-icons-strip" aria-label="Historical F&O and Backtesting Navigation">
+
+    <a href="/nifty/nifty-option-simulator-free.php" class="mini-icon-item" title="Nifty Option Simulator Free">
+      <i class="fa fa-play-circle" style="color:#2bb32d;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Option Simulator</span>
+      <span class="label-mobile" aria-hidden="true">OPTION<br>SIMULATR</span>
+      <span class="sr-only">Nifty Option Simulator Free</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-call-vs-put-oi-charts.php" class="mini-icon-item" title="Nifty Historical Call vs Put OI Charts">
+      <i class="fa fa-area-chart" style="color:#ff0000;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Historical CE <br>vs PE OI</span>
+      <span class="label-mobile" aria-hidden="true">OLD CE<br>VS PE</span>
+      <span class="sr-only">Nifty Historical Call vs Put OI Charts</span>
+    </a>
+
+    <a href="/nifty/nifty-max-pain-chart-history.php" class="mini-icon-item" title="Nifty Max Pain Chart History">
+      <i class="fa fa-bullseye" style="color:#e32964;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Max Pain History</span>
+      <span class="label-mobile" aria-hidden="true">MAX PAIN<br>HISTORY</span>
+      <span class="sr-only">Nifty Max Pain Chart History</span>
+    </a>
+
+    <a href="/nifty/download-nifty-option-chain-historical-data.php" class="mini-icon-item" title="Download Nifty Option Chain Historical Data">
+      <i class="fa fa-download" style="color:#0048ff;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Old Option Chain</span>
+      <span class="label-mobile" aria-hidden="true">OLD OPT<br> CHAIN</span>
+      <span class="sr-only">Download Nifty Option Chain Historical Data</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-open-interest-charts.php" class="mini-icon-item" title="Nifty Historical Open Interest Charts">
+      <i class="fa fa-line-chart" style="color:#5c08d1;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Old OI Charts</span>
+      <span class="label-mobile" aria-hidden="true">OLD OI<br>CHARTS</span>
+      <span class="sr-only">Nifty Historical Open Interest Charts</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-iv-charts.php" class="mini-icon-item" title="Nifty Historical IV Charts">
+      <i class="fa fa-bolt" style="color:#ff6400;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Old IV Charts</span>
+      <span class="label-mobile" aria-hidden="true">OLD IV<br>CHARTS</span>
+      <span class="sr-only">Nifty Historical IV Charts</span>
+    </a>
+
+    <a href="/nifty/nifty-compare-oi-with-previous-expiry.php" class="mini-icon-item" title="Nifty Compare OI with Previous Expiry">
+      <i class="fa fa-exchange" style="color:#456ff7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Compare Expiry OI</span>
+      <span class="label-mobile" aria-hidden="true">EXP TO<br>EXP OI</span>
+      <span class="sr-only">Nifty Compare OI with Previous Expiry</span>
+    </a>
+
+    <a href="/nifty/nifty-compare-option-price-with-previous-expiry.php" class="mini-icon-item" title="Nifty Compare Option Price with Previous Expiry">
+      <i class="fa fa-tags" style="color:#227d72;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Compare Option Price</span>
+      <span class="label-mobile" aria-hidden="true">OLD PRICE /<br>OPT PRICE</span>
+      <span class="sr-only">Nifty Compare Option Price with Previous Expiry</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-pcr-data.php" class="mini-icon-item" title="Nifty Historical PCR Data">
+      <i class="fa fa-heart" style="color:#d609c5;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Historical PCR Data</span>
+      <span class="label-mobile" aria-hidden="true">OLD PCR<br>DATA</span>
+      <span class="sr-only">Nifty Historical PCR Data</span>
+    </a>
+
+    <a href="/nifty/nifty-basis-historical-data.php" class="mini-icon-item" title="Nifty Basis Historical Data">
+      <i class="fa fa-columns" style="color:#0284c7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Futures Basis History</span>
+      <span class="label-mobile" aria-hidden="true">OLD FUT <br>BASIS HIST</span>
+      <span class="sr-only">Nifty Basis Historical Data</span>
+    </a>
+
+    <a href="/nifty/nifty-buy-and-hold-call-option-until-expiry.php" class="mini-icon-item" title="Nifty Buy and Hold Call Option Until Expiry">
+      <i class="fa fa-arrow-circle-up" style="color:#2bb32d;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Buy & Hold Call Option</span>
+      <span class="label-mobile" aria-hidden="true">BUY HOLD<br>CALL</span>
+      <span class="sr-only">Nifty Buy and Hold Call Option Until Expiry</span>
+    </a>
+
+    <a href="/nifty/nifty-buy-and-hold-put-option-until-expiry.php" class="mini-icon-item" title="Nifty Buy and Hold Put Option Until Expiry">
+      <i class="fa fa-arrow-circle-down" style="color:#dc2626;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Buy & Hold Put Option</span>
+      <span class="label-mobile" aria-hidden="true">BUY HOLD<br>PUT</span>
+      <span class="sr-only">Nifty Buy and Hold Put Option Until Expiry</span>
+    </a>
+
+  </nav>
+</section>
+    <!-- Table -->
+     <h2 style="color:#ff6400; font-size: 20px; margin-top: 30px;">Trading Tick Call vs Put OI Data Live</h2>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped" id="dataTable">
+        <thead>
+            <tr style="background-color: #1764fc; color: white;">
+                <th>TIME</th>
+                <th>SPOT</th>
+                <th>CE S1 CHANGE</th>
+                <th>CE S2 CHANGE</th>
+                <th>CE S3 CHANGE</th>
+                <th>PE S1 CHANGE</th>
+                <th>PE S2 CHANGE</th>
+                <th>PE S3 CHANGE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="8" class="text-center">Loading data...</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ADD PAGINATION HERE -->
+<div id="paginationControls" class="mt-3"></div>
+
+</div>  <!-- this is your outer closing div -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- OB Display Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="9443304154"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="mini-icons-section">
+  <h3 style="display: inline-block; background: #f7f7e1; color: #ff6400; font-size: 18px; font-weight: 500; padding: 6px 16px; border-radius: 999px; margin: 0 0 10px 0;">
+    NIFTY OPTION BACKTEST
+  </h3>
+
+  <nav class="mini-icons-strip" aria-label="Nifty Option Backtest Navigation">
+
+    <a href="/nifty/nifty-bear-call-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bear Call Spread Strategy Backtest">
+      <i class="fa fa-arrow-down" style="color:#dc2626;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bear Call Spread</span>
+      <span class="label-mobile" aria-hidden="true">BEAR CALL<br>SPREAD</span>
+      <span class="sr-only">Nifty Bear Call Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bear-put-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bear Put Spread Strategy Backtest">
+      <i class="fa fa-level-down" style="color:#e32964;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bear Put Spread</span>
+      <span class="label-mobile" aria-hidden="true">BEAR PUT<br>SPREAD</span>
+      <span class="sr-only">Nifty Bear Put Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bull-call-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bull Call Spread Strategy Backtest">
+      <i class="fa fa-arrow-up" style="color:#2bb32d;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bull Call Spread</span>
+      <span class="label-mobile" aria-hidden="true">BULL CALL<br>SPREAD</span>
+      <span class="sr-only">Nifty Bull Call Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bull-put-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bull Put Spread Strategy Backtest">
+      <i class="fa fa-level-up" style="color:#16a34a;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bull Put Spread</span>
+      <span class="label-mobile" aria-hidden="true">BULL PUT<br>SPREAD</span>
+      <span class="sr-only">Nifty Bull Put Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-call-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Call Strategy Backtest">
+      <i class="fa fa-long-arrow-up" style="color:#0284c7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Call Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG <br>CALL</span>
+      <span class="sr-only">Nifty Long Call Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-put-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Put Strategy Backtest">
+      <i class="fa fa-long-arrow-down" style="color:#d97706;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Put Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG <br>PUT</span>
+      <span class="sr-only">Nifty Long Put Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-straddle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Straddle Strategy Backtest">
+      <i class="fa fa-expand" style="color:#0048ff;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Straddle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG<br>STRADDLE</span>
+      <span class="sr-only">Nifty Long Straddle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-strangle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Strangle Strategy Backtest">
+      <i class="fa fa-arrows-alt" style="color:#227d72;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Strangle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG<br>STRANGLE</span>
+      <span class="sr-only">Nifty Long Strangle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-call-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Call Strategy Backtest">
+      <i class="fa fa-minus-circle" style="color:#ff6400;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Call Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT <br>CALL</span>
+      <span class="sr-only">Nifty Short Call Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-put-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Put Strategy Backtest">
+      <i class="fa fa-check-circle" style="color:#5c08d1;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Put Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT <br>PUT</span>
+      <span class="sr-only">Nifty Short Put Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-straddle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Straddle Strategy Backtest">
+      <i class="fa fa-compress" style="color:#d609c5;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Straddle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT<br>STRADDLE</span>
+      <span class="sr-only">Nifty Short Straddle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-strangle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Strangle Strategy Backtest">
+      <i class="fa fa-exchange" style="color:#456ff7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Strangle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT<br>STRANGLE</span>
+      <span class="sr-only">Nifty Short Strangle Strategy Backtest</span>
+    </a>
+
+  </nav>
+</section>   
+
+<h2 style=" font-size: 20px; color: #ff6400;">Call vs Put Open Interest (OI): A Simple Guide for Option Traders</h2>
+
+<p>
+If you are involved in option trading, you have probably heard traders talking about Call OI, Put OI, support levels, resistance levels, and PCR. At first, these terms may sound complicated, but they are actually quite simple once you understand the basics.
+</p>
+
+<p>
+Think of Open Interest (OI) as the number of active contracts in the market. By comparing Call OI and Put OI, traders can understand where market participants are placing their bets and what sentiment is building in the market.
+</p>
+
+<p>
+I'll explain Call vs Put OI in simple language.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">What is Open Interest (OI)?</h2>
+
+<p>
+Open Interest represents the total number of active option contracts that have not yet been closed or settled. Every time a new buyer and seller create a fresh contract, Open Interest increases.
+</p>
+
+<p>
+A rising Open Interest generally indicates fresh participation in the market, while falling Open Interest suggests traders are closing their positions.
+</p>
+
+<p>
+In option trading, traders closely monitor both Call Open Interest and Put Open Interest to identify potential support and resistance levels.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Call OI vs Put OI Calculation</h2>
+
+<p>
+The comparison between Call OI and Put OI is often done using total Open Interest data available from the option chain.
+</p>
+
+<p>
+A simple comparison can be made using:
+</p>
+
+<p>
+<strong>Call vs Put OI Ratio = Total Put OI ÷ Total Call OI</strong>
+</p>
+
+<p>
+This ratio is commonly known as the Put Call Ratio (PCR).
+</p>
+
+<ul>
+<li>If Put OI is higher than Call OI, traders generally see bullish sentiment.</li>
+<li>If Call OI is higher than Put OI, traders generally see bearish sentiment.</li>
+<li>If both are nearly equal, the market may remain range-bound.</li>
+</ul>
+
+<p>
+However, it is important to remember that OI should never be used alone. Always combine it with price action, volume, and trend analysis.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Nifty Call vs Put OI</h2>
+
+<p>
+Nifty 50 is the most actively traded index in India. Every day, thousands of traders track Nifty Call OI and Put OI to understand market sentiment.
+</p>
+
+<p>
+When a particular strike price has very high Call OI, it often acts as a resistance level because many traders expect the market to stay below that level.
+</p>
+
+<p>
+Similarly, when a strike has very high Put OI, it often acts as a support level because traders expect the market to remain above that level.
+</p>
+
+<p>
+For example, if the highest Call OI is at 26,000 and the highest Put OI is at 25,500, traders may consider 26,000 as resistance and 25,500 as support.
+</p>
+
+<p>
+This simple comparison helps traders estimate the likely trading range for Nifty.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Bank Nifty Call vs Put OI</h2>
+
+<p>
+Bank Nifty is known for its fast and emotional price movements. It can move hundreds of points within a short period, making Open Interest analysis extremely valuable.
+</p>
+
+<p>
+Many option traders monitor Bank Nifty Call OI and Put OI throughout the day to identify important support and resistance zones.
+</p>
+
+<p>
+If fresh Put OI is being added while prices are rising, it often indicates confidence among bullish traders.
+</p>
+
+<p>
+On the other hand, heavy Call OI addition near higher strikes may indicate strong resistance and possible profit booking zones.
+</p>
+
+<p>
+Since Bank Nifty is highly volatile, traders should always confirm OI signals with price action before entering trades.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Fin Nifty Call vs Put OI</h2>
+
+<p>
+Fin Nifty focuses on financial sector companies and has become increasingly popular among option traders.
+</p>
+
+<p>
+Just like Nifty and Bank Nifty, Fin Nifty Open Interest data can reveal where traders are building positions.
+</p>
+
+<p>
+High Put OI levels can indicate support zones, while high Call OI levels can indicate resistance zones.
+</p>
+
+<p>
+Many traders use Fin Nifty OI analysis to identify short-term option trading opportunities and understand overall market sentiment within the financial sector.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Advantages of Call vs Put OI Analysis</h2>
+
+<ul>
+<li>Helps identify important support and resistance levels.</li>
+<li>Provides insight into overall market sentiment.</li>
+<li>Useful for intraday trading and positional trading.</li>
+<li>Easy to understand once you learn the basics.</li>
+<li>Available freely through option chain data.</li>
+<li>Can improve trade planning and risk management.</li>
+<li>Works well when combined with technical analysis.</li>
+</ul>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 970x90 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="2284834201"
+     data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><section class="mini-icons-section">
+  <h3 style="display: inline-block; background: #f7f7e1; color: #ff6400; font-size: 18px; font-weight: 500; padding: 6px 16px; border-radius: 999px; margin: 0 0 10px 0;">
+    NIFTY HISTORICAL DATA
+  </h3>
+
+  <nav class="mini-icons-strip" aria-label="Nifty Historical Data Navigation">
+
+    <a href="/nifty/nifty-50-futures-historical-data.php" class="mini-icon-item" title="Nifty 50 Futures Historical Data">
+      <i class="fa fa-history" style="color:#0048ff;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Futures History</span>
+      <span class="label-mobile" aria-hidden="true">FUTURES<br>HISTORY</span>
+      <span class="sr-only">Nifty 50 Futures Historical Data</span>
+    </a>
+
+    <a href="/nifty/nifty-50-index-share-price-historical-data.php" class="mini-icon-item" title="Nifty 50 Index Share Price Historical Data">
+      <i class="fa fa-table" style="color:#0284c7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Index Price History</span>
+      <span class="label-mobile" aria-hidden="true">INDEX<br>HISTORY</span>
+      <span class="sr-only">Nifty 50 Index Share Price Historical Data</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-intraday-charts.php" class="mini-icon-item" title="Nifty Historical Intraday Charts">
+      <i class="fa fa-area-chart" style="color:#227d72;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Intraday Charts</span>
+      <span class="label-mobile" aria-hidden="true">INTRADY<br>CHARTS</span>
+      <span class="sr-only">Nifty Historical Intraday Charts</span>
+    </a>
+
+    
+    <a href="/nifty/nifty-expiry-day-historical-charts.php" class="mini-icon-item" title="Nifty Expiry Day Historical Charts">
+      <i class="fa fa-calendar-check-o" style="color:#d609c5;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Expiry Day Charts</span>
+      <span class="label-mobile" aria-hidden="true">EXP DAY<br>CHARTS</span>
+      <span class="sr-only">Nifty Expiry Day Historical Charts</span>
+    </a>
+
+    <a href="/nifty/nifty-expiry-day-historical-data-analysis.php" class="mini-icon-item" title="Nifty Expiry Day Historical Data Analysis">
+      <i class="fa fa-pie-chart" style="color:#5c08d1;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">0 TO Hero Builder</span>
+      <span class="label-mobile" aria-hidden="true">0 TO Hero<br>Builder</span>
+      <span class="sr-only">Nifty Expiry Day Historical Data Analysis</span>
+    </a>
+
+    <a href="/nifty/nifty-highest-biggest-single-day-gain-in-history.php" class="mini-icon-item" title="Nifty Biggest Single Day Gain in History">
+      <i class="fa fa-level-up" style="color:#2bb32d;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Biggest Gain</span>
+      <span class="label-mobile" aria-hidden="true">BIGGEST<br>GAIN</span>
+      <span class="sr-only">Nifty Biggest Single Day Gain in History</span>
+    </a>
+
+    <a href="/nifty/nifty-highest-biggest-single-day-loss-fall-in-history.php" class="mini-icon-item" title="Nifty Biggest Single Day Fall in History">
+      <i class="fa fa-level-down" style="color:#e32964;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Biggest Fall</span>
+      <span class="label-mobile" aria-hidden="true">BIGGEST<br>FALL</span>
+      <span class="sr-only">Nifty Biggest Single Day Fall in History</span>
+    </a>
+
+    <a href="/nifty/nifty-highest-gap-down-historical-data.php" class="mini-icon-item" title="Nifty Highest Gap Down Historical Data">
+      <i class="fa fa-chevron-circle-down" style="color:#dc2626;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Highest Gap Down</span>
+      <span class="label-mobile" aria-hidden="true">HIGHEST<br>GAP DOWN</span>
+      <span class="sr-only">Nifty Highest Gap Down Historical Data</span>
+    </a>
+
+    <a href="/nifty/nifty-highest-gap-up-history-chart.php" class="mini-icon-item" title="Nifty Highest Gap Up History Chart">
+      <i class="fa fa-chevron-circle-up" style="color:#16a34a;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Highest Gap Up</span>
+      <span class="label-mobile" aria-hidden="true">HIGHEST<br>GAP UP</span>
+      <span class="sr-only">Nifty Highest Gap Up History Chart</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-advance-decline-ratio.php" class="mini-icon-item" title="Nifty Historical Advance Decline Ratio">
+      <i class="fa fa-balance-scale" style="color:#ff6400;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Old Adv Decline Ratio</span>
+      <span class="label-mobile" aria-hidden="true">OLD ADV<br>DECLINE</span>
+      <span class="sr-only">Nifty Historical Advance Decline Ratio</span>
+    </a>
+
+    <a href="/nifty/nifty-standard-deviation-and-volatality.php" class="mini-icon-item" title="Nifty Standard Deviation and Volatility">
+      <i class="fa fa-bolt" style="color:#d97706;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Volatility & Std Dev</span>
+      <span class="label-mobile" aria-hidden="true">STD DEV<br>VOLATLTY </span>
+      <span class="sr-only">Nifty Standard Deviation and Volatility</span>
+    </a>
+
+    <a href="/nifty/nifty-historical-pe-ratio-data-and-charts.php" class="mini-icon-item" title="Nifty Historical PE Ratio Data and Charts">
+      <i class="fa fa-line-chart" style="color:#456ff7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Historical PE Ratio</span>
+      <span class="label-mobile" aria-hidden="true">PE RATIO<br>HISTORY</span>
+      <span class="sr-only">Nifty Historical PE Ratio Data and Charts</span>
+    </a>
+
+  </nav>
+</section><h2 style=" font-size: 20px; color: #ff6400;">Disadvantages of Call vs Put OI Analysis</h2>
+
+<ul>
+<li>OI data can change rapidly during market hours.</li>
+<li>Large traders may shift positions suddenly.</li>
+<li>High OI does not guarantee support or resistance will hold.</li>
+<li>False signals can occur during news events.</li>
+<li>OI alone cannot predict market direction accurately.</li>
+<li>Requires confirmation from price action and volume.</li>
+</ul>
+
+<h2 style=" font-size: 20px; color: #ff6400;">How to Use Call vs Put OI in Option Trading</h2>
+
+<p>
+The best way to use Call vs Put OI is as a supporting tool rather than a standalone trading system.
+</p>
+
+<p>
+Start by identifying the strikes with the highest Call OI and highest Put OI. These levels often become key resistance and support zones.
+</p>
+
+<p>
+Next, monitor changes in Open Interest throughout the day. Fresh additions can reveal where traders are actively building positions.
+</p>
+
+<p>
+Combine this information with chart patterns, trend analysis, volume, and market news. When multiple signals align, confidence in the trade setup generally improves.
+</p>
+
+<p>
+Remember that successful option trading is not about predicting every move. It is about understanding probabilities and managing risk effectively.
+</p>
+
+<h2 style=" font-size: 20px; color: #ff6400;">Summary</h2>
+
+<p>
+Call vs Put Open Interest is one of the most powerful tools available to option traders. By comparing Call OI and Put OI, traders can identify potential support and resistance levels, gauge market sentiment, and make more informed trading decisions.
+</p>
+
+<p>
+Whether you trade Nifty, Bank Nifty, or Fin Nifty, Open Interest analysis can provide valuable insights into where market participants are placing their bets.
+</p>
+
+<p>
+However, no indicator is perfect. The smartest traders use Call vs Put OI alongside price action, volume, and proper risk management. When used correctly, it can become a valuable part of your option trading strategy and help you trade with greater confidence.
+</p>
+
+<h2 style="font-size: 20px; color: #ff6400;">How to Read Live Call vs Put OI Data</h2>
+
+<p>
+Reading live Call vs Put Open Interest data is easier than many beginners think. Open the option chain and look for the strikes with the highest Call OI and highest Put OI.
+</p>
+
+<p>
+The strike with the highest Call OI often acts as a resistance level because many traders are expecting the market to stay below that price. Similarly, the strike with the highest Put OI often acts as a support level because traders are expecting the market to remain above that level.
+</p>
+
+<p>
+You should also watch changes in Open Interest throughout the day. If Call OI is increasing rapidly, traders may be building fresh bearish positions. If Put OI is increasing rapidly, traders may be building fresh bullish positions.
+</p>
+
+<p>
+The most important thing is to compare OI data with the actual market movement. OI tells you where traders are placing their bets, while price action shows what the market is actually doing.
+</p>
+
+<h2 style="font-size: 20px; color: #ff6400;">Common Mistakes Beginners Make</h2>
+
+<p>
+Many new option traders become excited after discovering Open Interest data and start treating it as a crystal ball. Unfortunately, the market does not work that way.
+</p>
+
+<p>
+One common mistake is assuming that the highest Call OI or highest Put OI will always act as perfect resistance or support. Markets can easily break these levels when strong buying or selling enters the market.
+</p>
+
+<p>
+Another mistake is ignoring price action. Open Interest should support your analysis, not replace it. A trader who blindly follows OI without checking charts often ends up making emotional trading decisions.
+</p>
+
+<p>
+Many beginners also focus only on total OI while ignoring OI changes. Fresh OI additions can provide more useful information than static OI numbers.
+</p>
+
+<p>
+Finally, never enter an option trade simply because someone says "Put OI is higher than Call OI." Always combine OI data with trend analysis, volume, support and resistance levels, and proper risk management.
+</p>
+
+<h2 style="font-size: 20px; color: #ff6400;">Call OI Buildup vs Put OI Buildup</h2>
+
+<p>
+Call OI buildup occurs when traders create new Call option positions. This usually happens when traders believe the market may face resistance or move lower.
+</p>
+
+<p>
+Put OI buildup occurs when traders create new Put option positions. This generally suggests that traders expect support to hold or prices to move higher.
+</p>
+
+<p>
+For example, if Nifty is trading near 25,800 and the 26,000 Call strike is seeing heavy Open Interest additions, traders may view 26,000 as an important resistance zone.
+</p>
+
+<p>
+Similarly, if large Put OI is being added at 25,500, traders may consider that level as a strong support area.
+</p>
+
+<p>
+The battle between Call OI buildup and Put OI buildup often creates the trading range that many option traders use for planning their trades.
+</p>
+
+<h2 style="font-size: 20px; color: #ff6400;">What Happens During Expiry Week?</h2>
+
+<p>
+Expiry week is often the most exciting and emotional period for option traders. Open Interest levels can change very quickly as traders close old positions and create new ones.
+</p>
+
+<p>
+During expiry week, support and resistance levels may shift from one strike price to another within a single trading session. This is why traders closely monitor live OI changes throughout the day.
+</p>
+
+<p>
+You may also notice large amounts of Call and Put writing near important strike prices. These strikes often become magnets for price action as expiry approaches.
+</p>
+
+<p>
+Volatility usually increases during expiry week, especially in Bank Nifty and Fin Nifty. While this creates opportunities, it also increases risk.
+</p>
+
+<p>
+For this reason, many experienced traders reduce position sizes during expiry week and pay extra attention to OI changes before entering trades.
+</p>
+
+<h2 style="font-size: 20px; color: #ff6400;">Real Nifty Example</h2>
+
+<p>
+Let's assume Nifty is currently trading at 25,700.
+</p>
+
+<ul>
+<li>Highest Put OI: 25,500 Strike</li>
+<li>Highest Call OI: 26,000 Strike</li>
+<li>Maximum Call OI Addition: 25,900 Strike</li>
+<li>Maximum Put OI Addition: 25,600 Strike</li>
+</ul>
+
+<p>
+Based on this data, traders may expect support near 25,500 and resistance near 26,000.
+</p>
+
+<p>
+If Nifty starts moving higher while Put OI continues to increase, it may indicate growing bullish confidence among traders.
+</p>
+
+<p>
+However, if prices approach 26,000 and large amounts of fresh Call OI are added, traders may anticipate selling pressure near that level.
+</p>
+
+<p>
+Remember that this is only a probability-based analysis. The market can always surprise traders, which is why stop losses and risk management remain essential in option trading.
+</p>
+
+<p>
+The goal of Call vs Put OI analysis is not to predict the future with certainty. Instead, it helps traders understand where market participants are placing their bets and where important support and resistance levels may exist.
+</p>
+
+<p>
+To make better option trading decisions, traders should regularly track Open Interest changes, option chain data, and price action. Tools available on <a href="https://tradingtick.in/" title="Tick Trading">Tick Trading</a> can help you analyze market sentiment and identify important support and resistance levels with greater confidence.
+</p>
+ 
+<!-- Random Broker Partners Section -->
+<section class="nifty-strategies">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <p class="subtitle">Trusted by Traders</p>
+        <h2 class="section-title" style="color:#ff6000;">Award Winning Broker for F&O Trading</h2>
+        <p class="mb-5">Recognized for best trading experience and lowest brokerage fees.</p>
+      </div>
+
+            <div class="col-lg-3 col-6 mb-4">
+        <div class="card border-0 shadow rounded-xs pt-4 text-center">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <img src="/assets/img/brokers/5paisa.webp" alt="5 Paisa" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+              <h4 class="mb-0" style="font-size: 1.1rem;">5 Paisa</h4>
+            </div>
+            <p class="mt-3 mb-2" style="font-size: 0.85rem;">Low‑cost brokerage plans tailored for small traders wanting to test Nifty straddles or strangles first.</p>
+            <!--<a href="#" class="backtest-link icon-green">Open Account</a>-->
+          </div>
+        </div>
+      </div>
+            <div class="col-lg-3 col-6 mb-4">
+        <div class="card border-0 shadow rounded-xs pt-4 text-center">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <img src="/assets/img/brokers/fryers.webp" alt="FYERS" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+              <h4 class="mb-0" style="font-size: 1.1rem;">FYERS</h4>
+            </div>
+            <p class="mt-3 mb-2" style="font-size: 0.85rem;">Popular among serious traders for its powerful charting suite and historical market data.</p>
+            <!--<a href="#" class="backtest-link icon-purple">Open Account</a>-->
+          </div>
+        </div>
+      </div>
+            <div class="col-lg-3 col-6 mb-4">
+        <div class="card border-0 shadow rounded-xs pt-4 text-center">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <img src="/assets/img/brokers/icici-securities.webp" alt="ICICI Securities" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+              <h4 class="mb-0" style="font-size: 1.1rem;">ICICI Securities</h4>
+            </div>
+            <p class="mt-3 mb-2" style="font-size: 0.85rem;">Strong advisory services with option chain analysis and a user‑friendly mobile app.</p>
+            <!--<a href="#" class="backtest-link icon-yellow">Open Account</a>-->
+          </div>
+        </div>
+      </div>
+            <div class="col-lg-3 col-6 mb-4">
+        <div class="card border-0 shadow rounded-xs pt-4 text-center">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <img src="/assets/img/brokers/axis-securities.webp" alt="Axis Direct" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+              <h4 class="mb-0" style="font-size: 1.1rem;">Axis Direct</h4>
+            </div>
+            <p class="mt-3 mb-2" style="font-size: 0.85rem;">Premium trading experience supported by research and reliable historical data.</p>
+            <!--<a href="#" class="backtest-link icon-purple">Open Account</a>-->
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 970x90 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="2284834201"
+     data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+<section class="mini-icons-section">
+  <h3 style="display: inline-block; background: #f7f7e1; color: #ff6400; font-size: 18px; font-weight: 500; padding: 6px 16px; border-radius: 999px; margin: 0 0 10px 0;">
+    NIFTY OPTION BACKTEST
+  </h3>
+
+  <nav class="mini-icons-strip" aria-label="Nifty Option Backtest Navigation">
+
+    <a href="/nifty/nifty-bear-call-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bear Call Spread Strategy Backtest">
+      <i class="fa fa-arrow-down" style="color:#dc2626;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bear Call Spread</span>
+      <span class="label-mobile" aria-hidden="true">BEAR CALL<br>SPREAD</span>
+      <span class="sr-only">Nifty Bear Call Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bear-put-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bear Put Spread Strategy Backtest">
+      <i class="fa fa-level-down" style="color:#e32964;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bear Put Spread</span>
+      <span class="label-mobile" aria-hidden="true">BEAR PUT<br>SPREAD</span>
+      <span class="sr-only">Nifty Bear Put Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bull-call-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bull Call Spread Strategy Backtest">
+      <i class="fa fa-arrow-up" style="color:#2bb32d;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bull Call Spread</span>
+      <span class="label-mobile" aria-hidden="true">BULL CALL<br>SPREAD</span>
+      <span class="sr-only">Nifty Bull Call Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-bull-put-spread-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Bull Put Spread Strategy Backtest">
+      <i class="fa fa-level-up" style="color:#16a34a;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Bull Put Spread</span>
+      <span class="label-mobile" aria-hidden="true">BULL PUT<br>SPREAD</span>
+      <span class="sr-only">Nifty Bull Put Spread Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-call-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Call Strategy Backtest">
+      <i class="fa fa-long-arrow-up" style="color:#0284c7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Call Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG <br>CALL</span>
+      <span class="sr-only">Nifty Long Call Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-put-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Put Strategy Backtest">
+      <i class="fa fa-long-arrow-down" style="color:#d97706;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Put Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG <br>PUT</span>
+      <span class="sr-only">Nifty Long Put Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-straddle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Straddle Strategy Backtest">
+      <i class="fa fa-expand" style="color:#0048ff;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Straddle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG<br>STRADDLE</span>
+      <span class="sr-only">Nifty Long Straddle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-long-strangle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Long Strangle Strategy Backtest">
+      <i class="fa fa-arrows-alt" style="color:#227d72;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Long Strangle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">LONG<br>STRANGLE</span>
+      <span class="sr-only">Nifty Long Strangle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-call-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Call Strategy Backtest">
+      <i class="fa fa-minus-circle" style="color:#ff6400;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Call Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT <br>CALL</span>
+      <span class="sr-only">Nifty Short Call Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-put-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Put Strategy Backtest">
+      <i class="fa fa-check-circle" style="color:#5c08d1;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Put Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT <br>PUT</span>
+      <span class="sr-only">Nifty Short Put Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-straddle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Straddle Strategy Backtest">
+      <i class="fa fa-compress" style="color:#d609c5;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Straddle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT<br>STRADDLE</span>
+      <span class="sr-only">Nifty Short Straddle Strategy Backtest</span>
+    </a>
+
+    <a href="/nifty/nifty-short-strangle-strategy-backtest-results.php" class="mini-icon-item" title="Nifty Short Strangle Strategy Backtest">
+      <i class="fa fa-exchange" style="color:#456ff7;" aria-hidden="true"></i>
+      <span class="label-desktop" aria-hidden="true">Short Strangle Backtest</span>
+      <span class="label-mobile" aria-hidden="true">SHORT<br>STRANGLE</span>
+      <span class="sr-only">Nifty Short Strangle Strategy Backtest</span>
+    </a>
+
+  </nav>
+</section>     <!-- /faq-block -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel-group" id="accordion">
+
+    <!-- Section 1 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingOne">
+    <h4 class="panel-title">
+      <a role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        What is Call vs Put OI?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseOne" class="panel-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>Call vs Put OI compares the Open Interest of Call options and Put options at different strike prices. It helps traders understand whether market participants are building more bullish or bearish positions in Nifty, Bank Nifty and Fin Nifty.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingTwo">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        How can Call vs Put OI help traders?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>By comparing Call OI and Put OI, traders can quickly gauge market sentiment. Higher Put OI may indicate stronger support, while higher Call OI may point towards resistance levels that traders are watching closely.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingThree">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Why track ATM, ATM+100 and ATM-100 strikes?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseThree" class="panel-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>Strikes near the At-The-Money (ATM) level usually attract the highest trading activity. Tracking ATM, ATM+100 and ATM-100 strikes helps traders monitor where fresh positions are being created around the current market price.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingFour">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Does higher Put OI always mean the market will move up?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseFour" class="panel-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>No. Higher Put OI often suggests support, but it does not guarantee an upward move. Market direction depends on several factors including price action, volume, news events and overall market sentiment.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 5 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingFive">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        What does a sudden increase in Call OI indicate?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseFive" class="panel-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>A sharp rise in Call OI may indicate that traders are adding positions at a particular strike price. This level can become an important resistance zone if Call writers continue building positions there.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6 -->
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="headingSix">
+    <h4 class="panel-title">
+      <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        Why compare Call vs Put OI instead of looking at OI alone?
+      </a>
+    </h4>
+  </div>
+  <div id="collapseSix" class="panel-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordion">
+    <div class="panel-body">
+      <p>Looking at both Call OI and Put OI together provides a clearer picture of market positioning. The comparison helps traders identify whether buyers and sellers are becoming more aggressive on the bullish side or the bearish side.</p>
+    </div>
+  </div>
+</div>
+ </div>
+    </div>
+  </div>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7020630172106461"
+     crossorigin="anonymous"></script>
+<!-- TT 970x90 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7020630172106461"
+     data-ad-slot="2284834201"
+     data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+<!-- faq -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let oiChangeChart = null;
+let allTableData = []; // Store all table data for pagination
+let currentPage = 1;
+const rowsPerPage = 25;
+// 👇 ADD THE FUNCTION HERE (right after the variable, before everything else)
+function formatIndianNumber(value) {
+    if (value === null || value === undefined || isNaN(value)) return '';
+    
+    const abs = Math.abs(value);
+    const sign = value < 0 ? '-' : '';
+    
+    if (abs >= 10000000) {
+        const cr = value / 10000000;
+        return sign + (Number.isInteger(cr) ? cr : cr.toFixed(2).replace(/\.?0+$/, '')) + ' Cr';
+    } else if (abs >= 100000) {
+        const lakh = value / 100000;
+        return sign + (Number.isInteger(lakh) ? lakh : lakh.toFixed(2).replace(/\.?0+$/, '')) + ' Lakh';
+    } else if (abs >= 1000) {
+        const k = value / 1000;
+        return sign + (Number.isInteger(k) ? k : k.toFixed(1).replace(/\.?0+$/, '')) + 'K';
+    }
+    return sign + value.toString();
+}
+// Set date to latest available from database
+async function setLatestDate() {
+    const index = document.getElementById('indexSelect').value;
+    
+    try {
+        const response = await fetch(`/nifty/php-files/nifty-multi-strike-oi-change-backend.php?action=getLatestDate&index=${encodeURIComponent(index)}`);
+        const data = await response.json();
+        
+        if (data.latestDate) {
+            document.getElementById('datePicker').value = data.latestDate;
+            console.log("Latest date set to:", data.latestDate);
+        } else {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayStr = yesterday.toISOString().split('T')[0];
+            document.getElementById('datePicker').value = yesterdayStr;
+            console.log("No latest date found, using yesterday:", yesterdayStr);
+        }
+    } catch (error) {
+        console.error('Error getting latest date:', error);
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        document.getElementById('datePicker').value = yesterday.toISOString().split('T')[0];
+    }
+    
+    loadStrikes();
+}
+
+// Load strikes dropdown
+async function loadStrikes() {
+    const index = document.getElementById('indexSelect').value;
+    const date = document.getElementById('datePicker').value;
+    
+    console.log("Loading strikes for:", index, date);
+    
+    if (!date) {
+        console.error("No date selected");
+        return;
+    }
+    
+    try {
+        const strikesUrl = `/nifty/php-files/nifty-multi-strike-oi-change-backend.php?action=getStrikes&index=${encodeURIComponent(index)}&date=${date}`;
+        console.log("Fetching strikes from:", strikesUrl);
+        
+        const strikesResponse = await fetch(strikesUrl);
+        const strikesData = await strikesResponse.json();
+        console.log("Strikes response:", strikesData);
+        
+        const atmUrl = `/nifty/php-files/nifty-multi-strike-oi-change-backend.php?action=getAtmStrikes&index=${encodeURIComponent(index)}&date=${date}`;
+        console.log("Fetching ATM from:", atmUrl);
+        
+        const atmResponse = await fetch(atmUrl);
+        const atmData = await atmResponse.json();
+        console.log("ATM response:", atmData);
+        
+        if (strikesData.strikes && strikesData.strikes.length > 0) {
+            const options = strikesData.strikes.map(strike => `<option value="${strike}">${strike}</option>`).join('');
+            
+            document.getElementById('ceStrike1').innerHTML = options;
+            document.getElementById('ceStrike2').innerHTML = options;
+            document.getElementById('ceStrike3').innerHTML = options;
+            document.getElementById('peStrike1').innerHTML = options;
+            document.getElementById('peStrike2').innerHTML = options;
+            document.getElementById('peStrike3').innerHTML = options;
+            
+            if (atmData.strike1 && atmData.strike2 && atmData.strike3) {
+                document.getElementById('ceStrike1').value = atmData.strike1;
+                document.getElementById('ceStrike2').value = atmData.strike2;
+                document.getElementById('ceStrike3').value = atmData.strike3;
+                document.getElementById('peStrike1').value = atmData.strike1;
+                document.getElementById('peStrike2').value = atmData.strike2;
+                document.getElementById('peStrike3').value = atmData.strike3;
+                console.log("Default values set to:", atmData);
+            }
+            
+            refreshData();
+        } else {
+            console.error('Could not load strikes - strikesData:', strikesData);
+            const prevDate = new Date(date);
+            prevDate.setDate(prevDate.getDate() - 1);
+            const prevDateStr = prevDate.toISOString().split('T')[0];
+            console.log("No data for selected date, trying previous date:", prevDateStr);
+            document.getElementById('datePicker').value = prevDateStr;
+            loadStrikes();
+        }
+    } catch (error) {
+        console.error('Error loading strikes:', error);
+    }
+}
+
+// Update single chart with 6 lines (3 CE + 3 PE)
+function updateChart(ceData, peData, ceStrike1, ceStrike2, ceStrike3, peStrike1, peStrike2, peStrike3) {
+    if (oiChangeChart) oiChangeChart.destroy();
+    
+    const ctx = document.getElementById('oiChangeChart').getContext('2d');
+    
+    oiChangeChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ceData.chart.times,
+        datasets: [
+            { 
+                label: `CE ${ceStrike1}`, 
+                data: ceData.chart.series[0].data.map(v => v === 0 ? null : v),
+                borderColor: '#90EE90', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,        // <-- Removes point markers
+                pointHoverRadius: 4,   // <-- Shows point only on hover
+                pointHitRadius: 10
+            },
+            { 
+                label: `CE ${ceStrike2}`, 
+                data: ceData.chart.series[1].data.map(v => v === 0 ? null : v), 
+                borderColor: '#28A745', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 10
+            },
+            { 
+                label: `CE ${ceStrike3}`, 
+                data: ceData.chart.series[2].data.map(v => v === 0 ? null : v), 
+                borderColor: '#006400', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 10
+            },
+            { 
+                label: `PE ${peStrike1}`, 
+                data: peData.chart.series[0].data.map(v => v === 0 ? null : v), 
+                borderColor: '#FFB3B3', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 10
+            },
+            { 
+                label: `PE ${peStrike2}`, 
+                data: peData.chart.series[1].data.map(v => v === 0 ? null : v), 
+                borderColor: '#FF6B6B', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 10
+            },
+            { 
+                label: `PE ${peStrike3}`, 
+                data: peData.chart.series[2].data.map(v => v === 0 ? null : v), 
+                borderColor: '#DC3545', 
+                tension: 0.4, 
+                fill: false, 
+                borderWidth: 2,
+                spanGaps: true,
+                pointRadius: 0,
+                pointHoverRadius: 4,
+                pointHitRadius: 10
+            }
+        ]
+    },
+    options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: {
+        mode: 'index',
+        intersect: false
+    },
+    plugins: {
+        legend: { position: 'top' },
+        tooltip: {
+            callbacks: {
+                label: function(context) {
+                    if (context.parsed.y === null) return 'No data';
+                    return `${context.dataset.label}: ${formatIndianNumber(context.parsed.y)}`;
+                }
+            }
+        }
+    },
+    scales: {
+        y: {
+            title: { display: true, text: 'OI Change', font: { weight: 'bold' } },
+            ticks: {
+                callback: function(value) {
+                    return formatIndianNumber(value);
+                }
+            }
+        },
+        x: {
+            title: { display: true, text: 'Time', font: { weight: 'bold' } }
+        }
+    }
+}
+});
+}
+
+// Render pagination controls
+function renderPagination(totalRows) {
+    const totalPages = Math.ceil(totalRows / rowsPerPage);
+    let paginationHtml = '';
+    
+    if (totalPages <= 1) {
+        document.getElementById('paginationControls').innerHTML = '';
+        return;
+    }
+    
+    paginationHtml += `<nav><ul class="pagination pagination-sm justify-content-center mb-0">`;
+    
+    // Previous button
+    paginationHtml += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage - 1}">&laquo; Prev</a>
+        </li>`;
+    
+    // Page numbers (show max 5 pages around current)
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
+    if (endPage - startPage < 4) {
+        startPage = Math.max(1, endPage - 4);
+    }
+    
+    if (startPage > 1) {
+        paginationHtml += `<li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>`;
+        if (startPage > 2) {
+            paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        }
+    }
+    
+    for (let i = startPage; i <= endPage; i++) {
+        paginationHtml += `
+            <li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>`;
+    }
+    
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+        }
+        paginationHtml += `<li class="page-item"><a class="page-link" href="#" data-page="${totalPages}">${totalPages}</a></li>`;
+    }
+    
+    // Next button
+    paginationHtml += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage + 1}">Next &raquo;</a>
+        </li>`;
+    
+    paginationHtml += `</ul></nav>`;
+    paginationHtml += `<div class="text-center text-muted small mt-1">Page ${currentPage} of ${totalPages} (${totalRows} total rows)</div>`;
+    
+    document.getElementById('paginationControls').innerHTML = paginationHtml;
+    
+    // Attach click handlers
+    document.querySelectorAll('#paginationControls .page-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = parseInt(this.dataset.page);
+            if (page && page !== currentPage && page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderTablePage();
+            }
+        });
+    });
+}
+
+// Render current page of table
+function renderTablePage() {
+    const tbody = document.querySelector('#dataTable tbody');
+    tbody.innerHTML = '';
+    
+    const totalRows = allTableData.length;
+    const totalPages = Math.ceil(totalRows / rowsPerPage);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+    
+    const startIdx = (currentPage - 1) * rowsPerPage;
+    const endIdx = Math.min(startIdx + rowsPerPage, totalRows);
+    
+    for (let i = startIdx; i < endIdx; i++) {
+        const row = allTableData[i];
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${row.time}</td>
+            <td>${row.spot.toFixed(2)}</td>
+            <td class="${row.ce1Class}">${row.ce1.toLocaleString()}</td>
+            <td class="${row.ce2Class}">${row.ce2.toLocaleString()}</td>
+            <td class="${row.ce3Class}">${row.ce3.toLocaleString()}</td>
+            <td class="${row.pe1Class}">${row.pe1.toLocaleString()}</td>
+            <td class="${row.pe2Class}">${row.pe2.toLocaleString()}</td>
+            <td class="${row.pe3Class}">${row.pe3.toLocaleString()}</td>
+        `;
+        tbody.appendChild(tr);
+    }
+    
+    renderPagination(totalRows);
+}
+
+// Fetch and update chart and table
+async function refreshData() {
+    const index = document.getElementById('indexSelect').value;
+    const date = document.getElementById('datePicker').value;
+    
+    const ceStrike1 = document.getElementById('ceStrike1').value;
+    const ceStrike2 = document.getElementById('ceStrike2').value;
+    const ceStrike3 = document.getElementById('ceStrike3').value;
+    const peStrike1 = document.getElementById('peStrike1').value;
+    const peStrike2 = document.getElementById('peStrike2').value;
+    const peStrike3 = document.getElementById('peStrike3').value;
+    
+    if (!ceStrike1 || !ceStrike2 || !ceStrike3 || !peStrike1 || !peStrike2 || !peStrike3) {
+        return;
+    }
+    
+    const tbody = document.querySelector('#dataTable tbody');
+    tbody.innerHTML = '<tr><td colspan="8" class="text-center">Loading data...</td></tr>';
+    document.getElementById('paginationControls').innerHTML = '';
+    
+    try {
+        const ceResponse = await fetch(`/nifty/php-files/nifty-multi-strike-oi-change-backend.php?action=getOiChangeData&index=${encodeURIComponent(index)}&strike1=${ceStrike1}&strike2=${ceStrike2}&strike3=${ceStrike3}&date=${date}&type=ce`);
+        const ceData = await ceResponse.json();
+        
+        const peResponse = await fetch(`/nifty/php-files/nifty-multi-strike-oi-change-backend.php?action=getOiChangeData&index=${encodeURIComponent(index)}&strike1=${peStrike1}&strike2=${peStrike2}&strike3=${peStrike3}&date=${date}&type=pe`);
+        const peData = await peResponse.json();
+        
+        if (ceData.error || peData.error) {
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center">${ceData.error || peData.error}</td></tr>`;
+            return;
+        }
+        
+        updateChart(ceData, peData, ceStrike1, ceStrike2, ceStrike3, peStrike1, peStrike2, peStrike3);
+        
+        // Build all table rows first
+        allTableData = [];
+        const times = ceData.chart.times;
+        
+        for (let i = 0; i < times.length; i++) {
+            const time = times[i];
+            const spot = ceData.spot?.[i] || peData.spot?.[i] || 0;
+            const ce1 = ceData.chart.series[0].data[i] || 0;
+            const ce2 = ceData.chart.series[1].data[i] || 0;
+            const ce3 = ceData.chart.series[2].data[i] || 0;
+            const pe1 = peData.chart.series[0].data[i] || 0;
+            const pe2 = peData.chart.series[1].data[i] || 0;
+            const pe3 = peData.chart.series[2].data[i] || 0;
+            
+            if (ce1 === 0 && ce2 === 0 && ce3 === 0 && pe1 === 0 && pe2 === 0 && pe3 === 0) {
+                continue;
+            }
+            
+            allTableData.push({
+                time,
+                spot,
+                ce1, ce2, ce3,
+                pe1, pe2, pe3,
+                ce1Class: ce1 > 0 ? 'profit-positive' : (ce1 < 0 ? 'profit-negative' : ''),
+                ce2Class: ce2 > 0 ? 'profit-positive' : (ce2 < 0 ? 'profit-negative' : ''),
+                ce3Class: ce3 > 0 ? 'profit-positive' : (ce3 < 0 ? 'profit-negative' : ''),
+                pe1Class: pe1 > 0 ? 'profit-positive' : (pe1 < 0 ? 'profit-negative' : ''),
+                pe2Class: pe2 > 0 ? 'profit-positive' : (pe2 < 0 ? 'profit-negative' : ''),
+                pe3Class: pe3 > 0 ? 'profit-positive' : (pe3 < 0 ? 'profit-negative' : '')
+            });
+        }
+        
+        // Reverse so latest is first
+        allTableData.reverse();
+        
+        // Reset to page 1 on refresh
+        currentPage = 1;
+        renderTablePage();
+        
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        tbody.innerHTML = '<tr><td colspan="8" class="text-center">Error loading data</td></tr>';
+    }
+}
+
+// Event listeners
+document.getElementById('indexSelect').addEventListener('change', function() {
+    setLatestDate();
+});
+document.getElementById('datePicker').addEventListener('change', loadStrikes);
+document.getElementById('ceStrike1').addEventListener('change', refreshData);
+document.getElementById('ceStrike2').addEventListener('change', refreshData);
+document.getElementById('ceStrike3').addEventListener('change', refreshData);
+document.getElementById('peStrike1').addEventListener('change', refreshData);
+document.getElementById('peStrike2').addEventListener('change', refreshData);
+document.getElementById('peStrike3').addEventListener('change', refreshData);
+
+// Initial load
+setLatestDate();
+</script>
+<script>
+(() => {
+const API_META = '/nifty/php-files/nifty-oi-meta.php';
+const API_DATA = '/nifty/php-files/nifty-oi.php';
+const REFRESH_MS = 300000;
+
+const $id = id => document.getElementById(id);
+
+/* ---------- Formatters ---------- */
+const fmtKM = n => {
+  if (n == null) return '—';
+  const abs = Math.abs(n);
+  const sign = n < 0 ? '−' : '';
+  if (abs >= 1e6) return sign + (abs / 1e6).toFixed(2) + 'M';
+  if (abs >= 1e3) return sign + (abs / 1e3).toFixed(2) + 'K';
+  return sign + abs.toString();
+};
+const fmtSignedKM = n => {
+  if (n == null) return '—';
+  const abs = Math.abs(n);
+  const sign = n >= 0 ? '+' : '−';
+  if (abs >= 1e6) return sign + (abs / 1e6).toFixed(2) + 'M';
+  if (abs >= 1e3) return sign + (abs / 1e3).toFixed(2) + 'K';
+  return sign + abs.toString();
+};
+
+/* ---------- Symbol labels ---------- */
+const SYMBOL_LABELS = {
+  'NIFTY W':   'Nifty Current Week',
+  'NIFTY WN':  'Nifty Next Week',
+  'NIFTY M':   'Nifty Monthly Exp',
+  'BANKNIFTY': 'BANK NIFTY'
+};
+const symbolLabel = code => SYMBOL_LABELS[code] || code;
+
+/* ---------- Fetchers ---------- */
+async function fetchMeta(symbol) {
+  const url = API_META + (symbol ? ('?symbol=' + encodeURIComponent(symbol)) : '');
+  const r = await fetch(url, { cache: 'no-store' });
+  return r.json();
+}
+async function fetchData(symbol, expiry) {
+  const url = API_DATA + '?symbol=' + encodeURIComponent(symbol) +
+                            '&expiry=' + encodeURIComponent(expiry);
+  const r = await fetch(url, { cache: 'no-store' });
+  return r.json();
+}
+
+/* ---------- Shared state ---------- */
+let currentSymbol = '';
+let currentExpiry = '';
+
+/* ---------- Render helpers ---------- */
+
+// Update hero meta line in a section (prefix = 'a-' or 'b-')
+function renderMeta(prefix, j) {
+  const m = j.meta;
+  const el = id => $id(prefix + id);
+  if (el('heroSymbol'))  el('heroSymbol').textContent  = symbolLabel(m.symbol);
+  if (el('heroExpiry'))  el('heroExpiry').textContent  = m.expiry;
+  if (el('heroSpot'))    el('heroSpot').textContent    = Number(m.spot).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+  if (el('heroUpdated')) el('heroUpdated').textContent = m.snapshot_time;
+}
+
+// Section A — stat tiles
+function renderSectionA(j) {
+  const s = j.summary;
+  $id('a-totalCallOi').textContent = fmtKM(s.total_call_oi);
+  $id('a-totalPutOi').textContent  = fmtKM(s.total_put_oi);
+  $id('a-callChg').textContent     = fmtSignedKM(s.call_oi_change_abs);
+  $id('a-putChg').textContent      = fmtSignedKM(s.put_oi_change_abs);
+  renderMeta('a-', j);
+}
+
+// Section B — stat tiles + mini charts
+function renderSectionB(j) {
+  const s = j.summary;
+  $id('b-totalCallOi').textContent = fmtKM(s.total_call_oi);
+  $id('b-totalPutOi').textContent  = fmtKM(s.total_put_oi);
+  $id('b-callChg').textContent     = fmtSignedKM(s.call_oi_change_abs);
+  $id('b-putChg').textContent      = fmtSignedKM(s.put_oi_change_abs);
+  renderMeta('b-', j);
+
+  // Mini chart 1 — Total OI
+  const callOI = Number(s.total_call_oi) || 0;
+  const putOI  = Number(s.total_put_oi)  || 0;
+  const maxOI  = Math.max(callOI, putOI, 1);
+  $id('b-oiCallBar').style.height = ((callOI / maxOI) * 100) + '%';
+  $id('b-oiPutBar').style.height  = ((putOI  / maxOI) * 100) + '%';
+  $id('b-oiCallVal').textContent = fmtKM(callOI);
+  $id('b-oiPutVal').textContent  = fmtKM(putOI);
+
+  // Mini chart 2 — OI Change
+  const callChg = Number(s.call_oi_change_abs) || 0;
+  const putChg  = Number(s.put_oi_change_abs)  || 0;
+  const maxChg  = Math.max(Math.abs(callChg), Math.abs(putChg), 1);
+  $id('b-chgCallBar').style.height = ((Math.abs(callChg) / maxChg) * 100) + '%';
+  $id('b-chgPutBar').style.height  = ((Math.abs(putChg)  / maxChg) * 100) + '%';
+  $id('b-chgCallVal').textContent = fmtSignedKM(callChg);
+  $id('b-chgPutVal').textContent  = fmtSignedKM(putChg);
+}
+
+/* ---------- Master render ---------- */
+
+function renderAll(j) {
+  if (j.status !== 'ok') {
+    console.warn('data status not ok', j);
+    return;
+  }
+
+  // Render Section A only if its HTML exists on the page.
+  if ($id('a-totalCallOi')) {
+    renderSectionA(j);
+  }
+
+  // Render Section B only if its HTML exists on the page.
+  if ($id('b-totalCallOi')) {
+    renderSectionB(j);
+  }
+}
+
+
+/* ---------- Refresh ---------- */
+async function refresh() {
+  if (!currentSymbol || !currentExpiry) return;
+  try {
+    const j = await fetchData(currentSymbol, currentExpiry);
+    renderAll(j);
+  } catch (e) {
+    console.error('refresh failed', e);
+  }
+}
+
+/* ---------- Load expiries for a symbol (updates both hidden selects) ---------- */
+async function loadExpiries(symbol) {
+  const meta = await fetchMeta(symbol);
+  const exps = meta.expiries || [];
+  ['a-filterExpiry', 'b-filterExpiry'].forEach(id => {
+    const sel = $id(id);
+    if (!sel) return;
+    sel.innerHTML = '';
+    exps.forEach(e => {
+      const o = document.createElement('option');
+      o.value = e; o.textContent = e;
+      sel.appendChild(o);
+    });
+  });
+  currentExpiry = exps[0] || '';
+  return currentExpiry;
+}
+
+/* ---------- Populate symbol dropdowns, sync them ---------- */
+function populateSymbols(symbols) {
+  const selects = ['a-filterSymbol', 'b-filterSymbol'];
+  selects.forEach(id => {
+    const sel = $id(id);
+    if (!sel) return;
+    sel.innerHTML = '';
+    symbols.forEach(s => {
+      const o = document.createElement('option');
+      o.value = s;
+      o.textContent = symbolLabel(s);
+      sel.appendChild(o);
+    });
+    sel.value = currentSymbol;
+  });
+
+  // Sync: changing one updates the other, then reloads data
+  selects.forEach(id => {
+    const sel = $id(id);
+    if (!sel) return;
+    sel.addEventListener('change', async () => {
+      currentSymbol = sel.value;
+      // mirror value in the other select
+      selects.forEach(otherId => {
+        const other = $id(otherId);
+        if (other && other !== sel) other.value = currentSymbol;
+      });
+      await loadExpiries(currentSymbol);
+      await refresh();
+    });
+  });
+}
+
+/* ---------- Init ---------- */
+async function init() {
+  try {
+    const meta = await fetchMeta();
+    const symbols = meta.symbols || [];
+    if (!symbols.length) { console.warn('no symbols returned'); return; }
+
+    currentSymbol = symbols.includes('NIFTY W') ? 'NIFTY W' : symbols[0];
+    populateSymbols(symbols);
+
+    await loadExpiries(currentSymbol);
+    await refresh();
+
+    setInterval(refresh, REFRESH_MS);
+  } catch (e) {
+    console.error('init failed', e);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+})();
+</script>
+      <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector(".toggle-sidebar-btn");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("toggle-sidebar");
+      });
+    }
+  });
+</script>
+<!-- <script>
+// Disable right-click
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+
+// Disable key combinations for copy (Ctrl+C, Ctrl+X, Ctrl+V)
+document.addEventListener('keydown', function(event) {
+    // Check if Ctrl key is pressed along with C, X, or V
+    if (event.ctrlKey && (event.key === 'c' || event.key === 'x' || event.key === 'v')) {
+        event.preventDefault();
+    }
+});
+</script>-->
+<!-- Mobile Double Bottom Navigation -->
+<nav class="mobile-double-footer">
+
+    <!-- ==============================
+         ROW 1
+    =============================== -->
+
+    <a href="https://optionbacktesting.in/" target="_blank" class="mobile-footer-item">
+        <i class="fa fa-opera" style="color:#2bb32d;"></i>
+        <span>OPTION<br>BACKTEST</span>
+    </a>
+
+    <a href="/sensex/bse-sensex-option-screener.php" class="mobile-footer-item">
+        <i class="fa fa-star" style="color:#1564eb;"></i>
+        <span>SENSEX<br>O SCRNER</span>
+    </a>
+
+    <a href="/sensex/bse-sensex-option-chain-live.php" target="_blank" class="mobile-footer-item">
+        <i class="fa fa-bullseye" style="color:#ff0000;"></i>
+        <span>SENSEX<br>O CHAIN</span>
+    </a>
+
+    <a href="/stock/stock-option-chain.php" class="mobile-footer-item">
+        <i class="fa fa-feed" style="color:#5c08d1;"></i>
+        <span>SENSEX<br>PCR</span>
+    </a>
+
+    <a href="https://tickscreener.com/" target="_blank" class="mobile-footer-item">
+        <i class="fa fa-search" style="color:#ff6400;"></i>
+        <span>Tick<br>SCRNER</span>
+    </a>
+
+    <a href="/global-index/" class="mobile-footer-item">
+        <i class="fa fa-google" style="color:#059999;"></i>
+        <span>Gift<br>NIFTY</span>
+    </a>
+
+
+    <!-- ==============================
+         ROW 2
+    =============================== -->
+
+    <a href="/stock/stock-option-chain.php" class="mobile-footer-item">
+        <i class="fa fa-chart-line" style="color:#ff6400;"></i>
+        <span>STOCK<br>O CHAIN</span>
+    </a>
+
+     <a href="/nifty/nifty-banknifty-finnifty-option-dashboard.php" class="mobile-footer-item">
+        <i class="fa fa-chart-bar" style="color:#2bb32d;"></i>
+        <span>NIFTY<br>O SCRNER</span>
+    </a>
+
+     <a href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php" class="mobile-footer-item">
+        <i class="fa fa-heart" style="color:#d609c5;"></i>
+        <span>NIFTY <br>PCR</span>
+    </a>
+
+    <a href="/option/all-option-chain-live.php" class="mobile-footer-item">
+        <i class="fa fa-link" style="color:#0048ff;"></i>
+        <span>NIFTY<br>O CHAIN</span>
+    </a>
+
+    <a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php" class="mobile-footer-item">
+        <i class="fa fa-chart-area" style="color:#ff0000;"></i>
+        <span>NIFTY<br>CE/PE OI</span>
+    </a>
+
+    <a href="/futures/future-oi-analysis.php" class="mobile-footer-item">
+        <i class="fa fa-signal" style="color:#5c08d1;"></i>
+        <span>FUTURE <br>OI</span>
+    </a>            
+    
+</nav>  </main><!-- End #main -->
+
+
+        
+        <!-- Footer -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<style>.footers a {color:#696969;}
+.footers p {color:#696969;}
+.footers ul {line-height:30px;}
+#social-fb:hover {
+     color: #3B5998;
+     transition:all .001s;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+     transition:all .001s;
+ }
+ #social-gp:hover {
+     color: #d34836;
+     transition:all .001s;
+ }
+ #social-em:hover {
+     color: #f39c12;
+     transition:all .001s;
+ }</style>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<section class="footers bg-light pt-5 pb-3">
+   <div class="container pt-5">
+       <div class="row">
+           <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+            <div class="footers-logo">
+                <img src="https://tradingtick.in/assets/img/trading-tick-logo.webp" alt="trading tick" style="width:280px;">
+            </div>
+            <div class="footers-info mt-3">
+                <p>Option Analytics website</p>
+            </div>
+            </div>
+         <div class="col-xs-12 col-sm-6 col-md-2 footers-two">
+            <h5>Charts </h5>
+            <ul class="list-unstyled">
+           <li><a href="https://tradingtick.in/nifty/nifty-historical-intraday-charts.php">Nifty Intraday</a></li>
+           <li><a href="https://tradingtick.in/nifty/nifty-expiry-day-historical-charts.php">Nifty Expiry Day</a></li>
+           <li><a href="https://tradingtick.in/share-price-target/">Share Price Target</a></li>
+           <li><a href="https://tickscreener.com/" title="Tick Screener">Tick Screener</a></li>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-6 col-md-2 footers-three">
+            <h5>Backtest </h5>
+            <ul class="list-unstyled">
+           <li><a href="https://tradingtick.in/nifty/nifty-short-straddle-backtest-report.php">Nifty Short Straddle</a></li>
+           <li><a href="https://tradingtick.in/nifty/nifty-highest-gap-up-history-chart.php">Nifty Gap up</a></li>
+           <li><a href="https://tradingtick.in/nifty/nifty-highest-gap-down-historical-data.php">Nifty Gap Down</a></li>
+           <li><a href="https://tradingtick.in/nifty/nifty-standard-deviation-and-volatality.php">Standard Deviation</a></li>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+            <h5>Option Data</h5>
+            <ul class="list-unstyled">
+           <li><a href="https://tradingtick.in/nifty/nifty-historical-open-interest-charts.php">OI Charts</a></li>
+           <li><a href="https://tradingtick.in/nifty/download-nifty-option-chain-historical-data.php">Old Option Chain</a></li>
+           <li><a href="https://tradingtick.in/nifty/nifty-option-charts-historical-data.php">Option Charts</a></li>
+          </ul>
+        </div>
+         <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+            <h5>Company </h5>
+            <ul class="list-unstyled">
+          <li><a class="dropdown-item" href="https://tradingtick.in/about-us.php" title="About us">About us</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/contact-us.php" title="Contact us">Contact us</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/disclaimer.php" title="Disclaimer">Disclaimer</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/affiliate-disclaimer.php" title="Nikkei 225 Live Charts">Affiliate Disclaimer</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/privacy-policy.php" title="Privacy Policy">Privacy Policy</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/cookie-consent-policy.php" title="Consent Policy">Consent Policy</a></li>
+          <li><a class="dropdown-item" href="https://tradingtick.in/terms-and-conditions.php" title="Consent Policy">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        
+       </div>
+   </div>
+</section>
+<section class="disclaimer bg-light border">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12 py-2">
+                <small>
+                   Disclaimer: Trade at your own risk. we dont recommend buying and selling. we dont give tips.
+               </small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Links  -->
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+  <footer class="bg-light text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: red;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-youtube"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-telegram"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: orangered;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: green;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #f75464; color: white;">
+  © 2025 Copyright:
+  <a class="text-light" href="https://tradingtick.in/">Trading Tick</a>
+</div>
+
+  <!-- Copyright -->
+</footer>
+  
+</div>
+<!-- End of .container -->
+</footer>
+<!-- Footer -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- jQuery -->
+<!-- Bootstrap JS -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+{
+  "mode": "demo",
+  "source": "dated public sample used to match uploaded screenshot",
+  "symbol": "NIFTY",
+  "date": "2026-11-20",
+  "expiry": "2026-11-23",
+  "interval": "10min",
+  "payload": {
+    "status": "success",
+    "data": {
+      "date": "2026-11-20",
+      "symbol": "NIFTY",
+      "expiry": "2026-11-23",
+      "interval": "10min",
+      "rows": [
+        {
+          "time": "14:30",
+          "symbol": "NIFTY",
+          "ltp": 25769.3,
+          "change": -18.3,
+          "oi": 8732945,
+          "oi_change": 195,
+          "interpretation": "SHORT BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "14:20",
+          "symbol": "NIFTY",
+          "ltp": 25787.6,
+          "change": 13.6,
+          "oi": 8732750,
+          "oi_change": 4420,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "14:10",
+          "symbol": "NIFTY",
+          "ltp": 25774,
+          "change": 27.5,
+          "oi": 8728330,
+          "oi_change": -1170,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "14:00",
+          "symbol": "NIFTY",
+          "ltp": 25746.5,
+          "change": 17.7,
+          "oi": 8729500,
+          "oi_change": -34645,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "13:50",
+          "symbol": "NIFTY",
+          "ltp": 25728.8,
+          "change": 0,
+          "oi": 8764145,
+          "oi_change": 0,
+          "interpretation": "NEUTRAL",
+          "interval": "10min"
+        },
+        {
+          "time": "13:40",
+          "symbol": "NIFTY",
+          "ltp": 25728.8,
+          "change": 11.8,
+          "oi": 8764145,
+          "oi_change": 10855,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "13:30",
+          "symbol": "NIFTY",
+          "ltp": 25717,
+          "change": -1,
+          "oi": 8753290,
+          "oi_change": -5850,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "13:20",
+          "symbol": "NIFTY",
+          "ltp": 25718,
+          "change": -20,
+          "oi": 8759140,
+          "oi_change": 42705,
+          "interpretation": "SHORT BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "13:10",
+          "symbol": "NIFTY",
+          "ltp": 25738,
+          "change": 36,
+          "oi": 8716435,
+          "oi_change": -3640,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "13:00",
+          "symbol": "NIFTY",
+          "ltp": 25702,
+          "change": -20,
+          "oi": 8720075,
+          "oi_change": -20670,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "12:50",
+          "symbol": "NIFTY",
+          "ltp": 25722,
+          "change": 7.1,
+          "oi": 8740745,
+          "oi_change": -19890,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "12:40",
+          "symbol": "NIFTY",
+          "ltp": 25714.9,
+          "change": 28.9,
+          "oi": 8760635,
+          "oi_change": -20345,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "12:30",
+          "symbol": "NIFTY",
+          "ltp": 25686,
+          "change": 52,
+          "oi": 8780980,
+          "oi_change": -17355,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "12:20",
+          "symbol": "NIFTY",
+          "ltp": 25634,
+          "change": -1,
+          "oi": 8798335,
+          "oi_change": -27755,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "12:10",
+          "symbol": "NIFTY",
+          "ltp": 25635,
+          "change": 21.9,
+          "oi": 8826090,
+          "oi_change": 4940,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "12:00",
+          "symbol": "NIFTY",
+          "ltp": 25613.1,
+          "change": 68.1,
+          "oi": 8821150,
+          "oi_change": -5915,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "11:50",
+          "symbol": "NIFTY",
+          "ltp": 25545,
+          "change": 15,
+          "oi": 8827065,
+          "oi_change": -8320,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "11:40",
+          "symbol": "NIFTY",
+          "ltp": 25530,
+          "change": -3.9,
+          "oi": 8835385,
+          "oi_change": -6110,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "11:30",
+          "symbol": "NIFTY",
+          "ltp": 25533.9,
+          "change": 21.6,
+          "oi": 8841495,
+          "oi_change": 5005,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "11:20",
+          "symbol": "NIFTY",
+          "ltp": 25512.3,
+          "change": 9.5,
+          "oi": 8836490,
+          "oi_change": 9880,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "11:10",
+          "symbol": "NIFTY",
+          "ltp": 25502.8,
+          "change": -17.2,
+          "oi": 8826610,
+          "oi_change": 23270,
+          "interpretation": "SHORT BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "11:00",
+          "symbol": "NIFTY",
+          "ltp": 25520,
+          "change": -34,
+          "oi": 8803340,
+          "oi_change": -2665,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "10:50",
+          "symbol": "NIFTY",
+          "ltp": 25554,
+          "change": 44,
+          "oi": 8806005,
+          "oi_change": -10790,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "10:40",
+          "symbol": "NIFTY",
+          "ltp": 25510,
+          "change": 3.4,
+          "oi": 8816795,
+          "oi_change": -9685,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "10:30",
+          "symbol": "NIFTY",
+          "ltp": 25506.6,
+          "change": 36.6,
+          "oi": 8826480,
+          "oi_change": -11830,
+          "interpretation": "SHORT COVERING",
+          "interval": "10min"
+        },
+        {
+          "time": "10:20",
+          "symbol": "NIFTY",
+          "ltp": 25470,
+          "change": -1,
+          "oi": 8838310,
+          "oi_change": 6760,
+          "interpretation": "SHORT BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "10:10",
+          "symbol": "NIFTY",
+          "ltp": 25471,
+          "change": -33.4,
+          "oi": 8831550,
+          "oi_change": -10660,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "10:00",
+          "symbol": "NIFTY",
+          "ltp": 25504.4,
+          "change": 55.9,
+          "oi": 8842210,
+          "oi_change": 27300,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "09:50",
+          "symbol": "NIFTY",
+          "ltp": 25448.5,
+          "change": 28.4,
+          "oi": 8814910,
+          "oi_change": 45370,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "09:40",
+          "symbol": "NIFTY",
+          "ltp": 25420.1,
+          "change": 2.8,
+          "oi": 8769540,
+          "oi_change": 39260,
+          "interpretation": "LONG BUILDUP",
+          "interval": "10min"
+        },
+        {
+          "time": "09:30",
+          "symbol": "NIFTY",
+          "ltp": 25417.3,
+          "change": -34.3,
+          "oi": 8730280,
+          "oi_change": -6240,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        },
+        {
+          "time": "09:20",
+          "symbol": "NIFTY",
+          "ltp": 25451.6,
+          "change": -81.4,
+          "oi": 8736520,
+          "oi_change": -8645,
+          "interpretation": "LONG UNWINDING",
+          "interval": "10min"
+        }
+      ]
+    }
+  }
+}

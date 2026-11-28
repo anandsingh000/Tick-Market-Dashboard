@@ -14,12 +14,12 @@ Open `http://localhost:4173`. The server binds to `0.0.0.0`, serves the register
 
 ## Pages and interactions
 
-- The primary menu follows the public site's NIFTY, SENSEX, OI, Charts, Stock, Research, Returns, Old Option, Backtest and Global groups. Trading tools and Contact are also included for the requested clone scope.
+- The top navigation and quick-link bar follow the public site's visible menu. A collapsible left sidebar includes the site's Nifty, Bank Nifty, Sensex, futures/OI, history, research, stock, backtest, tools and Contact sections. The sidebar starts collapsed to preserve the wide screenshot content; use the hamburger to open it.
 - The Nifty PCR page has symbol, date, strike-range and interval filters, Indian-number formatting, and pagination.
-- The Call vs Put OI page has index/date/six-strike controls, a six-series chart, timestamped rows and pagination.
-- Futures OI Buildup has symbol, expiry, date and interval controls with the screenshot-matched interpretation table.
+- The Call vs Put OI page has index/date/six-strike controls, a six-series chart, timestamped rows and pagination. Its historical navigation strip appears between the chart and table, as in the supplied captures.
+- Futures OI Buildup has symbol, expiry, date and interval controls with the screenshot-matched purple header, metadata strip and interpretation table.
 - Other routes are separate pages with their own controls. Scenario/backtest pages calculate theoretical option payoff only; local calculators operate in the browser.
-- Refresh/pause controls reload the selected page's local/source endpoint. A dated sample is never described as a verified live feed.
+- Page-level Refresh buttons reload the selected page's endpoint. Dated samples are never described as verified live data.
 
 ## Data and important limitations
 

@@ -3,57 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Nifty, Bank Nifty and Sensex option analytics, PCR, futures OI and historical market tools.">
-  <title>Trading Tick | Option Analytics</title>
+  <meta name="description" content="Trading Tick-style market analytics for Nifty, Bank Nifty, Sensex, futures and stock options.">
+  <title>Trading Tick | Tick Trading Charts &amp; Option Analysis</title>
   <link rel="icon" href="/assets/img/favicon.png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body>
-  <header class="site-header">
+<body class="toggle-sidebar">
+  <header id="header" class="site-header">
     <div class="header-main">
-      <a class="brand" href="/" aria-label="Trading Tick home">
-        <img src="/assets/img/logo.png" alt="Trading Tick">
-        <span class="brand-mode" id="brandMode">DEMO</span>
-      </a>
-      <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">☰</button>
+      <div class="header-brand-area">
+        <a class="brand" href="/" aria-label="Trading Tick home">
+          <img src="/assets/img/logo.png" alt="">
+          <span class="brand-wordmark"><span>Trading</span> <b>Tick</b></span>
+        </a>
+        <button class="sidebar-toggle" id="menuToggle" type="button" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false"><span>☰</span></button>
+      </div>
       <nav class="main-nav" id="mainNav" aria-label="Main navigation"></nav>
     </div>
   </header>
-  <nav class="quick-nav-wrap" aria-label="Quick navigation">
-    <div class="quick-nav" id="secondaryNav"></div>
+  <nav class="quick-nav-wrap" id="secondary-navigation" aria-label="Quick navigation">
+    <div class="secondary-nav-inner" id="secondaryNav"></div>
   </nav>
 
-  <div class="market-toolbar" role="status" aria-live="polite">
-    <span class="mode-pill mode-demo" id="modePill"><i></i><span id="modeText">DEMO DATA</span></span>
-    <span class="toolbar-copy" id="modeDescription">Source and as-of time are shown on each page.</span>
-    <span class="toolbar-spacer"></span>
-    <span class="refresh-label">Refresh</span>
-    <span class="refresh-count" id="refreshCount">60s</span>
-    <select id="refreshInterval" aria-label="Refresh interval">
-      <option value="30">30 sec</option>
-      <option value="60" selected>1 min</option>
-      <option value="300">5 min</option>
-    </select>
-    <button id="refreshNow" class="toolbar-button" type="button">↻ Now</button>
-    <button id="pauseRefresh" class="toolbar-button secondary" type="button">Pause</button>
-  </div>
+  <aside id="sidebar" class="sidebar" aria-label="Trading Tick sections">
+    <ul class="sidebar-nav" id="sidebarNav"></ul>
+  </aside>
 
-  <main id="mainContent" class="main-content" tabindex="-1">
+  <main id="mainContent" class="main main-content" tabindex="-1">
     <div class="loading-state">Loading page…</div>
   </main>
 
-  <footer class="site-footer">
+  <footer id="footer" class="site-footer">
     <div class="footer-inner">
       <div class="footer-about">
         <a href="/" class="footer-brand"><img src="/assets/img/trading-tick-logo.webp" alt="Trading Tick"></a>
-        <p>Separate market pages for Nifty, Bank Nifty, Sensex, futures analytics, backtesting and trading tools.</p>
+        <p>Market analytics, historical charts, futures OI, research and trading tools.</p>
       </div>
       <div><h2>Market pages</h2><a href="/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php">Nifty PCR</a><a href="/futures/future-oi-analysis.php">Futures OI</a><a href="/sensex/bse-sensex-pcr-live.php">Sensex PCR</a></div>
       <div><h2>Analysis</h2><a href="/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php">Call vs Put OI</a><a href="/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php">OI Charts</a><a href="/nifty/nifty-short-straddle-backtest-report.php">Backtest</a></div>
-      <div><h2>Company</h2><a href="/contact-us.php">Contact us</a><a href="/zero-to-hero.php">Zero to Hero</a></div>
+      <div><h2>Company</h2><a href="/contact-us.php">Contact us</a><a href="/nifty/nifty-expiry-day-historical-data-analysis.php">Zero to Hero</a><a href="/tools/index.php">Trading tools</a></div>
     </div>
-    <div class="footer-bottom">© 2026 Trading Tick · Analytics for education only; not investment advice. Data mode and timestamps are identified per page.</div>
+    <div class="footer-bottom">© 2026 Trading Tick · Data modes are identified on each page. Analytics are for education only, not investment advice.</div>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

@@ -1,0 +1,1490 @@
+{
+  "navigation": [
+    {
+      "label": "NIFTY",
+      "items": [
+        {
+          "label": "Nifty Option Dashboard",
+          "href": "/nifty/nifty-banknifty-finnifty-option-dashboard.php"
+        },
+        {
+          "label": "All Option Chain",
+          "href": "/option/all-option-chain-live.php"
+        },
+        {
+          "label": "Live PCR",
+          "href": "/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php"
+        },
+        {
+          "label": "Call vs Put OI",
+          "href": "/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php"
+        },
+        {
+          "label": "Trending OI",
+          "href": "/nifty/nifty-banknifty-finnifty-trending-oi.php"
+        },
+        {
+          "label": "Highest OI",
+          "href": "/nifty/nifty-banknifty-finnifty-highest-oi.php"
+        },
+        {
+          "label": "Open Interest Charts",
+          "href": "/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php"
+        },
+        {
+          "label": "Multi Strike OI",
+          "href": "/nifty/nifty-banknifty-finnifty-multi-strike-oi.php"
+        }
+      ]
+    },
+    {
+      "label": "SENSEX",
+      "items": [
+        {
+          "label": "Option Chain",
+          "href": "/sensex/bse-sensex-option-chain-live.php"
+        },
+        {
+          "label": "Option Screener",
+          "href": "/sensex/bse-sensex-option-screener.php"
+        },
+        {
+          "label": "Live PCR",
+          "href": "/sensex/bse-sensex-pcr-live.php"
+        },
+        {
+          "label": "Trending OI",
+          "href": "/sensex/bse-sensex-trending-oi.php"
+        },
+        {
+          "label": "Call vs Put OI",
+          "href": "/sensex/bse-sensex-call-vs-put-oi.php"
+        },
+        {
+          "label": "Trending OI",
+          "href": "/sensex/bse-sensex-highest-oi.php"
+        },
+        {
+          "label": "Multi strike OI",
+          "href": "/sensex/bse-sensex-multi-strike-oi.php"
+        },
+        {
+          "label": "OI Charts",
+          "href": "/sensex/bse-sensex-open-interest-charts-live.php"
+        },
+        {
+          "label": "Straddle Charts",
+          "href": "/sensex/bse-sensex-short-straddle-charts-intraday.php"
+        },
+        {
+          "label": "Multi strike Straddle",
+          "href": "/sensex/bse-sensex-multi-strike-straddle-charts.php"
+        }
+      ]
+    },
+    {
+      "label": "OI",
+      "items": [
+        {
+          "label": "Nifty Mood",
+          "href": "/futures/nifty-mood-indicator.php"
+        },
+        {
+          "label": "Bank Nifty Mood",
+          "href": "/futures/bank-nifty-mood-indicator.php"
+        },
+        {
+          "label": "Nifty Future Live Chart",
+          "href": "/nifty/nifty-future-live-chart.php"
+        },
+        {
+          "label": "Future OI",
+          "href": "/futures/future-oi-analysis.php"
+        },
+        {
+          "label": "Live Future",
+          "href": "/futures/all-live-futures.php"
+        }
+      ]
+    },
+    {
+      "label": "Charts",
+      "items": [
+        {
+          "label": "Nifty Intraday Charts",
+          "href": "/nifty/nifty-historical-intraday-charts.php"
+        },
+        {
+          "label": "Nifty Expiry Day Charts",
+          "href": "/nifty/nifty-expiry-day-historical-charts.php"
+        },
+        {
+          "label": "Nifty Highest Gapup",
+          "href": "/nifty/nifty-highest-gap-up-history-chart.php"
+        },
+        {
+          "label": "Nifty Highest Gap Down",
+          "href": "/nifty/nifty-highest-gap-down-historical-data.php"
+        },
+        {
+          "label": "Nifty Strandard Deviation",
+          "href": "/nifty/nifty-standard-deviation-and-volatality.php"
+        },
+        {
+          "label": "Nifty Weekly",
+          "href": "/nifty/nifty-option-chain.php"
+        },
+        {
+          "label": "Nifty Monthly",
+          "href": "/nifty/nifty-option-chain-live.php"
+        },
+        {
+          "label": "Bank Nifty",
+          "href": "/banknifty/bank-nifty-option-chain.php"
+        },
+        {
+          "label": "FinNifty",
+          "href": "/finnifty/finnifty-option-chain.php"
+        }
+      ]
+    },
+    {
+      "label": "Stock",
+      "items": [
+        {
+          "label": "Stock Option Chain",
+          "href": "/stock/option-chain/"
+        },
+        {
+          "label": "Stock Futures",
+          "href": "/stock/futures/"
+        },
+        {
+          "label": "Stock Max Pain",
+          "href": "/max-pain-today/"
+        },
+        {
+          "label": "Stock Futures Historical",
+          "href": "/stock/futures/historical-data/"
+        },
+        {
+          "label": "Stock Option Chain Historical",
+          "disabled": true
+        },
+        {
+          "label": "Stock Option Backtesting",
+          "href": "/share-price-target/"
+        },
+        {
+          "label": "Stock Option Backtesting",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "label": "Research",
+      "items": [
+        {
+          "label": "Nifty Zero to Hero",
+          "href": "/nifty/nifty-expiry-day-historical-data-analysis.php"
+        },
+        {
+          "label": "Nifty on Monday",
+          "href": "/nifty/research/nifty-50-monday-prediction.php"
+        },
+        {
+          "label": "Nifty on Tuesday",
+          "href": "/nifty/research/nifty-50-tuesday-prediction.php"
+        },
+        {
+          "label": "Nifty on Wednesday",
+          "href": "/nifty/research/nifty-50-wednesday-prediction.php"
+        },
+        {
+          "label": "Nifty on Thursday",
+          "href": "/nifty/research/nifty-50-thursday-prediction.php"
+        },
+        {
+          "label": "Nifty on Friday",
+          "href": "/nifty/research/nifty-50-friday-prediction.php"
+        },
+        {
+          "label": "Nifty Daily Change",
+          "href": "/nifty/nifty-daily-change-historical-data-analysis.php"
+        },
+        {
+          "label": "Nifty Open Low",
+          "href": "/nifty/research/nifty-open-to-low-probalility.php"
+        },
+        {
+          "label": "Nifty Open High",
+          "href": "/nifty/research/nifty-open-to-high-probalility.php"
+        },
+        {
+          "label": "Nifty Open Close",
+          "href": "/nifty/research/nifty-open-to-close-probalility.php"
+        },
+        {
+          "label": "Nifty Gapup > 1%",
+          "href": "/nifty/research/nifty-gap-up-above-1-percent-analysis.php"
+        },
+        {
+          "label": "Nifty Gapdown < 1%",
+          "href": "/nifty/research/nifty-gap-up-below-1-percent-analysis.php"
+        }
+      ]
+    },
+    {
+      "label": "Returns",
+      "items": [
+        {
+          "label": "Nifty Returns",
+          "href": "/nifty/nifty-historical-returns-with-cagr.php"
+        },
+        {
+          "label": "Nifty Buy on Dip Returns",
+          "href": "/nifty/backtest/nifty-buy-on-dip-investment-strategy-returns.php"
+        },
+        {
+          "label": "Nifty Lumpsum Returns",
+          "href": "/nifty/backtest/nifty-lumpsum-investment-strategy-returns.php"
+        },
+        {
+          "label": "Nifty Sip Returns",
+          "href": "/nifty/backtest/nifty-monthly-sip-investment-returns.php"
+        },
+        {
+          "label": "Nifty Historical PE",
+          "href": "/nifty/nifty-historical-pe-ratio-data-and-charts.php"
+        }
+      ]
+    },
+    {
+      "label": "Old Option",
+      "items": [
+        {
+          "label": "Nifty Simulator",
+          "href": "/nifty/nifty-option-simulator-free.php"
+        },
+        {
+          "label": "Nifty Old Chain",
+          "href": "/nifty/download-nifty-option-chain-historical-data.php"
+        },
+        {
+          "label": "Old Call vs Put",
+          "href": "/nifty/nifty-historical-call-vs-put-oi-charts.php"
+        },
+        {
+          "label": "Buy & Hold Call",
+          "href": "/nifty/nifty-buy-and-hold-call-option-until-expiry.php"
+        },
+        {
+          "label": "Buy & Hold Put",
+          "href": "/nifty/nifty-buy-and-hold-put-option-until-expiry.php"
+        },
+        {
+          "label": "Compare Current OI with Old Expiry",
+          "href": "/nifty/nifty-compare-oi-with-previous-expiry.php"
+        },
+        {
+          "label": "Compare Current Price with OI Old Expiry",
+          "href": "/nifty/nifty-compare-option-price-with-previous-expiry"
+        }
+      ]
+    },
+    {
+      "label": "Backtest",
+      "items": [
+        {
+          "label": "Nifty Bull Call Spread",
+          "href": "/nifty/option-backtesting/nifty-bull-call-spread-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Bear Call Spread",
+          "href": "/nifty/option-backtesting/nifty-bear-call-spread-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Bull Put Spread",
+          "href": "/nifty/option-backtesting/nifty-bull-put-spread-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Bull Call Spread",
+          "href": "/nifty/option-backtesting/nifty-bear-put-spread-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Long Call",
+          "href": "/nifty/option-backtesting/nifty-long-call-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Long Put",
+          "href": "/nifty/option-backtesting/nifty-long-put-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Short Call",
+          "href": "/nifty/option-backtesting/nifty-short-call-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Short Put",
+          "href": "/nifty/option-backtesting/nifty-short-call-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Short Straddle",
+          "href": "/nifty/option-backtesting/nifty-short-straddle-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Long Straddle",
+          "href": "/nifty/option-backtesting/nifty-long-straddle-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Short Strangle",
+          "href": "/nifty/option-backtesting/nifty-short-strangle-strategy-backtest-results.php"
+        },
+        {
+          "label": "Nifty Long Strangle",
+          "href": "/nifty/option-backtesting/nifty-long-strangle-strategy-backtest-results.php"
+        }
+      ]
+    },
+    {
+      "label": "Global",
+      "items": [
+        {
+          "label": "Gift Nifty",
+          "href": "https://giftnifty.tradingtick.in/",
+          "external": true
+        },
+        {
+          "label": "Dow futures",
+          "href": "https://dowjonesfuture.com/",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "secondaryNavigation": [
+    {
+      "label": "Nifty",
+      "href": "/nifty/"
+    },
+    {
+      "label": "Sensex",
+      "href": "/sensex/"
+    },
+    {
+      "label": "Opt Chain",
+      "href": "/option/all-option-chain-live.php"
+    },
+    {
+      "label": "Live PCR",
+      "href": "/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php"
+    },
+    {
+      "label": "Call vs Put OI",
+      "href": "/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php"
+    },
+    {
+      "label": "Trending OI",
+      "href": "/nifty/nifty-banknifty-finnifty-trending-oi.php"
+    },
+    {
+      "label": "Highest OI",
+      "href": "/nifty/nifty-banknifty-finnifty-highest-oi.php"
+    },
+    {
+      "label": "Futures OI",
+      "href": "/futures/future-oi-analysis.php"
+    },
+    {
+      "label": "Intraday Charts",
+      "href": "/nifty/nifty-historical-intraday-charts.php"
+    },
+    {
+      "label": "Expiry Charts",
+      "href": "/nifty/nifty-expiry-day-historical-charts.php"
+    },
+    {
+      "label": "Simulator",
+      "href": "/nifty/nifty-option-simulator-free.php"
+    },
+    {
+      "label": "Old Chain",
+      "href": "/nifty/nifty-historical-intraday-charts.php"
+    },
+    {
+      "label": "0 to Hero",
+      "href": "/nifty/nifty-expiry-day-historical-data-analysis.php"
+    }
+  ],
+  "externalLinks": [
+    {
+      "label": "Gift Nifty",
+      "href": "https://giftnifty.tradingtick.in/"
+    },
+    {
+      "label": "Dow futures",
+      "href": "https://dowjonesfuture.com/"
+    }
+  ],
+  "pages": {
+    "/": {
+      "type": "home",
+      "title": "Trading Tick",
+      "market": "Market overview"
+    },
+    "/nifty/nifty-banknifty-finnifty-option-dashboard.php": {
+      "type": "overview",
+      "title": "Nifty Option Dashboard",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/option/all-option-chain-live.php": {
+      "type": "option-chain",
+      "title": "All Option Chain",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php": {
+      "type": "pcr",
+      "title": "Live PCR",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php": {
+      "type": "callput",
+      "title": "Call vs Put OI",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-banknifty-finnifty-trending-oi.php": {
+      "type": "oi-list",
+      "title": "Trending OI",
+      "market": "Nifty"
+    },
+    "/nifty/nifty-banknifty-finnifty-highest-oi.php": {
+      "type": "oi-list",
+      "title": "Highest OI",
+      "market": "Nifty"
+    },
+    "/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php": {
+      "type": "oi-chart",
+      "title": "Open Interest Charts",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-banknifty-finnifty-multi-strike-oi.php": {
+      "type": "multi-strike",
+      "title": "Multi Strike OI",
+      "market": "Nifty"
+    },
+    "/sensex/bse-sensex-option-chain-live.php": {
+      "type": "option-chain",
+      "title": "Option Chain",
+      "market": "Sensex",
+      "symbol": "SENSEX"
+    },
+    "/sensex/bse-sensex-option-screener.php": {
+      "type": "screener",
+      "title": "Option Screener",
+      "market": "Sensex"
+    },
+    "/sensex/bse-sensex-pcr-live.php": {
+      "type": "pcr",
+      "title": "Live PCR",
+      "market": "Sensex",
+      "symbol": "SENSEX"
+    },
+    "/sensex/bse-sensex-trending-oi.php": {
+      "type": "oi-list",
+      "title": "Trending OI",
+      "market": "Sensex"
+    },
+    "/sensex/bse-sensex-call-vs-put-oi.php": {
+      "type": "callput",
+      "title": "Call vs Put OI",
+      "market": "Sensex",
+      "symbol": "SENSEX"
+    },
+    "/sensex/bse-sensex-highest-oi.php": {
+      "type": "oi-list",
+      "title": "Trending OI",
+      "market": "Sensex"
+    },
+    "/sensex/bse-sensex-multi-strike-oi.php": {
+      "type": "multi-strike",
+      "title": "Multi strike OI",
+      "market": "Sensex"
+    },
+    "/sensex/bse-sensex-open-interest-charts-live.php": {
+      "type": "oi-chart",
+      "title": "OI Charts",
+      "market": "Sensex",
+      "symbol": "SENSEX"
+    },
+    "/sensex/bse-sensex-short-straddle-charts-intraday.php": {
+      "type": "history",
+      "title": "Straddle Charts",
+      "market": "Sensex",
+      "dataset": "Straddle Charts"
+    },
+    "/sensex/bse-sensex-multi-strike-straddle-charts.php": {
+      "type": "multi-strike",
+      "title": "Multi strike Straddle",
+      "market": "Sensex"
+    },
+    "/futures/nifty-mood-indicator.php": {
+      "type": "mood",
+      "title": "Nifty Mood",
+      "market": "Futures"
+    },
+    "/futures/bank-nifty-mood-indicator.php": {
+      "type": "mood",
+      "title": "Bank Nifty Mood",
+      "market": "Futures"
+    },
+    "/nifty/nifty-future-live-chart.php": {
+      "type": "history",
+      "title": "Nifty Future Live Chart",
+      "market": "Futures",
+      "dataset": "Nifty Future Live Chart"
+    },
+    "/futures/future-oi-analysis.php": {
+      "type": "futures-build",
+      "title": "Future OI",
+      "market": "Futures"
+    },
+    "/futures/all-live-futures.php": {
+      "type": "live-futures",
+      "title": "Live Future",
+      "market": "Futures"
+    },
+    "/nifty/nifty-historical-intraday-charts.php": {
+      "type": "intraday",
+      "title": "Nifty Intraday Charts",
+      "market": "Nifty",
+      "symbol": "NIFTY"
+    },
+    "/nifty/nifty-expiry-day-historical-charts.php": {
+      "type": "history",
+      "title": "Nifty Expiry Day Charts",
+      "market": "Nifty",
+      "dataset": "Nifty Expiry Day Charts"
+    },
+    "/nifty/nifty-highest-gap-up-history-chart.php": {
+      "type": "history",
+      "title": "Nifty Highest Gapup",
+      "market": "Nifty",
+      "dataset": "Nifty Highest Gapup"
+    },
+    "/nifty/nifty-highest-gap-down-historical-data.php": {
+      "type": "history",
+      "title": "Nifty Highest Gap Down",
+      "market": "Nifty",
+      "dataset": "Nifty Highest Gap Down"
+    },
+    "/nifty/nifty-standard-deviation-and-volatality.php": {
+      "type": "history",
+      "title": "Nifty Strandard Deviation",
+      "market": "Nifty",
+      "dataset": "Nifty Strandard Deviation"
+    },
+    "/nifty/nifty-option-chain.php": {
+      "type": "option-chain",
+      "title": "Nifty Weekly",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-option-chain-live.php": {
+      "type": "option-chain",
+      "title": "Nifty Monthly",
+      "market": "Nifty",
+      "symbol": "NIFTY M"
+    },
+    "/banknifty/bank-nifty-option-chain.php": {
+      "type": "option-chain",
+      "title": "Bank Nifty Option Chain",
+      "market": "Bank Nifty",
+      "symbol": "BANKNIFTY"
+    },
+    "/finnifty/finnifty-option-chain.php": {
+      "type": "option-chain",
+      "title": "FinNifty",
+      "market": "FinNifty",
+      "symbol": "FINNIFTY"
+    },
+    "/stock/option-chain/": {
+      "type": "stock-chain",
+      "title": "Stock Option Chain",
+      "market": "Stocks"
+    },
+    "/stock/futures/": {
+      "type": "stock-futures",
+      "title": "Stock Futures",
+      "market": "Stocks"
+    },
+    "/max-pain-today/": {
+      "type": "history",
+      "title": "Stock Max Pain",
+      "market": "Stocks",
+      "dataset": "Stock Max Pain"
+    },
+    "/stock/futures/historical-data/": {
+      "type": "stock-futures",
+      "title": "Stock Futures Historical",
+      "market": "Stocks"
+    },
+    "/share-price-target/": {
+      "type": "stock-target",
+      "title": "Stock Option Backtesting",
+      "market": "Stocks"
+    },
+    "/nifty/nifty-expiry-day-historical-data-analysis.php": {
+      "type": "zerohero",
+      "title": "Nifty Zero to Hero",
+      "market": "Nifty"
+    },
+    "/nifty/research/nifty-50-monday-prediction.php": {
+      "type": "research",
+      "title": "Nifty on Monday",
+      "market": "Nifty",
+      "dataset": "Nifty on Monday"
+    },
+    "/nifty/research/nifty-50-tuesday-prediction.php": {
+      "type": "research",
+      "title": "Nifty on Tuesday",
+      "market": "Nifty",
+      "dataset": "Nifty on Tuesday"
+    },
+    "/nifty/research/nifty-50-wednesday-prediction.php": {
+      "type": "research",
+      "title": "Nifty on Wednesday",
+      "market": "Nifty",
+      "dataset": "Nifty on Wednesday"
+    },
+    "/nifty/research/nifty-50-thursday-prediction.php": {
+      "type": "research",
+      "title": "Nifty on Thursday",
+      "market": "Nifty",
+      "dataset": "Nifty on Thursday"
+    },
+    "/nifty/research/nifty-50-friday-prediction.php": {
+      "type": "research",
+      "title": "Nifty on Friday",
+      "market": "Nifty",
+      "dataset": "Nifty on Friday"
+    },
+    "/nifty/nifty-daily-change-historical-data-analysis.php": {
+      "type": "history",
+      "title": "Nifty Daily Change",
+      "market": "Nifty",
+      "dataset": "Nifty Daily Change"
+    },
+    "/nifty/research/nifty-open-to-low-probalility.php": {
+      "type": "research",
+      "title": "Nifty Open Low",
+      "market": "Nifty",
+      "dataset": "Nifty Open Low"
+    },
+    "/nifty/research/nifty-open-to-high-probalility.php": {
+      "type": "research",
+      "title": "Nifty Open High",
+      "market": "Nifty",
+      "dataset": "Nifty Open High"
+    },
+    "/nifty/research/nifty-open-to-close-probalility.php": {
+      "type": "research",
+      "title": "Nifty Open Close",
+      "market": "Nifty",
+      "dataset": "Nifty Open Close"
+    },
+    "/nifty/research/nifty-gap-up-above-1-percent-analysis.php": {
+      "type": "research",
+      "title": "Nifty Gapup > 1%",
+      "market": "Nifty",
+      "dataset": "Nifty Gapup > 1%"
+    },
+    "/nifty/research/nifty-gap-up-below-1-percent-analysis.php": {
+      "type": "research",
+      "title": "Nifty Gapdown < 1%",
+      "market": "Nifty",
+      "dataset": "Nifty Gapdown < 1%"
+    },
+    "/nifty/nifty-historical-returns-with-cagr.php": {
+      "type": "returns",
+      "title": "Nifty Returns",
+      "market": "Nifty",
+      "dataset": "Nifty Returns"
+    },
+    "/nifty/backtest/nifty-buy-on-dip-investment-strategy-returns.php": {
+      "type": "returns",
+      "title": "Nifty Buy on Dip Returns",
+      "market": "Nifty",
+      "dataset": "Nifty Buy on Dip Returns"
+    },
+    "/nifty/backtest/nifty-lumpsum-investment-strategy-returns.php": {
+      "type": "returns",
+      "title": "Nifty Lumpsum Returns",
+      "market": "Nifty",
+      "dataset": "Nifty Lumpsum Returns"
+    },
+    "/nifty/backtest/nifty-monthly-sip-investment-returns.php": {
+      "type": "returns",
+      "title": "Nifty Sip Returns",
+      "market": "Nifty",
+      "dataset": "Nifty Sip Returns"
+    },
+    "/nifty/nifty-historical-pe-ratio-data-and-charts.php": {
+      "type": "history",
+      "title": "Nifty Historical PE",
+      "market": "Nifty",
+      "dataset": "Nifty Historical PE"
+    },
+    "/nifty/nifty-option-simulator-free.php": {
+      "type": "simulator",
+      "title": "Nifty Simulator",
+      "market": "Nifty"
+    },
+    "/nifty/download-nifty-option-chain-historical-data.php": {
+      "type": "option-chain",
+      "title": "Nifty Old Chain",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-historical-call-vs-put-oi-charts.php": {
+      "type": "callput",
+      "title": "Old Call vs Put",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/nifty/nifty-buy-and-hold-call-option-until-expiry.php": {
+      "type": "history",
+      "title": "Buy & Hold Call",
+      "market": "Nifty",
+      "dataset": "Buy & Hold Call"
+    },
+    "/nifty/nifty-buy-and-hold-put-option-until-expiry.php": {
+      "type": "history",
+      "title": "Buy & Hold Put",
+      "market": "Nifty",
+      "dataset": "Buy & Hold Put"
+    },
+    "/nifty/nifty-compare-oi-with-previous-expiry.php": {
+      "type": "history",
+      "title": "Compare Current OI with Old Expiry",
+      "market": "Nifty",
+      "dataset": "Compare Current OI with Old Expiry"
+    },
+    "/nifty/nifty-compare-option-price-with-previous-expiry": {
+      "type": "history",
+      "title": "Compare Current Price with OI Old Expiry",
+      "market": "Nifty",
+      "dataset": "Compare Current Price with OI Old Expiry"
+    },
+    "/nifty/option-backtesting/nifty-bull-call-spread-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Bull Call Spread",
+      "market": "Nifty",
+      "strategy": "Bull Call Spread"
+    },
+    "/nifty/option-backtesting/nifty-bear-call-spread-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Bear Call Spread",
+      "market": "Nifty",
+      "strategy": "Bear Call Spread"
+    },
+    "/nifty/option-backtesting/nifty-bull-put-spread-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Bull Put Spread",
+      "market": "Nifty",
+      "strategy": "Bull Put Spread"
+    },
+    "/nifty/option-backtesting/nifty-bear-put-spread-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Bear Put Spread",
+      "market": "Nifty",
+      "strategy": "Bear Put Spread"
+    },
+    "/nifty/option-backtesting/nifty-long-call-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Long Call",
+      "market": "Nifty",
+      "strategy": "Long Call"
+    },
+    "/nifty/option-backtesting/nifty-long-put-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Long Put",
+      "market": "Nifty",
+      "strategy": "Long Put"
+    },
+    "/nifty/option-backtesting/nifty-short-call-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Short Call",
+      "market": "Nifty",
+      "strategy": "Short Call"
+    },
+    "/nifty/option-backtesting/nifty-short-straddle-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Short Straddle",
+      "market": "Nifty",
+      "strategy": "Short Straddle"
+    },
+    "/nifty/option-backtesting/nifty-long-straddle-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Long Straddle",
+      "market": "Nifty",
+      "strategy": "Long Straddle"
+    },
+    "/nifty/option-backtesting/nifty-short-strangle-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Short Strangle",
+      "market": "Nifty",
+      "strategy": "Short Strangle"
+    },
+    "/nifty/option-backtesting/nifty-long-strangle-strategy-backtest-results.php": {
+      "type": "backtest",
+      "title": "Nifty Long Strangle",
+      "market": "Nifty",
+      "strategy": "Long Strangle"
+    },
+    "/nifty/": {
+      "type": "index",
+      "title": "Nifty",
+      "market": "Nifty"
+    },
+    "/sensex/": {
+      "type": "index",
+      "title": "Sensex",
+      "market": "Sensex"
+    },
+    "/contact-us.php": {
+      "type": "contact",
+      "title": "Contact us",
+      "market": "Company"
+    },
+    "/tools/index.php": {
+      "type": "tools",
+      "title": "Trading Tools & Calculators",
+      "market": "Tools"
+    },
+    "/zero-to-hero.php": {
+      "type": "zerohero",
+      "title": "Zero to Hero",
+      "market": "Education"
+    },
+    "/banknifty/bank-nifty-intraday-pcr-live.php": {
+      "type": "pcr",
+      "title": "Bank Nifty Live PCR",
+      "market": "Bank Nifty",
+      "symbol": "BANKNIFTY"
+    },
+    "/banknifty/bank-nifty-open-interest-charts-live.php": {
+      "type": "oi-chart",
+      "title": "Bank Nifty Open Interest Charts",
+      "market": "Bank Nifty",
+      "symbol": "BANKNIFTY"
+    },
+    "/banknifty/bank-nifty-intraday-chart-history.php": {
+      "type": "intraday",
+      "title": "Bank Nifty Intraday Chart",
+      "market": "Bank Nifty",
+      "symbol": "BANKNIFTY"
+    },
+    "/banknifty/bank-nifty-short-straddle-backtest-report.php": {
+      "type": "backtest",
+      "title": "Bank Nifty Short Straddle Backtest",
+      "market": "Bank Nifty",
+      "strategy": "Short Straddle"
+    },
+    "/banknifty/bank-nifty-backtesting.php": {
+      "type": "backtest-index",
+      "title": "Bank Nifty Backtesting",
+      "market": "Bank Nifty"
+    },
+    "/tools/gann-square-of-nine.php": {
+      "type": "calculator",
+      "title": "Gann Square of 9",
+      "market": "Tools",
+      "tool": "Gann Square of 9"
+    },
+    "/tools/position-size-calculator.php": {
+      "type": "calculator",
+      "title": "Position Size Calculator",
+      "market": "Tools",
+      "tool": "Position Size"
+    },
+    "/tools/risk-reward-calculator.php": {
+      "type": "calculator",
+      "title": "Risk-Reward Calculator",
+      "market": "Tools",
+      "tool": "Risk-Reward"
+    },
+    "/tools/stop-loss-calculator.php": {
+      "type": "calculator",
+      "title": "Stop Loss Calculator",
+      "market": "Tools",
+      "tool": "Stop Loss"
+    },
+    "/tools/lot-size-calculator.php": {
+      "type": "calculator",
+      "title": "Lot Size Calculator",
+      "market": "Tools",
+      "tool": "Lot Size"
+    },
+    "/tools/win-rate-calculator.php": {
+      "type": "calculator",
+      "title": "Win Rate Calculator",
+      "market": "Tools",
+      "tool": "Win Rate"
+    },
+    "/tools/average-down-calculator.php": {
+      "type": "calculator",
+      "title": "Average Down Calculator",
+      "market": "Tools",
+      "tool": "Average Down"
+    },
+    "/tools/average-target-calculator.php": {
+      "type": "calculator",
+      "title": "Average Target Calculator",
+      "market": "Tools",
+      "tool": "Average Target"
+    },
+    "/tools/sip-calculator.php": {
+      "type": "calculator",
+      "title": "SIP Calculator",
+      "market": "Tools",
+      "tool": "SIP Calculator"
+    },
+    "/tools/lumpsum-calculator.php": {
+      "type": "calculator",
+      "title": "Lumpsum Calculator",
+      "market": "Tools",
+      "tool": "Lumpsum"
+    },
+    "/tools/swp-calculator.php": {
+      "type": "calculator",
+      "title": "SWP Calculator",
+      "market": "Tools",
+      "tool": "SWP Calculator"
+    },
+    "/global-index/": {
+      "type": "overview",
+      "title": "Global Indices",
+      "market": "Global"
+    },
+    "/futures/future-advance-decline.php": {
+      "type": "history",
+      "title": "Nifty Advance / Decline",
+      "market": "Futures",
+      "dataset": "Advance / Decline"
+    },
+    "/nifty/nifty-historical-option-chain.php": {
+      "type": "history",
+      "title": "Nifty Historical Option Chain",
+      "market": "Nifty",
+      "dataset": "Nifty Historical Option Chain"
+    },
+    "/banknifty/bank-nifty-option-chain-historical-data.php": {
+      "type": "history",
+      "title": "Bank Nifty Historical Option Chain",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Historical Option Chain"
+    },
+    "/nifty/nifty-option-price-charts.php": {
+      "type": "history",
+      "title": "Nifty Option Price Charts",
+      "market": "Nifty",
+      "dataset": "Nifty Option Price Charts"
+    },
+    "/banknifty/bank-nifty-option-chart-old-data.php": {
+      "type": "history",
+      "title": "Bank Nifty Option Charts",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Option Charts"
+    },
+    "/banknifty/bank-nifty-expiry-day-chart-history.php": {
+      "type": "history",
+      "title": "Bank Nifty Expiry Day Charts",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Expiry Day Charts"
+    },
+    "/nifty/nifty-historical-open-interest-charts.php": {
+      "type": "oi-chart",
+      "title": "Nifty Historical OI Charts",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    },
+    "/banknifty/bank-nifty-highest-gap-up-opening-history.php": {
+      "type": "history",
+      "title": "Bank Nifty Highest Gap Up",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Highest Gap Up"
+    },
+    "/banknifty/bank-nifty-highest-gap-down-opening-history.php": {
+      "type": "history",
+      "title": "Bank Nifty Lowest Gap Down",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Lowest Gap Down"
+    },
+    "/banknifty/bank-nifty-standard-deviation-and-volatality.php": {
+      "type": "history",
+      "title": "Bank Nifty Standard Deviation",
+      "market": "Bank Nifty",
+      "dataset": "Bank Nifty Standard Deviation"
+    },
+    "/stock/option-chain/historical-data/": {
+      "type": "stock-chain",
+      "title": "Stock Option Chain Historical",
+      "market": "Stocks"
+    },
+    "/stock/option-backtesting/": {
+      "type": "backtest-index",
+      "title": "Stock Option Backtesting",
+      "market": "Stocks"
+    },
+    "/banknifty/bank-nifty-expiry-day-historical-data-analysis.php": {
+      "type": "zerohero",
+      "title": "Bank Nifty Zero to Hero",
+      "market": "Bank Nifty"
+    },
+    "/nifty/nifty-intraday-short-straddle-charts.php": {
+      "type": "history",
+      "title": "Nifty Intraday Short Straddle Charts",
+      "market": "Nifty",
+      "dataset": "Nifty Intraday Short Straddle Charts"
+    },
+    "/nifty/nifty-banknifty-finnifty-multi-strike-straddle-charts.php": {
+      "type": "multi-strike",
+      "title": "Nifty Multi Strike Straddle Charts",
+      "market": "Nifty",
+      "symbol": "NIFTY W"
+    }
+  },
+  "quickLinks": [
+    {
+      "label": "TRADING TICK",
+      "href": "/",
+      "icon": "⌂",
+      "color": "#0037ff"
+    },
+    {
+      "label": "SCREENER",
+      "href": "https://tickscreener.com/",
+      "external": true,
+      "icon": "⌕",
+      "color": "#fd2424"
+    }
+  ],
+  "sidebarNavigation": [
+    {
+      "label": "Nifty Live",
+      "icon": "▥",
+      "color": "#ff6f00",
+      "items": [
+        [
+          "Nifty Option Dashboard",
+          "/nifty/nifty-banknifty-finnifty-option-dashboard.php"
+        ],
+        [
+          "Nifty Option Chain",
+          "/option/all-option-chain-live.php"
+        ],
+        [
+          "Nifty Live PCR",
+          "/nifty/nifty-banknifty-finnifty-intraday-pcr-live.php"
+        ],
+        [
+          "Nifty Call vs Put OI",
+          "/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php"
+        ],
+        [
+          "Nifty Trending OI",
+          "/nifty/nifty-banknifty-finnifty-trending-oi.php"
+        ],
+        [
+          "Nifty Highest OI",
+          "/nifty/nifty-banknifty-finnifty-highest-oi.php"
+        ],
+        [
+          "Nifty Open Interest Charts",
+          "/nifty/nifty-banknifty-finnifty-open-interest-charts-live.php"
+        ],
+        [
+          "Nifty Multi Strike OI",
+          "/nifty/nifty-banknifty-finnifty-multi-strike-oi.php"
+        ],
+        [
+          "Nifty Mood",
+          "/futures/nifty-mood-indicator.php"
+        ],
+        [
+          "Bank Nifty Mood",
+          "/futures/bank-nifty-mood-indicator.php"
+        ],
+        [
+          "Nifty Future OI",
+          "/futures/future-oi-analysis.php"
+        ],
+        [
+          "Nifty Live Future",
+          "/futures/all-live-futures.php"
+        ],
+        [
+          "Nifty Adv / Dec",
+          "/futures/future-advance-decline.php"
+        ]
+      ]
+    },
+    {
+      "label": "Sensex Live",
+      "icon": "✦",
+      "color": "#4fa21c",
+      "items": [
+        [
+          "Sensex Option Chain",
+          "/sensex/bse-sensex-option-chain-live.php"
+        ],
+        [
+          "Sensex Option Screener",
+          "/sensex/bse-sensex-option-screener.php"
+        ],
+        [
+          "Sensex Live PCR",
+          "/sensex/bse-sensex-pcr-live.php"
+        ],
+        [
+          "Sensex Trending OI",
+          "/sensex/bse-sensex-trending-oi.php"
+        ],
+        [
+          "Sensex Call vs Put OI",
+          "/sensex/bse-sensex-call-vs-put-oi.php"
+        ],
+        [
+          "Sensex Highest OI",
+          "/sensex/bse-sensex-highest-oi.php"
+        ],
+        [
+          "Sensex Multi strike OI",
+          "/sensex/bse-sensex-multi-strike-oi.php"
+        ],
+        [
+          "Sensex OI Charts",
+          "/sensex/bse-sensex-open-interest-charts-live.php"
+        ],
+        [
+          "Sensex Straddle Charts",
+          "/sensex/bse-sensex-short-straddle-charts-intraday.php"
+        ],
+        [
+          "Sensex Multi strike Straddle",
+          "/sensex/bse-sensex-multi-strike-straddle-charts.php"
+        ]
+      ]
+    },
+    {
+      "label": "Bank Nifty",
+      "icon": "▥",
+      "color": "#ff8f00",
+      "items": [
+        [
+          "Bank Nifty Option Chain",
+          "/banknifty/bank-nifty-option-chain.php"
+        ],
+        [
+          "Bank Nifty Live PCR",
+          "/banknifty/bank-nifty-intraday-pcr-live.php"
+        ],
+        [
+          "Bank Nifty Call vs Put OI",
+          "/nifty/nifty-banknifty-finnifty-call-vs-put-oi.php"
+        ],
+        [
+          "Bank Nifty OI Charts",
+          "/banknifty/bank-nifty-open-interest-charts-live.php"
+        ],
+        [
+          "Bank Nifty Intraday Charts",
+          "/banknifty/bank-nifty-intraday-chart-history.php"
+        ],
+        [
+          "Bank Nifty Short Straddle",
+          "/banknifty/bank-nifty-short-straddle-backtest-report.php"
+        ]
+      ]
+    },
+    {
+      "label": "Nifty Historical",
+      "icon": "▤",
+      "color": "#5f11d6",
+      "items": [
+        [
+          "Nifty Historical F&O Data",
+          "/nifty/nifty-option-chain.php"
+        ],
+        [
+          "Bank Nifty Live",
+          "/banknifty/bank-nifty-option-chain.php"
+        ],
+        [
+          "Nifty Historical Option Chain",
+          "/nifty/nifty-historical-option-chain.php"
+        ],
+        [
+          "Bank Nifty Historical Option Chain",
+          "/banknifty/bank-nifty-option-chain-historical-data.php"
+        ]
+      ]
+    },
+    {
+      "label": "Option Charts",
+      "icon": "▧",
+      "color": "#0d9c8d",
+      "items": [
+        [
+          "Nifty Option Price Charts",
+          "/nifty/nifty-option-price-charts.php"
+        ],
+        [
+          "Bank Nifty Option Charts",
+          "/banknifty/bank-nifty-option-chart-old-data.php"
+        ]
+      ]
+    },
+    {
+      "label": "26 Years Research",
+      "icon": "◉",
+      "color": "#a73bff",
+      "items": [
+        [
+          "Nifty On Monday",
+          "/nifty/research/nifty-50-monday-prediction.php"
+        ],
+        [
+          "Nifty On Tuesday",
+          "/nifty/research/nifty-50-tuesday-prediction.php"
+        ],
+        [
+          "Nifty On Wednesday",
+          "/nifty/research/nifty-50-wednesday-prediction.php"
+        ],
+        [
+          "Nifty On Thursday",
+          "/nifty/research/nifty-50-thursday-prediction.php"
+        ],
+        [
+          "Nifty On Friday",
+          "/nifty/research/nifty-50-friday-prediction.php"
+        ],
+        [
+          "Nifty SIP Returns",
+          "/nifty/backtest/nifty-monthly-sip-investment-returns.php"
+        ],
+        [
+          "Nifty Buy on Dip",
+          "/nifty/backtest/nifty-buy-on-dip-investment-strategy-returns.php"
+        ],
+        [
+          "Nifty Lumpsum Investment Returns",
+          "/nifty/backtest/nifty-lumpsum-investment-strategy-returns.php"
+        ]
+      ]
+    },
+    {
+      "label": "1 Min Charts (11 Years)",
+      "icon": "♥",
+      "color": "#ff144b",
+      "items": [
+        [
+          "Nifty Intraday Charts",
+          "/nifty/nifty-historical-intraday-charts.php"
+        ],
+        [
+          "Bank Nifty Intraday Charts",
+          "/banknifty/bank-nifty-intraday-chart-history.php"
+        ],
+        [
+          "Nifty Expiry Day Charts",
+          "/nifty/nifty-expiry-day-historical-charts.php"
+        ],
+        [
+          "Bank Nifty Expiry Day Charts",
+          "/banknifty/bank-nifty-expiry-day-chart-history.php"
+        ],
+        [
+          "Nifty OI Charts",
+          "/nifty/nifty-historical-open-interest-charts.php"
+        ],
+        [
+          "Bank Nifty OI Charts",
+          "/banknifty/bank-nifty-open-interest-charts-live.php"
+        ]
+      ]
+    },
+    {
+      "label": "Option Backtest",
+      "icon": "◴",
+      "color": "#fd52ce",
+      "items": [
+        [
+          "Nifty Short Straddle",
+          "/nifty/nifty-short-straddle-backtest-report.php"
+        ],
+        [
+          "Bank Nifty Short Straddle",
+          "/banknifty/bank-nifty-short-straddle-backtest-report.php"
+        ]
+      ]
+    },
+    {
+      "label": "Analysis",
+      "icon": "◈",
+      "color": "#0084ff",
+      "items": [
+        [
+          "Nifty Returns",
+          "/nifty/nifty-historical-returns-with-cagr.php"
+        ],
+        [
+          "Nifty Highest Gap Up",
+          "/nifty/nifty-highest-gap-up-history-chart.php"
+        ],
+        [
+          "Nifty Lowest Gap Down",
+          "/nifty/nifty-highest-gap-down-historical-data.php"
+        ],
+        [
+          "Nifty Historical PE",
+          "/nifty/nifty-historical-pe-ratio-data-and-charts.php"
+        ],
+        [
+          "Nifty Standard Deviation",
+          "/nifty/nifty-standard-deviation-and-volatality.php"
+        ],
+        [
+          "Bank Nifty Highest Gap Up",
+          "/banknifty/bank-nifty-highest-gap-up-opening-history.php"
+        ],
+        [
+          "Bank Nifty Lowest Gap Down",
+          "/banknifty/bank-nifty-highest-gap-down-opening-history.php"
+        ],
+        [
+          "Bank Nifty Standard Deviation",
+          "/banknifty/bank-nifty-standard-deviation-and-volatality.php"
+        ]
+      ]
+    },
+    {
+      "label": "Stock",
+      "icon": "◷",
+      "color": "#0037ff",
+      "items": [
+        [
+          "Stock Option Chain",
+          "/stock/option-chain/"
+        ],
+        [
+          "Stock Option Chain Historical",
+          "/stock/option-chain/historical-data/"
+        ],
+        [
+          "Stock Futures",
+          "/stock/futures/"
+        ],
+        [
+          "Stock Futures Historical",
+          "/stock/futures/historical-data/"
+        ],
+        [
+          "Max Pain of All Stocks",
+          "/max-pain-today/"
+        ],
+        [
+          "Stock Option Backtesting",
+          "/stock/option-backtesting/"
+        ]
+      ]
+    },
+    {
+      "label": "Zero to Hero",
+      "icon": "◷",
+      "color": "#fa2020",
+      "items": [
+        [
+          "Nifty Zero to Hero",
+          "/nifty/nifty-expiry-day-historical-data-analysis.php"
+        ],
+        [
+          "Bank Nifty Zero to Hero",
+          "/banknifty/bank-nifty-expiry-day-historical-data-analysis.php"
+        ]
+      ]
+    },
+    {
+      "label": "Tools & Calculators",
+      "icon": "▦",
+      "color": "#1b64da",
+      "items": [
+        [
+          "Gann Square of 9",
+          "/tools/gann-square-of-nine.php"
+        ],
+        [
+          "Position Size",
+          "/tools/position-size-calculator.php"
+        ],
+        [
+          "Risk-Reward",
+          "/tools/risk-reward-calculator.php"
+        ],
+        [
+          "Stop Loss",
+          "/tools/stop-loss-calculator.php"
+        ],
+        [
+          "Lot Size",
+          "/tools/lot-size-calculator.php"
+        ],
+        [
+          "Win Rate",
+          "/tools/win-rate-calculator.php"
+        ],
+        [
+          "Average Down",
+          "/tools/average-down-calculator.php"
+        ],
+        [
+          "Average Target",
+          "/tools/average-target-calculator.php"
+        ],
+        [
+          "SIP Calculator",
+          "/tools/sip-calculator.php"
+        ],
+        [
+          "Lumpsum Calculator",
+          "/tools/lumpsum-calculator.php"
+        ],
+        [
+          "SWP Calculator",
+          "/tools/swp-calculator.php"
+        ],
+        [
+          "Browse all tools",
+          "/tools/index.php"
+        ]
+      ]
+    },
+    {
+      "label": "Blog",
+      "icon": "▤",
+      "color": "#fd5604",
+      "disabled": true
+    },
+    {
+      "label": "Contact us",
+      "icon": "✉",
+      "color": "#fb05b7",
+      "href": "/contact-us.php"
+    }
+  ]
+}
